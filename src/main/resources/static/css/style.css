@@ -34,7 +34,7 @@ strong {
 }
 
 a {
-	color: #2F2F2F;
+	color: black;
 }
 
 a:hover {
@@ -263,37 +263,50 @@ hr {
 	overflow:visible;
 	padding:0;
 }
-/* 메인페이지 이 달의 신상품 */
-#newproduct{
+/* 메인페이지 상품 */
+.productcontainer{
 	width: 1100px;
 	height: 70px;
 	margin: 0px 50px;
 }
 
-#newproduct h2{
-	margin: 10px 0px 10px 0px;
+.productcontainer h2{
+	margin: 20px 15px 20px 15px;
 	padding-left: 10px;
+	display:inline;
 }
 
-#newproduct img{
+.productcontainer h2 a{
+	color:rebeccapurple;
+	margin:15px 0px 15px 0px;
+	padding-left:10px;
+}
+
+.productcontainer h4{
+	margin: 10px 0px 10px 0px;
+	padding-left: 10px;
+	float:right;
+}
+
+.productcontainer img{
 	width:265px;
 	height:250px;
 
 }
-#newproduct .newthumb{
+.productcontainer .newthumb{
 	float:left;
 	margin: 0 5px 0 5px;
 }
 
-#newproduct p{
+.productcontainer p{
 	margin:0;
 }
 
-#newproduct a{
+.productcontainer a{
 	text-decoration: none;
 }
 
-#newproduct a:hover{
+.productcontainer a:hover{
 	text-decoration: underline;
 }
 
