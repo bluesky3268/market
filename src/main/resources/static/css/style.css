@@ -263,9 +263,9 @@ hr {
 	overflow:visible;
 	padding:0;
 }
-
+/* 메인페이지 이 달의 신상품 */
 #newproduct{
-	width: 1200px;
+	width: 1100px;
 	height: 70px;
 	margin: 0px 50px;
 }
@@ -297,9 +297,44 @@ hr {
 	text-decoration: underline;
 }
 
-/** PAGE */
+/*  상품리스트 페이지 - 상품목록  */
+#productlist{
+	width: 1100px;
+	height: 70px;
+	margin: 0px 50px;
+}
+
+#productlist h2{
+	margin: 10px 0px 10px 0px;
+	padding-left: 10px;
+}
+
+#productlist img{
+	width:265px;
+	height:250px;
+
+}
+#productlist .newthumb{
+	float:left;
+	margin: 0 5px 0 5px;
+}
+
+#productlist p{
+	margin:0;
+}
+
+#productlist a{
+	text-decoration: none;
+}
+
+#productlist a:hover{
+	text-decoration: underline;
+}
+
+/** PAGING */
 
 #page {
+
 }
 
 /** CONTENT */
