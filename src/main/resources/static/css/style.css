@@ -237,6 +237,7 @@ hr {
 	width: 155px;
 	text-align: center;
 	opacity: 0;
+	visibility: hidden;
 }
 
 #menu .navbar ul li{
@@ -257,6 +258,7 @@ hr {
 #menu .navbar li:hover ul{
 	opacity:1;
 	text-align: center;
+	visibility: visible;
 }
 #menu .navbar li:hover ul li{
 	height:35px;
@@ -338,6 +340,12 @@ hr {
 
 #productlist a{
 	text-decoration: none;
+}
+
+#productlist h2 a{
+	color:rebeccapurple;
+	margin:15px 0px 15px 0px;
+	padding-left:10px;
 }
 
 #productlist a:hover{
