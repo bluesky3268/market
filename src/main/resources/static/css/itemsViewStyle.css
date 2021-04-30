@@ -1,0 +1,27 @@
+@charset "UTF-8";
+body { padding: 50px; }
+
+.items_view { position: relative; padding: 0 0 0 500px; width: 1080px; box-sizing: border-box; }
+.items_view .img { position: absolute; left: 0; top: 0; }
+.items_view .img > img { width: 450px; height: 450px; border:1px solid #e8e8e8; }
+.items_view .img li:after { content: ""; display: block; clear: both; }
+.items_view .img li { float: left; padding: 10px 10px 0 0; }
+.items_view .img li.on img { border-color: #454545; }
+.items_view .img li img { width: 70px; height: 70px; border: 1px solid #e8e8e8; }
+.items_view h2 { margin: 0 0 15px; padding: 0 0 20px; border-bottom: 2px solid #333; font-size: 24px; color: #232323; line-height: 26px; }
+.items_view table th,
+.items_view table td { padding: 14px 0; font-size: 15px; color: #444; text-align: left; }
+.items_view table td.price { font-size: 22px; }
+.items_view table td.total { font-size: 19px; color: rebeccapurple; }
+.items_view table td.total b { font-size: 22px; }
+.items_view table .length { position: relative; width: 71px; height: 32px; border:1px solid #c6c6c6; }
+.items_view table .length input { width: 44px; height: 30px; border:none; border-right:1px solid #c6c6c6; text-align:center; }
+.items_view table .length a { overflow: hidden; position: absolute; right: 0; width: 26px; height: 16px; color:transparent; }
+.items_view table .length a:nth-of-type(1) {  top: 0; background: url("images/ico_up.png") no-repeat center; }
+.items_view table .length a:nth-of-type(2) { bottom:0; background: url("images/ico_down.png") no-repeat center; border-top:1px solid #c6c6c6; }
+.items_view table select { width:100%; border:1px solid #c6c6c6; box-sizing: border-box;  background: url("images/ico_select.png") no-repeat right 11px center; appearance:none; -webkit-appearance:none; -moz-appearance:none; }
+.items_view table select::-ms-expand { display: none;}
+.items_view .btns { padding: 45px 0 0; text-align: center; }
+.items_view .btns > a { display: inline-block; width: 136px; height: 42px;border-radius: 2px; font-size: 16px; color:#fff; line-height: 42px; }
+.items_view .btns > a.btn1 { background: #666; }
+.items_view .btns > a.btn2 { background: rebeccapurple; }

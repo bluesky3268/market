@@ -1,0 +1,52 @@
+@charset "utf-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,form,fieldset,p,button,table,th,td,pre{margin:0;padding:0;}
+body,div,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,p,th,td,input,textarea,select,button,pre,a{font-family:'Nanum Gothic', sans-serif; font-size:16px; color:#222;}
+
+textarea { width:100%;}
+select,input,img, button {vertical-align:middle;}
+ul, ol {list-style-type:none; }
+.hide,legend,hr,caption span {position:absolute; left:-3000%;}
+em, address { font-style:normal;}
+table { border-collapse:collapse; border-spacing:0; width:100%;}
+a { color:#666; text-decoration:none;}
+a:focus,
+a:hover { text-decoration:none;}
+fieldset, img, button{border:0;}
+
+input[type=text]::-ms-clear {display: none;}
+
+select { padding:0 0 0 5px; height:38px; border:1px solid #e3e3e3;}
+textarea,
+input[type="file"],
+input[type="password"],
+input[type="text"] { text-indent:4px; border:1px solid #ccc;}
+ 
+select:focus, textarea:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+input[type="text"]:focus { border:1px solid #555;}
+ 
+textarea[readonly="readonly"],
+button[readonly="readonly"],
+select[readonly="readonly"],
+input[readonly="readonly"],
+ 
+textarea[disabled="disabled"],
+button[disabled="disabled"],
+select[disabled="disabled"],
+input[disabled="disabled"] { background:#f5f5f5; border-color:#d4d4d4;}
+ 
+input[type="password"],
+input[type="file"],
+input[type="text"] { height:34px; line-height:34px;}
+input[type="file"] { width:100%;}
+input[type="radio"] { vertical-align:text-bottom;}
+ 
+.clear { zoom:1;clear:both;}
+.clear:after { content:""; display:block; clear:both;}
+
+.skip { position:absolute; left:0; top:-100px; z-index:1000; width:100%; height:60px; line-height:60px; text-align:center; font-size:20px; color:#fff; transition:all 0.5s; background:#666;}
+.skip:focus { top:0;}

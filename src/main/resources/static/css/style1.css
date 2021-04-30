@@ -1,0 +1,499 @@
+div {
+  display: block;
+  margin: 0;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+textarea {
+  padding: 5px 6px;
+  border: 1px solid #d5d5d5;
+  line-height: 1.5;
+}
+
+caption {
+  display: none;
+}
+
+col {
+  display: table-column;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+
+strong {
+  font-weight: bold;
+}
+
+input {
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  padding: 1px 2px;
+  border-width: 2px;
+  border-style: inset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+}
+
+table {
+  width: 950px;
+}
+
+label {
+  cursor: default;
+}
+
+table.type10 td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  font-weight: bold;
+  font-size: larger;
+}
+
+table.type10 th {
+  background-color: rgba(53, 50, 54, 0.075);
+  font-size: larger;
+}
+
+.top-menu {
+  display: inline;
+  float: right;
+}
+.top-menu li {
+  display: inline-block;
+}
+.top-menu.login {
+  float: right;
+}
+
+.top-menu.login a {
+  float: right;
+}
+
+.navbar ol {
+  background-color: purple;
+  padding: 6px;
+}
+
+.navbar li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.title2 {
+  font-size: larger;
+  font-weight: bolder;
+}
+.title2 li {
+  display: inline;
+}
+
+.navbar li a {
+  color: white;
+}
+.top-menu li {
+  justify-content: space-between;
+}
+
+.totalpricef {
+  font-size: 1.5em;
+}
+
+.payment {
+  font-size: 1.5em;
+  margin-top: 65px;
+}
+.title {
+  margin: 40px 0 10px 10px;
+}
+.title h3 {
+  display: inline-block;
+  vertical-align: middle;
+  color: #353535;
+  font-size: 1.5em;
+}
+
+.title span {
+  font-size: larger;
+}
+
+.howto h4 {
+  background-color: rgba(53, 50, 54, 0.075);
+  padding: 5px;
+  font-size: 1.5em;
+  padding: 9px 0 6px 10px;
+  border-bottom: 1px solid #e8e7e7;
+  color: #101010;
+  font-size: 1.5em;
+  background: #fbfbfb;
+}
+
+.h4 {
+  margin-bottom: 100px;
+  margin: 20px 0;
+  border: 1px solid #d6d4d4;
+  line-height: 18px;
+}
+.howto li {
+  font-size: 1.5em;
+  line-height: 18px;
+}
+.caution {
+  font-size: 1.5em;
+  margin-bottom: 100px;
+  margin: 30px 0;
+  line-height: 18px;
+}
+
+.caution h4 {
+  border-bottom: 1px solid #e8e7e7;
+  color: #101010;
+  font-size: 1em;
+  background: #fbfbfb;
+  padding: 9px 0 6px 10px;
+}
+.caution p {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.caution ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+.cation ol li {
+  padding: 0 0 0 25px;
+  background: url(//img.echosting.cafe24.com/skin/base/common/ico_number.png)
+    no-repeat;
+}
+
+.method {
+  overflow: hidden;
+  position: relative;
+  padding: 10px 241px 0 0;
+  border: 1px solid #777;
+  color: #353535;
+  line-height: 1.5;
+  font-size: larger;
+  font-weight: bold;
+}
+.total {
+  float: right;
+  width: 240px;
+  margin: 0 -241px 0;
+  text-align: right;
+  background: #fbfafa;
+}
+
+.total h4 {
+  margin: 17px 10px 0 0;
+  color: #353535;
+  font-size: 12px;
+}
+
+.total .price input#total_price {
+  color: #ed1c24;
+  width: 190px;
+  height: auto;
+  padding: 0;
+  border: 0;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: normal;
+  background: #fbfafa;
+}
+
+.method1 {
+  font-weight: bold;
+}
+
+.ec-base-table table {
+  position: relative;
+  margin: 10px 0 0;
+  border: 1px solid #d7d5d5;
+  border-top: 0;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.total .btnpay {
+  text-align: center;
+  background-color: #75328a;
+}
+
+.total .btnpay1 {
+  width: 136px;
+  height: 42px;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  border-radius: 2px;
+  line-height: 42px;
+}
+
+.payArea:after {
+  position: absolute;
+  top: 0;
+  right: 240px;
+  display: block;
+  content: "";
+  width: 1px;
+  height: 100%;
+  background: #777;
+}
+
+.payArea {
+  overflow: hidden;
+  position: relative;
+  font-size: larger;
+  padding: 0 241px 0 0;
+  border: 1px solid #777;
+  color: #353535;
+  line-height: 1.5;
+}
+
+.ec-base-table table {
+  border: 1px solid #fff;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+table.payArea {
+  width: 100%;
+  border: 50;
+  border-spacing: 30;
+  border-collapse: collapse;
+}
+
+.payArea .ec-base-table th,
+.payArea .ec-base-table td {
+  padding: 5px 0 5px 9px;
+  vertical-align: middle;
+}
+
+.ec-base-table tbody th {
+  /*예금주명 칼럼*/
+  padding: 11px 0 10px 18px;
+  border: 1px solid #dfdfdf;
+  border-bottom-width: 0;
+  color: #353535;
+  text-align: left;
+  font-weight: normal;
+  background-color: #fbfafa;
+  font-size: larger;
+}
+
+.ec-base-table td {
+  padding: 11px 10px 10px;
+  border-top: 1px solid #dfdfdf;
+  color: #353535;
+  vertical-align: middle;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.payArea .payHelp {
+  margin: 0 0 0 130px;
+}
+
+span.ec-base-help,
+p.ec-base-help,
+ul.ec-base-help li {
+  margin: 2px 9px;
+  padding: 1px 0 1px 20px;
+  line-height: 1.4;
+  background: url(//img.echosting.cafe24.com/skin/base/common/ico_info.gif)
+    no-repeat 0 2px;
+  font-size: larger;
+}
+
+.payArea .agree {
+  padding: 0 20px;
+}
+
+.payArea .agree > table > tbody > tr > th {
+  width: 130px;
+  padding: 20px 0;
+  border-top: 1px solid #e8e8e8;
+  font-weight: normal;
+  text-align: left;
+}
+.payArea .agree > table > tbody > tr > td {
+  padding: 20px 0;
+  border-top: 1px solid #e8e8e8;
+}
+
+.payArea th,
+td {
+  border: 0;
+  vertical-align: top;
+}
+
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+
+.ec-base-table table:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #d7d5d5;
+}
+
+.displaynone {
+  display: none !important;
+}
+
+.payArea .payment .ec-base-table {
+  padding: 0;
+}
+.payArea .agree .textArea {
+  position: relative;
+  margin: 0 0 8px;
+  padding: 0 80px 0 0;
+}
+.payArea .agree .textArea textarea {
+  width: 96%;
+  height: 57px;
+}
+
+.payArea .agree .textArea a {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.btnAgree,
+a.btnAgree {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 80px;
+  height: 70px;
+  line-height: 70px;
+  border: 1px solid #d1d1d1;
+  border-radius: 0;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #222;
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.payArea .total .price strong,
+.payArea .total .price span {
+  vertical-align: -5px;
+}
+
+.inner1 li {
+  line-height: 2;
+}
+
+.caution {
+  line-height: 2;
+}
+
+#path li {
+  display: inline;
+  margin: 0 5px;
+  color: gray;
+  font-size: small;
+}
+
+#titleArea1 {
+  font-size: 20px;
+}
+
+#msg {
+  width: 600px;
+  height: 100px;
+}
+#addr {
+  width: 200px;
+  height: 25px;
+}
+
+#addr2 {
+  width: 300px;
+  height: 25px;
+}
+
+#boxsize {
+  width: auto;
+  height: 25px;
+}
+
+#content1 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+#content2 {
+  font-size: 1.5em;
+  margin-top: 60px;
+}
