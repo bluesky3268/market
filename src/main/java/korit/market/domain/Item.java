@@ -1,7 +1,11 @@
 package korit.market.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 
+@Getter @Setter
 public class Item {
 
     /**
@@ -34,63 +38,4 @@ public class Item {
         this.itemDate = itemDate;
     }
 
-    public Long getItemNo() {
-        return itemNo;
-    }
-
-    public String getItemName() {
-        return itemName;
-    }
-
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
-    public Integer getCategoryCode() {
-        return categoryCode;
-    }
-
-    public void setCategoryCode(Integer categoryCode) {
-        this.categoryCode = categoryCode;
-    }
-
-    public Integer getItemPrice() {
-        return itemPrice;
-    }
-
-    public void setItemPrice(Integer itemPrice) {
-        this.itemPrice = itemPrice;
-    }
-
-    public Integer getItemQuantity() {
-        return itemQuantity;
-    }
-
-    public void setItemQuantity(Integer itemQuantity) {
-        this.itemQuantity = itemQuantity;
-    }
-
-    public String getItemInfo() {
-        return itemInfo;
-    }
-
-    public void setItemInfo(String itemInfo) {
-        this.itemInfo = itemInfo;
-    }
-
-    public String getItemImg() {
-        return itemImg;
-    }
-
-    public void setItemImg(String itemImg) {
-        this.itemImg = itemImg;
-    }
-
-    public Date getItemDate() {
-        return itemDate;
-    }
-
-    public void setItemDate(Date itemDate) {
-        this.itemDate = itemDate;
-    }
 }
