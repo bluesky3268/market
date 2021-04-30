@@ -1,59 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>캠핑가지</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <link rel="stylesheet" type="text/css" href="./login.css">
-</head>
-
-<body>
-  <div class="xans-elemet- xans-member xans-member-login ec-base-box typeThin">
-    <div class="login">
-      <h3 class="Title">
-        LOGIN
-        <br>
-        <span>회원로그인</span>
-      </h3>
-      <fieldset>
-        <legend>회원로그인</legend>
-        <label class="id ePlaceholder" title="아이디">
-          <div class="pre">아이디</div>
-          <input id="member_id" name="member_id" fw-filter="isFill" fw-label="아이디" fw-msg="" class="inputTypeText"
-            placeholder="" value="" type="text">
-        </label>
-        <label class="password ePlaceholder" title="비밀번호">
-          <div class="pre">비밀번호</div>
-          <input id="member_passwd" name="member_passwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="패스워드"
-            fw-msg="" autocomplete="off" value="" type="password">
-        </label>
-
-        <div>
-          <a href="#none" class="Loginbtn" onclick="MemberAction.login('member_form_4818398116'); return false;">
-            <span class="hangrd_1 pogrd_hov2">
-              로그인
-              <span></span>
-            </span>
-          </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="./login.css" />
+    <link rel="stylesheet" href="/src/main/resources/static/css/style.css"/>
+  </head>
+  <body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="logo">
+                <a href="index.html"><img alt="logo" src="/src/main/resources/static/img/logo.jpg"></a>
+                <h1><a href="index.html">캠핑가지</a></h1>
+            </div>
+            <div class="search">
+                <form action="#" method="post">
+                    <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
+                    <input class="searchsubmit" type="submit" value="검색">
+                </form>
+            </div>
         </div>
+        <!-- end #header -->
+        <div id="menu">
+            <ul class="navbar">
+                <li class="current_page_item"><a href="/src/main/resources/templates/index.html">Home</a></li>
+                <li><a href="#">텐트/타프</a>
+                    <ul>
+                        <li><a href="#">리빙쉘 텐트</a></li>
+                        <li><a href="#">돔형 텐트</a></li>
+                        <li><a href="#">원터치 텐트</a></li>
+                        <li><a href="#">렉사 타프</a></li>
+                        <li><a href="#">헥사 텐트</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">테이블/체어</a>
+                    <ul>
+                        <li><a href="#">접이식 테이블</a></li>
+                        <li><a href="#">조립식 테이블</a></li>
+                        <li><a href="#">접이식 체어</a></li>
+                        <li><a href="#">조립식 테이블</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">침낭/매트</a>
+                    <ul>
+                        <li><a href="#">4계절 침낭</a></li>
+                        <li><a href="#">하계용 침낭</a></li>
+                        <li><a href="#">에어매트</a></li>
+                        <li><a href="#">하계용 침낭</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">밀키트</a>
+                    <ul>
+                        <li><a href="#">밀키트</a></li>
+                        <li><a href="#">소시지/육포</a></li>
+                        <li><a href="#">캔/통조림</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../java/korit/market/login/login.html">로그인</a></li>
+                <li><a href="../../java/korit/market/member/join.html">회원가입</a></li>
+            </ul>
+        </div>
+    
+    <div
+      class="xans-elemet- xans-member xans-member-login ec-base-box typeThin"
+    >
+      <div class="login">
+        <h3 class="Title">
+          LOGIN
+          <br />
+          <span>회원로그인</span>
+        </h3>
+        <fieldset>
+          <legend>회원로그인</legend>
+          <label class="id ePlaceholder" title="아이디">
+            <div class="pre">아이디</div>
+            <input
+              id="member_id"
+              name="member_id"
+              fw-filter="isFill"
+              fw-label="아이디"
+              fw-msg=""
+              class="inputTypeText"
+              placeholder=""
+              value=""
+              type="text"
+            />
+          </label>
+          <label class="password ePlaceholder" title="비밀번호">
+            <div class="pre">비밀번호</div>
+            <input
+              id="member_passwd"
+              name="member_passwd"
+              fw-filter="isFill&amp;isMin[4]&amp;isMax[16]"
+              fw-label="패스워드"
+              fw-msg=""
+              autocomplete="off"
+              value=""
+              type="password"
+            />
+          </label>
 
-        <ul class="snsArea">
-          <li class="kakaoLogin">
-            <a href="#none" onclick="MemberAction.snsLogin('kakao', '%2Findex.html')">
-              <img src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_kakao_login.gif" alt="" title="">
+          <div>
+            <a
+              href="#none"
+              class="Loginbtn"
+              onclick="MemberAction.login('member_form_4818398116'); return false;"
+            >
+              <span class="hangrd_1 pogrd_hov2">
+                로그인
+                <span></span>
+              </span>
             </a>
-            <script src="https://developers.kakao.com/"> </script>
-          </li>
-        </ul>
-        <ul class="ec-base-button gColumn">
-          <li><a href="/member/join.html">회원가입</a></li>
-        </ul>
-      </fieldset>
-    </div>
-  </div>
-</body>
+          </div>
 
+          <ul class="snsArea">
+            <li class="kakaoLogin">
+              <a
+                href="#none"
+                onclick="MemberAction.snsLogin('kakao', '%2Findex.html')"
+              >
+                <img
+                  src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_kakao_login.gif"
+                  alt=""
+                  title=""
+                />
+              </a>
+              <script src="https://developers.kakao.com/"></script>
+            </li>
+          </ul>
+          <ul class="ec-base-button gColumn">
+            <li><a href="../member/join.html">회원가입</a></li>
+          </ul>
+        </fieldset>
+      </div>
+    </div>
+  </body>
 </html>
