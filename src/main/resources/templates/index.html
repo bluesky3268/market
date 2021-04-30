@@ -11,244 +11,340 @@ Released   : 20121231
 
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>캠핑가지</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css" />
-    <link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="../static/css/style.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
     <![endif]-->
-</head>
-<body>
-<div id="wrapper">
-    <div id="header">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="header">
         <div id="logo">
-            <a href="index.html"><img alt="logo" src="../static/img/logo.jpg"></a>
-            <h1><a href="index.html">캠핑가지</a></h1>
+          <a href="index.html"
+            ><img alt="logo" src="../static/img/logo.jpg"
+          /></a>
+          <h1><a href="index.html">캠핑가지</a></h1>
         </div>
         <div class="search">
-            <form action="#" method="post">
-                <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
-                <input class="searchsubmit" type="submit" value="검색">
-            </form>
+          <form action="#" method="post">
+            <input
+              class="searchtext"
+              type="text"
+              name="search"
+              placeholder="검색어를 입력해주세요."
+              size="50"
+            />
+            <input class="searchsubmit" type="submit" value="검색" />
+          </form>
         </div>
-    </div>
-    <!-- end #header -->
-    <div id="menu">
+      </div>
+      <!-- end #header -->
+      <div id="menu">
         <ul class="navbar">
-            <li class="current_page_item"><a href="index.html">Home</a></li>
-            <li><a href="productlist.html">텐트/타프</a>
-                <ul>
-                    <li><a href="productlistdetail.html">리빙쉘 텐트</a></li>
-                    <li><a href="#">돔형 텐트</a></li>
-                    <li><a href="#">원터치 텐트</a></li>
-                    <li><a href="#">렉사 타프</a></li>
-                    <li><a href="#">헥사 텐트</a></li>
-                </ul>
-            </li>
-            <li><a href="#">테이블/체어</a>
-                <ul>
-                    <li><a href="#">접이식 테이블</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                    <li><a href="#">접이식 체어</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                </ul>
-            </li>
-            <li><a href="#">침낭/매트</a>
-                <ul>
-                    <li><a href="#">4계절 침낭</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                    <li><a href="#">에어매트</a></li>
-                    <li><a href="#">베개/쿠션</a></li>
-                </ul>
-            </li>
-            <li><a href="#">밀키트</a>
-                <ul>
-                    <li><a href="#">밀키트</a></li>
-                    <li><a href="#">소시지/육포</a></li>
-                    <li><a href="#">캔/통조림</a></li>
-                </ul>
-            </li>
-            <li><a href="#">로그인</a></li>
-            <li><a href="#">회원가입</a></li>
+          <li class="current_page_item"><a href="index.html">Home</a></li>
+          <li>
+            <a href="productlist.html">텐트/타프</a>
+            <ul>
+              <li><a href="productlistdetail.html">리빙쉘 텐트</a></li>
+              <li><a href="#">돔형 텐트</a></li>
+              <li><a href="#">원터치 텐트</a></li>
+              <li><a href="#">렉사 타프</a></li>
+              <li><a href="#">헥사 텐트</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">테이블/체어</a>
+            <ul>
+              <li><a href="#">접이식 테이블</a></li>
+              <li><a href="#">조립식 테이블</a></li>
+              <li><a href="#">접이식 체어</a></li>
+              <li><a href="#">조립식 테이블</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">침낭/매트</a>
+            <ul>
+              <li><a href="#">4계절 침낭</a></li>
+              <li><a href="#">하계용 침낭</a></li>
+              <li><a href="#">에어매트</a></li>
+              <li><a href="#">베개/쿠션</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">밀키트</a>
+            <ul>
+              <li><a href="#">밀키트</a></li>
+              <li><a href="#">소시지/육포</a></li>
+              <li><a href="#">캔/통조림</a></li>
+            </ul>
+          </li>
+          <li><a href="../../java/korit/market/login/login.html">로그인</a></li>
+          <li>
+            <a href="../../java/korit/market/member/join.html">회원가입</a>
+          </li>
         </ul>
-    </div>
-    <div id="banner"><img src="../static/img/tent1.jpg" width="1100" height="450" alt="" /></div>
-    <div class="productcontainer">
+      </div>
+      <div id="banner">
+        <img src="../static/img/tent1.jpg" width="1100" height="450" alt="" />
+      </div>
+      <div class="productcontainer">
         <h2>이 달의 신상품</h2>
         <div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/chair2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">의자2</a></p>
-                <p>가격 : <a href="#">50,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tent3.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">텐트3</a></p>
-                <p>가격 : <a href="#">550,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tent2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">텐트2</a></p>
-                <p>가격 : <a href="#">100,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/chair1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">의자1</a></p>
-                <p>가격 : <a href="#">30,000원</a></p>
-            </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/chair2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">의자2</a></p>
+            <p>가격 : <a href="#">50,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tent3.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">텐트3</a></p>
+            <p>가격 : <a href="#">550,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tent2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">텐트2</a></p>
+            <p>가격 : <a href="#">100,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/chair1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">의자1</a></p>
+            <p>가격 : <a href="#">30,000원</a></p>
+          </div>
         </div>
-    </div>
-    <div class="productcontainer">
+      </div>
+      <div class="productcontainer">
         <h2><a href="productlist.html">텐트/타프</a></h2>
         <h4><a href="productlist.html">더보기</a></h4>
         <div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tarp1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">타프1</a></p>
-                <p>가격 : <a href="#">70,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tent1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">텐트1</a></p>
-                <p>가격 : <a href="#">150,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tent2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">텐트2</a></p>
-                <p>가격 : <a href="#">100,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tarp2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">타프2</a></p>
-                <p>가격 : <a href="#">550,000원</a></p>
-            </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tarp1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">타프1</a></p>
+            <p>가격 : <a href="#">70,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tent1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">텐트1</a></p>
+            <p>가격 : <a href="#">150,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tent2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">텐트2</a></p>
+            <p>가격 : <a href="#">100,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tarp2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">타프2</a></p>
+            <p>가격 : <a href="#">550,000원</a></p>
+          </div>
         </div>
         <h2><a href="productlist.html">테이블/체어</a></h2>
         <h4><a href="productlist.html">더보기</a></h4>
         <div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/chair1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">의자1</a></p>
-                <p>가격 : <a href="#">70,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/hammock.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">해먹</a></p>
-                <p>가격 : <a href="#">50,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/chair2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">의자2</a></p>
-                <p>가격 : <a href="#">100,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/table2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">테이블2</a></p>
-                <p>가격 : <a href="#">50,000원</a></p>
-            </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/chair1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">의자1</a></p>
+            <p>가격 : <a href="#">70,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/hammock.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">해먹</a></p>
+            <p>가격 : <a href="#">50,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/chair2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">의자2</a></p>
+            <p>가격 : <a href="#">100,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/table2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">테이블2</a></p>
+            <p>가격 : <a href="#">50,000원</a></p>
+          </div>
         </div>
         <h2><a href="productlist.html">침낭/매트</a></h2>
         <h4><a href="productlist.html">더보기</a></h4>
         <div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/sleepingbag.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">침낭1</a></p>
-                <p>가격 : <a href="#">70,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/sleepigbag2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">침낭2</a></p>
-                <p>가격 : <a href="#">150,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/pillow1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">베개</a></p>
-                <p>가격 : <a href="#">40,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tarp2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">타프2</a></p>
-                <p>가격 : <a href="#">550,000원</a></p>
-            </div>
+          <div class="newthumb">
+            <a href="#"
+              ><img alt="new1" src="../static/img/sleepingbag.jpg"
+            /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">침낭1</a></p>
+            <p>가격 : <a href="#">70,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"
+              ><img alt="new1" src="../static/img/sleepigbag2.jpg"
+            /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">침낭2</a></p>
+            <p>가격 : <a href="#">150,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/pillow1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">베개</a></p>
+            <p>가격 : <a href="#">40,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tarp2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">타프2</a></p>
+            <p>가격 : <a href="#">550,000원</a></p>
+          </div>
         </div>
         <h2><a href="productlist.html">밀키트</a></h2>
         <h4><a href="productlist.html">더보기</a></h4>
         <div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tarp1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">타프1</a></p>
-                <p>가격 : <a href="#">70,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tent1.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">텐트1</a></p>
-                <p>가격 : <a href="#">150,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tent2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">텐트2</a></p>
-                <p>가격 : <a href="#">100,000원</a></p>
-            </div>
-            <div class="newthumb">
-                <a href="#"><img alt="new1" src="../static/img/tarp2.jpg"></a>
-                <p><a href="#"><b>브랜드</b></a></p>
-                <p>상품명 : <a href="#">타프2</a></p>
-                <p>가격 : <a href="#">550,000원</a></p>
-            </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tarp1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">타프1</a></p>
+            <p>가격 : <a href="#">70,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tent1.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">텐트1</a></p>
+            <p>가격 : <a href="#">150,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tent2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">텐트2</a></p>
+            <p>가격 : <a href="#">100,000원</a></p>
+          </div>
+          <div class="newthumb">
+            <a href="#"><img alt="new1" src="../static/img/tarp2.jpg" /></a>
+            <p>
+              <a href="#"><b>브랜드</b></a>
+            </p>
+            <p>상품명 : <a href="#">타프2</a></p>
+            <p>가격 : <a href="#">550,000원</a></p>
+          </div>
         </div>
-    </div>
-    <div id="three-columns">
+      </div>
+      <div id="three-columns">
         <div class="content">
-            <div id="column1">
-                <h2>여기에는 뭘 넣을까요??</h2>
-            </div>
-            <div id="column2">
-                <h2>원터치 텐트 사용법</h2>
-                <p><iframe width="430" height="200" src="https://www.youtube.com/embed/rmnKHAbHVhw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-                <p><iframe width="430" height="200" src="https://www.youtube.com/embed/iqP67GdRvA4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-            </div>
-            <div id="column3">
-                <h2>자주 묻는 질문</h2>
-                <ul class="list-style2">
-                    <li class="first"><a href="#">Q.배송기간은 얼마나 걸리나요?</a></li>
-                    <li><a href="#">Q.단순 변심 시 환불 규정은 어떻게 되나요??</a></li>
-                    <li><a href="#">Q.제품 불량 시 교환 절차는 어떻게 되나요?</a></li>
-                    <li><a href="#">Q.A/S는 어떻게 받을 수 있나요?</a></li>
-                    <li><a href="#">Q.품절 제품의 경우 재입고까지 얼마나 걸리나요?</a></li>
-                    <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
-                    <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
-                    <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
-                </ul>
-                <p><a href="#" class="link-style">Read More</a></p>
-            </div>
-
+          <div id="column1">
+            <h2>여기에는 뭘 넣을까요??</h2>
+          </div>
+          <div id="column2">
+            <h2>원터치 텐트 사용법</h2>
+            <p>
+              <iframe
+                width="430"
+                height="200"
+                src="https://www.youtube.com/embed/rmnKHAbHVhw"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </p>
+            <p>
+              <iframe
+                width="430"
+                height="200"
+                src="https://www.youtube.com/embed/iqP67GdRvA4"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </p>
+          </div>
+          <div id="column3">
+            <h2>자주 묻는 질문</h2>
+            <ul class="list-style2">
+              <li class="first">
+                <a href="#">Q.배송기간은 얼마나 걸리나요?</a>
+              </li>
+              <li>
+                <a href="#">Q.단순 변심 시 환불 규정은 어떻게 되나요??</a>
+              </li>
+              <li><a href="#">Q.제품 불량 시 교환 절차는 어떻게 되나요?</a></li>
+              <li><a href="#">Q.A/S는 어떻게 받을 수 있나요?</a></li>
+              <li>
+                <a href="#">Q.품절 제품의 경우 재입고까지 얼마나 걸리나요?</a>
+              </li>
+              <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
+              <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
+              <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
+            </ul>
+            <p><a href="#" class="link-style">Read More</a></p>
+          </div>
         </div>
+      </div>
+      <div id="footer">
+        <p>
+          Copyright&copy; 2021 CampingGaji. All rights reserved. Photos by
+          <a href="https://unsplash.com/">Fotogrph</a>
+        </p>
+      </div>
     </div>
-    <div id="footer">
-        <p>Copyright&copy; 2021 CampingGaji. All rights reserved. Photos by <a href="https://unsplash.com/">Fotogrph</a></p>
-    </div>
-
-</div>
-</body>
+  </body>
 </html>
