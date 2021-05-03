@@ -1,5 +1,5 @@
 package korit.market.Repository;
 
-public class ProductDao {
+public class ItemRepository {
 
 }

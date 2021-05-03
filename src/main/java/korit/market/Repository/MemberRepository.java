@@ -1,4 +1,4 @@
 package korit.market.Repository;
 
-public class UserDao {
+public class MemberRepository {
 }

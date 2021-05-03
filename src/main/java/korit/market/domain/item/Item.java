@@ -1,4 +1,4 @@
-package korit.market.domain;
+package korit.market.domain.item;
 
 import lombok.Getter;
 import lombok.Setter;
