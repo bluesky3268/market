@@ -3,7 +3,7 @@ package korit.market.domain;
 import lombok.Getter;
 
 @Getter
-public class User {
+public class Member {
 
     /**
      * userId      varchar(16)    not null primary key,
@@ -24,7 +24,7 @@ public class User {
     private String address2;
     private String address3;
 
-    public User(String id, String pwd, String userName, String phoneNumber, String email, String address1, String address2, String address3) {
+    public Member(String id, String pwd, String userName, String phoneNumber, String email, String address1, String address2, String address3) {
         this.id = id;
         this.pwd = pwd;
         this.userName = userName;
