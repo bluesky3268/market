@@ -7,7 +7,6 @@ import lombok.Setter;
 public class Cart {
 
     /**
-    create table cart(
             cartNo bigint not null auto_increment primary key,
             userId varchar(16) not null,
             itemsNo bigint not null,
