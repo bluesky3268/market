@@ -7,16 +7,23 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"/>
-    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <!-- <link rel="stylesheet" href="../static/css/itemsViewDefault.css" /> -->
     <link rel="stylesheet" href="../static/css/itemsViewStyle.css"/>
 </head>
+
+<script>
+    $("#btnCart").click(function () {
+        // 장바구니 페이지로 이동
+        location.href="../"
+    });
+</script>
 
 <body>
 <div id="wrapper">
     <div id="header">
         <div id="logo">
-            <a href="/"><img alt="logo" src="/img/logo.jpg"/></a>
+            <a href="/"><img alt="logo" src="../static/img/logo.jpg"/></a>
             <h1><a href="/">캠핑가지</a></h1>
         </div>
         <div class="search">
@@ -31,9 +38,9 @@
         <ul class="navbar">
             <li class="current_page_item"><a href="/">Home</a></li>
             <li>
-                <a href="/item/productlist">텐트/타프</a>
+                <a href="../templates/productlist.html">텐트/타프</a>
                 <ul>
-                    <li><a href="/item/productlistdetail">리빙쉘 텐트</a></li>
+                    <li><a href="../templates/productlistdetail.html">리빙쉘 텐트</a></li>
                     <li><a href="#">돔형 텐트</a></li>
                     <li><a href="#">원터치 텐트</a></li>
                     <li><a href="#">렉사 타프</a></li>
@@ -130,24 +137,24 @@
                 <td class="total"><b>299,000</b>원</td>
             </tr>
             <div class="img">
-                <img src="/img/Fastcamp_onetouch_tent1.JPG" alt=""/>
+                <img src="../static/img/Fastcamp_onetouch_tent1.JPG" alt=""/>
                 <ul>
                     <li class="on">
-                        <a href="#a"><img src="/img/Fastcamp_onetouch_tent1.JPG" alt=""/></a>
+                        <a href="#a"><img src="../static/img/Fastcamp_onetouch_tent1.JPG" alt=""/></a>
                     </li>
                     <li>
-                        <a href="#a"><img src="/img/Fastcamp_onetouch_tent1-1.JPG" alt=""/></a>
+                        <a href="#a"><img src="../static/img/Fastcamp_onetouch_tent1-1.JPG" alt=""/></a>
                     </li>
                     <li>
-                        <a href="#a"><img src="/img/Fastcamp_onetouch_tent1-2.JPG" alt=""/></a>
+                        <a href="#a"><img src="../static/img/Fastcamp_onetouch_tent1-2.JPG" alt=""/></a>
                     </li>
                 </ul>
             </div>
             </tbody>
         </table>
         <div class="btns">
-            <a href="#a" class="btn1">장바구니</a>
-            <a href="#a" class="btn2">구매하기</a>
+            <a href="#a" class="btn1" id="btnCart">장바구니</a>
+            <a href="#a" class="btn2" id="btnBuy">구매하기</a>
         </div>
     </div>
     <div id="footer">
