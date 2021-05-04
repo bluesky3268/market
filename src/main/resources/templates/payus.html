@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTMl 4.01 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns= "//www.w3.org/1999/xhtml" xml: lang="ko" lang="ko">
 <head>
@@ -15,292 +17,396 @@
 
 
 <body>
-    <div id="wrapper">
-        <div id="header">
-            <div id="logo">
-                <a href="../static/index.html"><img alt="logo" src="../static/img/logo.jpg"></a>
-                <h1><a href="../static/index.html">캠핑가지</a></h1>
-            </div>
-            <div class="search">
-                <form action="#" method="post">
-                    <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
-                    <input class="searchsubmit" type="submit" value="검색">
-                </form>
-            </div>
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">
+            <a href="../static/index.html"><img alt="logo" src="../static/img/logo.jpg"></a>
+            <h1><a href="../static/index.html">캠핑가지</a></h1>
         </div>
-        <!-- end #header -->
-        <div id="menu">
-            <ul class="navbar">
-                <li class="current_page_item"><a href="../static/index.html">Home</a></li>
-                <li><a href="#">텐트/타프</a>
-                    <ul>
-                        <li><a href="#">리빙쉘 텐트</a></li>
-                        <li><a href="#">돔형 텐트</a></li>
-                        <li><a href="#">원터치 텐트</a></li>
-                        <li><a href="#">렉사 타프</a></li>
-                        <li><a href="#">헥사 텐트</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">테이블/체어</a>
-                    <ul>
-                        <li><a href="#">접이식 테이블</a></li>
-                        <li><a href="#">조립식 테이블</a></li>
-                        <li><a href="#">접이식 체어</a></li>
-                        <li><a href="#">조립식 테이블</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">침낭/매트</a>
-                    <ul>.
-                        <li><a href="#">4계절 침낭</a></li>
-                        <li><a href="#">하계용 침낭</a></li>
-                        <li><a href="#">에어매트</a></li>
-                        <li><a href="#">하계용 침낭</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">밀키트</a>
-                    <ul>
-                        <li><a href="#">밀키트</a></li>
-                        <li><a href="#">소시지/육포</a></li>
-                        <li><a href="#">캔/통조림</a></li>
-                    </ul>
-                </li>
-                <li><a href="../../java/korit/market/login/login.html">로그인</a></li>
-                <li><a href="../../java/korit/market/member/join.html">회원가입</a></li>
-            </ul>
-        </div>
-    
-    <div align="right">
-        <div id="path">
-            <ul>
-                <li>
-                    <a href="../static/index.html">홈 > </a>
-                </li>
-                <li title ="현재위치">
-                    <strong>주문서작성</strong>
-                </li>
-            </ul>
+        <div class="search">
+            <form action="#" method="post">
+                <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
+                <input class="searchsubmit" type="submit" value="검색">
+            </form>
         </div>
     </div>
-    
+    <!-- end #header -->
+    <div id="menu">
+        <ul class="navbar">
+            <li class="current_page_item"><a href="../static/index.html">Home</a></li>
+            <li><a href="#">텐트/타프</a>
+                <ul>
+                    <li><a href="#">리빙쉘 텐트</a></li>
+                    <li><a href="#">돔형 텐트</a></li>
+                    <li><a href="#">원터치 텐트</a></li>
+                    <li><a href="#">렉사 타프</a></li>
+                    <li><a href="#">헥사 텐트</a></li>
+                </ul>
+            </li>
+            <li><a href="#">테이블/체어</a>
+                <ul>
+                    <li><a href="#">접이식 테이블</a></li>
+                    <li><a href="#">조립식 테이블</a></li>
+                    <li><a href="#">접이식 체어</a></li>
+                    <li><a href="#">조립식 테이블</a></li>
+                </ul>
+            </li>
+            <li><a href="#">침낭/매트</a>
+                <ul>.
+                    <li><a href="#">4계절 침낭</a></li>
+                    <li><a href="#">하계용 침낭</a></li>
+                    <li><a href="#">에어매트</a></li>
+                    <li><a href="#">하계용 침낭</a></li>
+                </ul>
+            </li>
+            <li><a href="#">밀키트</a>
+                <ul>
+                    <li><a href="#">밀키트</a></li>
+                    <li><a href="#">소시지/육포</a></li>
+                    <li><a href="#">캔/통조림</a></li>
+                </ul>
+            </li>
+            <li><a href="../../java/korit/market/login/login.html">로그인</a></li>
+            <li><a href="../../java/korit/market/member/join.html">회원가입</a></li>
+        </ul>
+    </div>
+
+    <div id="wrapper">
+        <div id="frame">
+
+            <!--메뉴  상단바쪽 홈>주문서작성 -->
+            <div align="right">
+                <div id="path">
+                    <ul>
+                        <li>
+                            <a href="../static/index.html">홈 > </a>
+                        </li>
+                        <li title ="현재위치">
+                            <strong>주문서작성</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--상품정보 테이블-->
+
+            <div>
+                <table class="calculation1">
+                    <thead>
+                    <tr>
+                        <th colspan="8" style="text-align: left; padding-left: 10px;">일반상품(1)</th>
+                    </tr>
+
+                    <tr>
+                        <th><input type="checkbox" name="checkbox" id="check"/></th>
+                        <th><span>이미지</span></th>
+                        <th style="width: 500px;"><span>상품정보</span></th>
+                        <th style= "width: 100px;">판매가</th>
+                        <th>수량</th>
+                        <th style= "width: 100px;">배송비</th>
+                        <th style= "width: 100px;">합계</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="calculation1tbody">
+                    <tr class="calculation1_tbody_tr1" style="height: 90px; background-color: #fff;">
+                        <td style="text-align: left; text-align: center; border-right:none;">
+                            <input type="checkbox" id="cbtr1" name="checkbox"/>
+                        </td>
+                        <td style="border-left: none; border-right: none;"><img style="width: 45%;" src="/src/main/resources/static/img/hammock.jpg"></td>
+                        <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">해먹</td>
+
+
+                        <td><span style="padding-left: 10px;">34,000</span>원</td>
+                        <td style="width: 80px;">
+                            <span>1</span>
+                        </td>
+                        <td>무료배송</td>
+                        <td><span>34,000</span>원</td>
+                    </tr>
+
+                    <tr class="calculation1_tbody_tr2" style="height: 90px; background-color: #fff;">
+                        <td style="text-align: left; text-align: center; border-right:none;">
+                            <input type="checkbox" id="cbtr2" name="checkbox"/>
+                        </td>
+                        <td style="border-left: none; border-right: none;"><img style="width: 45%;" src="/src/main/resources/static/img/hammock.jpg"></td>
+                        <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">해먹</td>
+
+
+                        <td><span style="padding-left: 10px;">34,000</span>원</td>
+                        <td style="width: 80px;">
+                            <span>1</span>
+                        </td>
+                        <td>무료배송</td>
+                        <td><span>34,000</span>원</td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr style="height: 60px;">
+                        <td colspan="5" style="border-right: none; text-align: left; padding-left: 10px;">
+                            <span>[기본배송]</span>
+                        </td>
+                        <td colspan="5" style="border-left: none; text-align: right; padding-right: 10px;">
+                            상품금액 <span> 34,000 </span>+<span>배송비 2,500 = 합계</span>&nbsp; <span style="font-weight: bold; font-size: 10pt;">
+                    </span>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div style="border: solid 1px #e0e0eb; border-right: none; border-left: none; padding: 11px 0; background-color: #e0e0eb ;">
+                <span style="font-size: 10pt; color:red;">상품의 옵션 및 수량 변경은 상품상세 또는 장바구니에서 가능합니다.</span>
+            </div>
+        </div>
+
+        <div style="margin: 10px 0; padding-bottom: 50px; border-bottom: solid 1px gray;">
+            <span style="margin: 0 10px;" class="btnfloat">선택상품을</span>
+            <button type="button" class="btn default btnfloat" id="choiceProductDelete" style="background-color: gray;; color: #fff;"> x 삭제하기</button>
+            <button type="button" class="btn default btnfloat2" onclick="javascript: history.back()">이전페이지></button>
+        </div>
+        <br/>
+        <br/>
+
+
+    </div>
+    <!--배송정보 적는 테이블-->
     <div align="center">
         <div id="titleArea1">
             <h2>주문서 작성</h2>
         </div>
     </div>
-    
+
     <div id="content1">
         <h3>배송상품 주문내역</h3>
     </div>
-    
+
     <div class="orderArea">
         <div align="right" class="title2">
             <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수">필수입력사항
         </div>
 
-    <table class="type10">
-        <tbody>
+        <table class="type10">
+            <tbody>
             <tr>
-                <th>받으시는 분 
+                <th>받으시는 분
                     <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
-                <td> 
-                   <input id="boxsize" type="text" name="name"/>
+                <td>
+                    <input id="boxsize" type="text" name="name"/>
                 </td>
             </tr>
             <tr>
-                <th>주소 
+                <th>주소
                     <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수">
                 </th>
-                <td> 
+                <td>
                     <div>
                         <input type="text" id="zip1" name="zip1" size="6" readonly>
                         <button type="button" class="btn btn-primary" id="btn_select_addr">주소 선택</button>
                     </div>
-                    <input type="text" id="addr1" name="addr1" size='40' placeholder="기본 주소지" readonly>&nbsp; 
+                    <input type="text" id="addr1" name="addr1" size='40' placeholder="기본 주소지" readonly>&nbsp;
                     <input type="text" name="addr2" size='40' placeholder="상세 주소지">
                 </td>
             </tr>
-                <tr>
-                    <th> 휴대전화<img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
-                    <td> 
-                        <select id="boxsize" name="tel">
-                            <option value="010">010</option>
-                            <option value="011">011</option>
-                            <option value="016">016</option>
-                            <option value="070">070</option>
-                        </select>&nbsp-
-                        <input id="boxsize" type="text" name="tel2" size="5" maxlength="4">
-                        -
-                        <input id="boxsize" type="text" name="tel2" size="5" maxlength="4">
-                    </td>
-                </tr>
-                <tr>
-                    <th>이메일 <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
-                    <td> 
-                        <input id="boxsize" type="text" name="email"> @ 
-                        <select id="boxsize" name="email">
-                            <option value="gmail">gmail.com</option>
-                            <option value="yahoo">yahoo.com</option>
-                            <option value="hotmail">hotmail.com</option>
-                            <option value="naver">naver.com</option>
-                            <option value="korea">korea.com</option>
-                            <option value="nate">nate.com</option>
-                            <option value="daum">daum.net</option>
-                        </select><br>
-                        <p>
-                            이메일을 통해 주문처리 과정을 보내드립니다.<br>
-                            이메일 주소란에는 반드시 수신가능한 이메일 주소를 입력해주세요.
-                        </p>
-                    </td>
-                </tr>                    
-                    <tr>
-                        <th>배송 메세지</th>
-                        <td> <textarea name="review" form="inform" cols="80" rows="10" autofocus required wrap="hard" placeholder="배송메세지를 입력해주세요"></textarea> </td>
-                    </tr>
-                    <tfoot class="totalpricef">
-                        <th> 총 결제예정 금액</th>
-                        <td align="right">1,258,951,000,000</td>
-                    </tfoot>
-                    </td>
-                    </tr>
-                    </td>
-                </tr>
-        </tbody>
-    </table>
+            <tr>
+                <th> 휴대전화<img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
+                <td>
+                    <select id="boxsize" name="tel">
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="016">016</option>
+                        <option value="070">070</option>
+                    </select>&nbsp-
+                    <input id="boxsize" type="text" name="tel2" size="5" maxlength="4">
+                    -
+                    <input id="boxsize" type="text" name="tel2" size="5" maxlength="4">
+                </td>
+            </tr>
+            <tr>
+                <th>이메일 <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
+                <td>
+                    <input type="text"/> @ <input id="domainName" type="text"/>
+                    <select id="emailChoice" style="height:20px;">
+                        <option>-이메일 선택-</option>
+                        <option value="gmail">gmail.com</option>
+                        <option value="yahoo">yahoo.com</option>
+                        <option value="hotmail">hotmail.com</option>
+                        <option value="naver">naver.com</option>
+                        <option value="korea">korea.com</option>
+                        <option value="nate">nate.com</option>
+                        <option value="daum">daum.net</option>
+                    </select><br>
+                    <span style="font-size: 10pt; color: gray;">
+                            <p>이메일을 통해 주문처리 과정을 보내드립니다.<br>
+                            이메일 주소란에는 반드시 수신가능한 이메일 주소를 입력해주세요.</p>
+                        </span>
+                </td>
+            </tr>
+            <tr>
+                <th>배송 메세지</th>
+                <td> <textarea name="review" form="inform" cols="80" rows="10" autofocus required wrap="hard" placeholder="배송메세지를 입력해주세요"></textarea> </td>
+            </tr>
+            </td>
+            </tr>
+            </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
-    
+    <br/>
+    <br/>
+    <!--결제예정금액 테이블-->
+
+    <table class="calculation2">
+        <tr>
+            <th>총 상품금액</th>
+            <th>총 배송비</th>
+            <th style="width: 750px; padding: 22px 0;"><span>결제예정금액</span></th>
+        </tr>
+
+        <tr style="background-color: #fff;">
+            <td style="padding: 23px 0;"><span class="price">34,000</span>원</td>
+            <td>+<span class="price">0</span>원</td>
+            <td>=<span class="price">0</span>원</td>
+
+        </tr>
+
+
+    </table>
+    <br/><br/>
     <div class="title">
         <h3>결제수단</h3>
         <span class="txtEm gIndent20 cc_cursor">
             <input type="checkbox" id="save_paymethod" name="save_paymethod" value=""><label for="save_paymethod">결제수단과 입력정보를 다음에도 사용</label>
         </span>
 
-    <div class="payArea">
+        <div class="payArea">
+            <div class="payment1">
+                <div style="padding: 10px; font-size: 10pt; border-bottom: solid 1px #e0e0eb;">
         <span class="method1">
             <input id="addr_paymethod1" name="addr_paymethod" type="radio" checked="checked">
             <label for="addr_paymethod1">신용카드
             </label>
         </span>
-        <span class="method1">
+                    <span class="method1">
             <input id="addr_paymethod2" name="addr_paymethod" type="radio" checked="checked">
             <label for="addr_paymethod2">무통장입금
             </label>
         </span>
-        <span class="method1">
+                    <span class="method1">
             <input id="addr_paymethod3" name="addr_paymethod" type="radio" checked="checked">
             <label for="addr_paymethod3">실시간계좌이체
             </label>
         </span>
-    <div class="ec-base-table cc_cursor">
-        
-        <!-- 무통장입금 -->
-    <table border="1" summary="" id="payment_input_cash" style="display:none;">
-        <caption>무통장입금</caption>
-        <colgroup>
-            <col style="width:139px">
-            <col style="width:auto">
-        </colgroup>
-        <tbody>
-            <tr>
-                <th scope="row">입금자명</th>
-                <td><input id="payname" type="text" name="name"/>
-                    </td>
-            </tr>
-            <tr>
-                <th scope="row">입금은행</th>
-                <td>
-                    <p class="gBlank5 ">
-                        <a href="#none" class="btnNormal" id="btn_bank_go">은행사이트 바로가기</a>
-                    </p>
-            </tr>
-        </tbody>
-        </table>
-    
-    <!-- 실시간 계좌이체 -->
-    <table border="1" summary="" id="payment_input_tcash" style="">
-        <caption>실시간 계좌이체</caption>
-        <colgroup>
-            <col style="width:139px">
-            <col style="width:auto">
-        </colgroup>
-        <tbody>
-            <tr>
-            <th scope="row">예금주명</th>
-            <td><input id="allat_account_nm" name="allat_account_nm" fw-filter="" fw-label="무통장 입금자명" fw-msg="" class="inputTypeText" placeholder="" size="26" maxlength="30" value="" type="text">
-            </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
+                    <div class="ec-base-table cc_cursor">
 
-<!-- 무통장입금, 카드결제, 휴대폰결제, 실시간계좌이체 -->
-<div id="pg_paymethod_info" class="payHelp" style="">
-    <p id="pg_paymethod_info_shipfee" class="ec-base-help" style="display: none;">최소 결제 가능 금액은 결제금액에서 배송비를 제외한 금액입니다.</p>
-    <p id="pg_paymethod_info_pg" class="ec-base-help">소액 결제의 경우 PG사 정책에 따라 결제 금액 제한이 있을 수 있습니다.</p>
-</div>
+                        <!-- 무통장입금 -->
+                        <table border="1" summary="" id="payment_input_cash" style="display:none;">
+                            <caption>무통장입금</caption>
+                            <colgroup>
+                                <col style="width:139px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">입금자명</th>
+                                <td><input id="payname" type="text" name="name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">입금은행</th>
+                                <td>
+                                    <p class="gBlank5 ">
+                                        <a href="#none" class="btnNormal" id="btn_bank_go">은행사이트 바로가기</a>
+                                    </p>
+                            </tr>
+                            </tbody>
+                        </table>
 
-    <div class="total">
-        <h4><span>최종결제 금액</span></h4>
-        <p class="price">
-            <span></span>
-            <input id="total_price" name="total_price" fw-filter="isFill" fw-label="결제금액" fw-msg="" class="inputTypeText" placeholder="" style="text-align:right;ime-mode:disabled;clear:none;border:0px;float:none;" size="10" readonly="1" value="1,258,951" type="text">
-            <span></span>
-        </p>
-        <div class="btnpay">
-            <a href="javascript:popup()" class="btnpay1">결제하기</a>
+                        <!-- 실시간 계좌이체 -->
+                        <table border="1" summary="" id="payment_input_tcash" style="">
+                            <caption>실시간 계좌이체</caption>
+                            <colgroup>
+                                <col style="width:139px">
+                                <col style="width:auto">
+                            </colgroup>
+                            <tbody>
+                            <tr>
+                                <th scope="row">예금주명</th>
+                                <td><input id="allat_account_nm" name="allat_account_nm" fw-filter="" fw-label="무통장 입금자명" fw-msg="" class="inputTypeText" placeholder="" size="26" maxlength="30" value="" type="text">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 무통장입금, 카드결제, 휴대폰결제, 실시간계좌이체 -->
+                    <div align="left">
+                        <p id="pg_paymethod_info_shipfee" class="ec-base-help" style="display: none;">최소 결제 가능 금액은 결제금액에서 배송비를 제외한 금액입니다.</p>
+                        <p id="pg_paymethod_info_pg" class="ec-base-help">소액 결제의 경우 PG사 정책에 따라 결제 금액 제한이 있을 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="total">
+                <span style="display: inline-block; padding: 20px 10px;"> 최종결제 금액</span><br/>
+                <span style="font-size: 25pt; font-weight: bold; padding: 0px 10px;">0원</span><br/><br/>
+                </p>
+                <div class="btnpay">
+                    <a href="javascript:popup()" class="btnpay1">결제하기</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="howto">
+            <h4>무이자 할부 이용안내</h4>
+            <div class="inner1">
+                <ol>
+                    <li>무이자할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자할부가 적용되지 않습니다.</li>
+                    <li>무이자할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여 주문하여 주시기 바랍니다.</li>
+                </ol>
+            </div>
         </div>
     </div>
-</div>
 
-    <div class="howto">
-        <h4>무이자 할부 이용안내</h4>
-        <div class="inner1">
-            <ol>
-                <li>무이자할부가 적용되지 않은 상품과 무이자할부가 가능한 상품을 동시에 구매할 경우 전체 주문 상품 금액에 대해 무이자할부가 적용되지 않습니다.</li>
-                <li>무이자할부를 원하시는 경우 장바구니에서 무이자할부 상품만 선택하여 주문하여 주시기 바랍니다.</li>
-            </ol>
-        </div>
-    </div>
-    </div>
-    
-        
+
     <div class="caution">
         <h4>이용안내</h4>
-            <div clss="inner">
-                <p>&nbsp;WindowXP 서비스팩2를 설치하신후 결제가 정상적인 단계로 처리되지 않는경우, 아래의 절차에 따라 해결하시기 바랍니다.</p>
-                <ol>
+        <div clss="inner">
+            <p>&nbsp;WindowXP 서비스팩2를 설치하신후 결제가 정상적인 단계로 처리되지 않는경우, 아래의 절차에 따라 해결하시기 바랍니다.</p>
+            <ol>
                 <li class="item1">
-                    <a href="javascript:;" onclick="window.open('https://service-api.echosting.cafe24.com/shop/notice_XP_ActiveX.html','','width=795,height=500,scrollbars=yes',resizable=1);">안심클릭 결제모듈이 설치되지 않은 경우 ActiveX 수동설치
+                    <a href="javascript:;" onclick="window.open('https://service-api.echosting.cafe24.com/shop/notice_XP_ActiveX.html','','width=795,height=500,scrollbars=yes',resizable=1);">안심클릭 결제모듈이 설치되지 않은 경우 ActiveX 수동설치</a>
                     </a>
                 </li>
                 <li class="item2">
-                    <a href="http://www.microsoft.com/korea/windowsxp/sp2/default.asp" target="_blank">Service Pack 2에 대한 Microsoft사의 상세안내 
+                    <a href="http://www.microsoft.com/korea/windowsxp/sp2/default.asp" target="_blank">Service Pack 2에 대한 Microsoft사의 상세안내
                     </a>
                 </li>
-                </ol>
-                    <div class>
-                        <p>&nbsp;아래의 쇼핑몰일 경우에는 모든 브라우저 사용이 가능합니다.</p>
-                    <ol>
+            </ol>
+            <div class>
+                <p>&nbsp;아래의 쇼핑몰일 경우에는 모든 브라우저 사용이 가능합니다.</p>
+                <ol>
                     <li class="item1">
                         <strong>KG이니시스, KCP, LG U+를 사용하는 쇼핑몰일 경우
                         </strong>
                     </li>
                     <li class="item2 cc_cursor">결제가능브라우저 : 크롬,파이어폭스,사파리,오페라 브라우저에서 결제 가능<br>
-                    (단, window os 사용자에 한하며 리눅스/mac os 사용자는 사용불가)</li>
+                        (단, window os 사용자에 한하며 리눅스/mac os 사용자는 사용불가)</li>
                     <li class="item3">최초 결제 시도시에는 플러그인을 추가 설치 후 반드시 브라우저 종료 후 재시작해야만 결제가 가능합니다.<br>
-                    (무통장, 휴대폰결제 포함)
+                        (무통장, 휴대폰결제 포함)
                     </li>
-                    </ol>
-                    </div>
-                <p>&nbsp;세금계산서 발행 안내</p>
+                </ol>
+            </div>
+            <p>&nbsp;세금계산서 발행 안내</p>
             <ol>
                 <li class="item1 cc_cursor">부가가치세법 제 54조에 의거하여 세금계산서는 배송완료일로부터 다음달 10일까지만 요청하실 수 있습니다.</li>
                 <li class="item2">세금계산서는 사업자만 신청하실 수 있습니다.</li>
                 <li class="item3">배송이 완료된 주문에 한하여 세금계산서 발행신청이 가능합니다.</li>
                 <li class="item4">[세금계산서 신청]버튼을 눌러 세금계산서 신청양식을 작성한 후 팩스로 사업자등록증사본을 보내셔야 세금계산서 발생이 가능합니다.</li>
                 <li class="item5 cc_cursor">[세금계산서 인쇄]버튼을 누르면 발행된 세금계산서를 인쇄하실 수 있습니다.</li>
-             </ol>
-             <p>&nbsp; 부가가치세법 변경에 따른 신용카드매출전표 및 세금계산서 변경안내</p>
-             <ol>
+            </ol>
+            <p>&nbsp; 부가가치세법 변경에 따른 신용카드매출전표 및 세금계산서 변경안내</p>
+            <ol>
                 <li class="item1">변경된 부가가치세법에 의거, 2004.7.1 이후 신용카드로 결제하신 주문에 대해서는 세금계산서 발행이 불가하며</li>
                 <li class="item2">신용카드매출전표로 부가가치세 신고를 하셔야 합니다.(부가가치세법 시행령 57조)</li>
                 <li class="item3">상기 부가가치세법 변경내용에 따라 신용카드 이외의 결제건에 대해서만 세금계산서 발행이 가능함을 양지하여 주시기 바랍니다.</li>
@@ -313,19 +419,48 @@
                 <li class="item4 cc_cursor">현금영수증 발행 취소의 경우는 시간 제한이 없습니다. (국세청의 정책에 따라 변경 될 수 있습니다.)</li>
                 <li class="item5">현금영수증이나 세금계산서 중 하나만 발행 가능 합니다.</li>
             </ol>
-            </div>
         </div>
     </div>
-    <div id="footer">
-        <p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>  + <a href="http://iconify.it/">Iconify.it</a></p>
-    </div>
+</div>
+</div>
+</div>
+<div id="footer">
+    <p>&copy; Untitled. All rights reserved. Design by <a href="http://templated.co" rel="nofollow">TEMPLATED</a>. Photos by <a href="http://fotogrph.com/">Fotogrph</a>  + <a href="http://iconify.it/">Iconify.it</a></p>
+</div>
 
-    <script
-    src="https://code.jquery.com/jquery-1.12.4.min.js"
-    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-    crossorigin="anonymous"></script>
+<script
+        src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+        crossorigin="anonymous"></script>
 
-    <script>
+<script>
+    $("#choiceProductDelete").click(function(){
+        var  bool = $(".calculation1 tbody input:checkbox[name=checkbox]").is(":checked");
+
+        if(!bool){
+            alert("선택된 상품이 없습니다.");
+        }
+        else{
+
+            if(bool ==$(".calculation1 tbody input:checkbox[id=cbtr1]").is(":checked")){
+                $(".calculation1_tbody_tr1").remove();
+            }
+            else if(bool ==$(".calculation1 tbody input:checkbox[id=cbtr2]").is(":checked")){
+                $(".calculation1_tbody_tr2").remove();
+            }
+        }
+
+        bool = $(".calculation1 thead input:checkbox[id=check]").is(":checked");
+        if(bool){
+            $(".calculation1 >tbody").empty();
+            $(".calculation1 thead input:checkbox[name=checkbox]").prop("checked",false);
+        }
+    });
+
+    $("#emailChoice").bind("change",function(){
+        $("#domainName").val($(this).val());
+    });
+
     $(document).ready(function(){
         $("#btn_select_addr").click(function(){
             new daum.Postcode({
@@ -340,34 +475,38 @@
     $(document).ready(function(){
         $("#addr_paymethod1").click(function(){
             $("#payment_input_tcash").hide();
-                $("#pg_paymethod_info").show();
-                $("#payment_input_cash").hide();
-            });
+            $("#pg_paymethod_info").show();
+            $("#payment_input_cash").hide();
         });
+    });
 
     $(document).ready(function(){
         $("#addr_paymethod2").click(function(){
             $("#payment_input_cash").show();
-                $("#pg_paymethod_info").show();
-                $("#payment_input_tcash").hide();
-            });
+            $("#pg_paymethod_info").show();
+            $("#payment_input_tcash").hide();
         });
+    });
 
     $(document).ready(function(){
         $("#addr_paymethod3").click(function(){
             $("#payment_input_tcash").show();
-                $("#pg_paymethod_info").show();
-                $("#payment_input_cash").hide();
-            });
+            $("#pg_paymethod_info").show();
+            $("#payment_input_cash").hide();
         });
-    
+    });
+
     function popup(){
         var url ="payFinish.html";
         var name = "popup alert";
         var option="width = 500, height= 500, top= 100, left= 200, location= no"
         window.open(url, name, option);
     }
-    </script>
+
+
+</script>
 
 </body>
 </html>
+
+
