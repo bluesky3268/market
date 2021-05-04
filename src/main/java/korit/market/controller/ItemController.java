@@ -2,6 +2,7 @@ package korit.market.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -20,6 +21,16 @@ public class ItemController {
 
     @GetMapping("/itemdetail")
     public String item_detail() {
-        return "itemsViewPage";
+        return "details";
+    }
+
+    @GetMapping("/add")
+    public String item_addForm(){
+        return "itemAdd";
+    }
+
+    @PostMapping("/add")
+    public String item_add(){
+        return "/index";
     }
 }
