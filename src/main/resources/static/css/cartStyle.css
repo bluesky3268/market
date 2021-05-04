@@ -1,0 +1,74 @@
+.calculation1 {
+    clear: both;
+    border: solid 1px #e0e0eb;
+    border-collapse: collapse;
+    background-color: #f5f5f0;
+    width: 100%;
+    font-size: 10pt;
+}
+
+.calculation1 th {
+    border: solid 1px #e0e0eb;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.calculation1 td {
+    border: solid 1px #e0e0eb;
+    text-align: center;
+}
+
+.calculation2 {
+    border: solid 1px #e0e0eb;
+    border-collapse: collapse;
+    background-color: #f5f5f0;
+    width: 100%;
+    font-size: 10pt;
+}
+
+.calculation2 th {
+    border: solid 1px #e0e0eb;
+    text-align: center;
+}
+
+.calculation2 td {
+    border: solid 1px #e0e0eb;
+    text-align: center;
+}
+
+.price {
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+.default {
+    background-color: gray;
+    border: solid 1px gray;
+    color: #fff;
+}
+
+.default:hover {
+    background: #ddd;
+}
+
+.backBtn {
+    background: #fff;
+    border: solid 1px gray;
+}
+
+.btn {
+    border: none;
+    color: black;
+    padding: 5px 10px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#btnfloat {
+    float: left;
+}
+
+#btnfloat2 {
+    float: right;
+}

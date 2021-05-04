@@ -1,10 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>캠핑가지 - 장바구니</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"/>
+    <!-- <link rel="stylesheet" href="../static/css/itemsViewDefault.css" /> -->
+    <link href="../static/css/itemsViewStyle.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="../static/css/cartStyle.css" rel="stylesheet" type="text/css"/>
+    <script>
+        $("#choiceProductDelete").click(function () {
+            var bool = $(".calculation1 tbody input:checkbox[name=checkbox]").is(":checked");
+
+            if (!bool) {
+                alert("선택된 상품이 없습니다.");
+            } else {
+
+                if (bool == $(".calculation1 tbody input:checkbox[id=cbtr1]").is(":checked")) {
+                    $(".calculation1_tbody_tr1").remove();
+                } else if (bool == $(".calculation1 tbody input:checkbox[id=cbtr2]").is(":checked")) {
+                    $(".calculation1_tbody_tr2").remove();
+                }
+            }
+
+            bool = $(".calculation1 thead input:checkbox[id=check]").is(":checked");
+            if (bool) {
+                $(".calculation1 >tbody").empty();
+                $(".calculation1 thead input:checkbox[name=checkbox]").prop("checked", false);
+            }
+        });
+    </script>
 </head>
+
 <body>
-$END$
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">
+            <a href="index.html"><img alt="logo" src="../static/img/logo.jpg"/></a>
+            <h1><a href="index.html">캠핑가지</a></h1>
+        </div>
+        <div class="search">
+            <form action="#" method="post">
+                <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
+                <input class="searchsubmit" type="submit" value="검색">
+            </form>
+        </div>
+    </div>
+    <!-- end #header -->
+    <div id="menu">
+        <ul class="navbar">
+            <li class="current_page_item"><a href="index.html">Home</a></li>
+            <li><a href="#">텐트/타프</a>
+                <ul>
+                    <li><a href="#">리빙쉘 텐트</a></li>
+                    <li><a href="#">돔형 텐트</a></li>
+                    <li><a href="#">원터치 텐트</a></li>
+                    <li><a href="#">렉사 타프</a></li>
+                    <li><a href="#">헥사 텐트</a></li>
+                </ul>
+            </li>
+            <li><a href="#">테이블/체어</a>
+                <ul>
+                    <li><a href="#">접이식 테이블</a></li>
+                    <li><a href="#">조립식 테이블</a></li>
+                    <li><a href="#">접이식 체어</a></li>
+                    <li><a href="#">조립식 테이블</a></li>
+                </ul>
+            </li>
+            <li><a href="#">침낭/매트</a>
+                <ul>
+                    <li><a href="#">4계절 침낭</a></li>
+                    <li><a href="#">하계용 침낭</a></li>
+                    <li><a href="#">에어매트</a></li>
+                    <li><a href="#">하계용 침낭</a></li>
+                </ul>
+            </li>
+            <li><a href="#">밀키트</a>
+                <ul>
+                    <li><a href="#">밀키트</a></li>
+                    <li><a href="#">소시지/육포</a></li>
+                    <li><a href="#">캔/통조림</a></li>
+                </ul>
+            </li>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+        </ul>
+    </div>
+
+    <h2>장바구니</h2>
+    <div>
+        <table class="calculation1">
+            <thead>
+            <tr>
+                <th colspan="8" style="text-align: left; padding-left: 10px;">일반상품(1)</th>
+            </tr>
+
+            <tr>
+                <th><input type="checkbox" name="checkbox" id="check"/></th>
+                <th><span>이미지</span></th>
+                <th style="width: 500px;"><span>상품정보</span></th>
+                <th style="width: 100px;">판매가</th>
+                <th>수량</th>
+                <th style="width: 100px;">배송비</th>
+                <th style="width: 100px;">합계</th>
+            </tr>
+            </thead>
+
+            <tbody id="calculation1tbody">
+            <tr class="calculation1_tbody_tr1" style="height: 90px; background-color: #fff;">
+                <td style="text-align: left; text-align: center; border-right:none;">
+                    <input type="checkbox" id="cbtr1" name="checkbox"/>
+                </td>
+                <td style="border-left: none; border-right: none;">
+                    <img style="width: 45%;" src="../static/img/hammock.jpg">
+                </td>
+                <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">해먹</td>
+
+
+                <td><span style="padding-left: 10px;">34,000</span>원</td>
+                <td style="width: 80px;">
+                    <span>1</span>
+                </td>
+                <td>무료배송</td>
+                <td><span>34,000</span>원</td>
+            </tr>
+
+            <tr class="calculation1_tbody_tr2" style="height: 90px; background-color: #fff;">
+                <td style="text-align: left; text-align: center; border-right:none;">
+                    <input type="checkbox" id="cbtr2" name="checkbox"/>
+                </td>
+                <td style="border-left: none; border-right: none;">
+                    <img style="width: 45%;" src="../static/img/hammock.jpg">
+                </td>
+                <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">해먹</td>
+
+
+                <td><span style="padding-left: 10px;">34,000</span>원</td>
+                <td style="width: 80px;">
+                    <span>1</span>
+                </td>
+                <td>무료배송</td>
+                <td><span>34,000</span>원</td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr style="height: 60px;">
+                <td colspan="5" style="border-right: none; text-align: left; padding-left: 10px;">
+                    <span>[기본배송]</span>
+                </td>
+                <td colspan="5" style="border-left: none; text-align: right; padding-right: 10px;">
+                    상품금액 <span> 34,000 </span>+<span>배송비 0 = 합계 </span>&nbsp;
+                    <span style="font-weight: bold; font-size: 10pt;"></span>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+    <div style="border: solid 1px #e0e0eb; border-right: none; border-left: none; padding: 11px 0; background-color: #e0e0eb ;">
+        <span style="font-size: 10pt; color:red;">상품의 옵션 및 수량 변경은 상품상세 또는 장바구니에서 가능합니다.</span>
+    </div>
+</div>
+
+<div style="margin: 10px 0; padding-bottom: 50px; border-bottom: solid 1px gray;">
+    <span style="margin: 0 10px;" class="btnfloat">선택상품을</span>
+    <button type="button" class="btn default btnfloat" id="choiceProductDelete"
+            style="background-color: gray;; color: #fff;"> x 삭제하기
+    </button>
+    <button type="button" class="btn default btnfloat2" onclick="javascript: history.back()">이전페이지></button>
+</div>
+<br/>
+<br/>
+<div id="footer">
+    <p>
+        Copyright&copy; 2021 CampingGaji. All rights reserved. Photos by
+        <a href="https://unsplash.com/">Fotogrph</a>
+    </p>
+</div>
 </body>
 </html>
