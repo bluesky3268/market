@@ -98,8 +98,8 @@
                     </tr>
 
                     <tr>
-                        <th><input type="checkbox" name="checkbox" id="check"/></th>
-                        <th><span>이미지</span></th>
+                        <th></th>
+                        <th>이미지</th>
                         <th style="width: 500px;"><span>상품정보</span></th>
                         <th style= "width: 100px;">판매가</th>
                         <th>수량</th>
@@ -111,7 +111,6 @@
                     <tbody id="calculation1tbody">
                     <tr class="calculation1_tbody_tr1" style="height: 90px; background-color: #fff;">
                         <td style="text-align: left; text-align: center; border-right:none;">
-                            <input type="checkbox" id="cbtr1" name="checkbox"/>
                         </td>
                         <td style="border-left: none; border-right: none;"><img style="width: 45%;" src="../static/img/hammock.jpg"></td>
                         <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">해먹</td>
@@ -126,9 +125,7 @@
                     </tr>
 
                     <tr class="calculation1_tbody_tr2" style="height: 90px; background-color: #fff;">
-                        <td style="text-align: left; text-align: center; border-right:none;">
-                            <input type="checkbox" id="cbtr2" name="checkbox"/>
-                        </td>
+                        <td style="text-align: left; text-align: center; border-right:none;"></td>
                         <td style="border-left: none; border-right: none;"><img style="width: 45%;" src="../static/img/hammock.jpg"></td>
                         <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">해먹</td>
 
@@ -147,7 +144,7 @@
                             <span>[기본배송]</span>
                         </td>
                         <td colspan="5" style="border-left: none; text-align: right; padding-right: 10px;">
-                            상품금액 <span> 34,000 </span>+<span>배송비 2,500 = 합계</span>&nbsp; <span style="font-weight: bold; font-size: 10pt;">
+                            상품금액 <span> 34,000 </span>+<span>배송비 0 = 합계 </span>&nbsp; <span style="font-weight: bold; font-size: 10pt;">
                     </span>
                         </td>
                     </tr>
@@ -188,6 +185,13 @@
 
         <table class="type10">
             <tbody>
+            <tr>
+                <th>주문자 명
+                    <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
+                <td>
+                    <input id="boxsize" type="text" name="name"/>
+                </td>
+            </tr>
             <tr>
                 <th>받으시는 분
                     <img src="//img.echosting.cafe24.com/skin/base_ko_KR/order/ico_required.gif" alt="필수"> </th>
