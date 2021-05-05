@@ -1,6 +1,9 @@
 plugins {
 	id 'org.springframework.boot' version '2.4.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	// 추가 항목 (Querydsl)
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+
 	id 'java'
 }
 
@@ -19,19 +22,43 @@ repositories {
 }
 
 dependencies {
+	implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.0.0'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	// 추가항목(Querydsl)
+	implementation 'com.querydsl:querydsl-jpa'
+
+	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	// providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	runtimeOnly 'mysql:mysql-connector-java'
+//	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
 	useJUnitPlatform()
+}
+
+// 추가항목(Querydsl)
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+sourceSets{
+	main.java.srcDir querydslDir
+}
+configurations{
+	querydsl.extendsFrom compileClasspath
+}
+compileQuerydsl{
+	options.annotationProcessorPath=configurations.querydsl
 }

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTMl 4.01 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns= "//www.w3.org/1999/xhtml" xml: lang="ko" lang="ko">
+<html xmlns= "//www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xml: lang="ko" lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -18,58 +18,8 @@
 
 <body>
 <div id="wrapper">
-    <div id="header">
-        <div id="logo">
-            <a href="../static/index.html"><img alt="logo" src="../static/img/logo.jpg"></a>
-            <h1><a href="../static/index.html">캠핑가지</a></h1>
-        </div>
-        <div class="search">
-            <form action="#" method="post">
-                <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
-                <input class="searchsubmit" type="submit" value="검색">
-            </form>
-        </div>
-    </div>
-    <!-- end #header -->
-    <div id="menu">
-        <ul class="navbar">
-            <li class="current_page_item"><a href="../static/index.html">Home</a></li>
-            <li><a href="#">텐트/타프</a>
-                <ul>
-                    <li><a href="#">리빙쉘 텐트</a></li>
-                    <li><a href="#">돔형 텐트</a></li>
-                    <li><a href="#">원터치 텐트</a></li>
-                    <li><a href="#">렉사 타프</a></li>
-                    <li><a href="#">헥사 텐트</a></li>
-                </ul>
-            </li>
-            <li><a href="#">테이블/체어</a>
-                <ul>
-                    <li><a href="#">접이식 테이블</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                    <li><a href="#">접이식 체어</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                </ul>
-            </li>
-            <li><a href="#">침낭/매트</a>
-                <ul>.
-                    <li><a href="#">4계절 침낭</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                    <li><a href="#">에어매트</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                </ul>
-            </li>
-            <li><a href="#">밀키트</a>
-                <ul>
-                    <li><a href="#">밀키트</a></li>
-                    <li><a href="#">소시지/육포</a></li>
-                    <li><a href="#">캔/통조림</a></li>
-                </ul>
-            </li>
-            <li><a href="../../java/korit/market/login/login.html">로그인</a></li>
-            <li><a href="../../java/korit/market/member/join.html">회원가입</a></li>
-        </ul>
-    </div>
+    <div th:replace="/fragments/header,html :: header"></div>
+   <div th:replace="/fragments/navbar.html :: navbar"></div>
 
     <div id="wrapper">
         <div id="frame">

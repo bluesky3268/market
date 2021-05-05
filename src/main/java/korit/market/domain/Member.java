@@ -15,6 +15,7 @@ public class Member {
      * userAddr2   varchar(50)    null,
      * userAddr3   varchar(50)    null,
      */
+
     private String id;
     private String pwd;
     private String userName;

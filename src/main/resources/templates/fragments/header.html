@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div id="header" th:fragment="header">
+  <div id="logo">
+    <a href="/"><img alt="logo" src="img/logo.jpg" /></a>
+    <h1><a href="/">캠핑가지</a></h1>
+  </div>
+  <div class="search">
+    <form action="#" method="post">
+      <input
+              class="searchtext"
+              type="text"
+              name="search"
+              placeholder="검색어를 입력해주세요."
+              size="50"
+      />
+      <input class="searchsubmit" type="submit" value="검색" />
+    </form>
+  </div>
+</div>
+</html>

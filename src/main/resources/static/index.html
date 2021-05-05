@@ -10,7 +10,7 @@
   </head>
   <body>
     <div id="wrapper">
-      <div id="header">
+      <div id="header" th:replace="/fragments/header.html :: header">
         <div id="logo">
           <a href="/"><img alt="logo" src="img/logo.jpg" /></a>
           <h1><a href="/">캠핑가지</a></h1>
@@ -22,14 +22,13 @@
               type="text"
               name="search"
               placeholder="검색어를 입력해주세요."
-              size="50"
-            />
+              size="50"/>
             <input class="searchsubmit" type="submit" value="검색" />
           </form>
         </div>
       </div>
       <!-- end #header -->
-      <div id="menu">
+      <div id="menu" th:replace="/fragments/navbar.html :: navbar">
         <ul class="navbar">
           <li class="current_page_item"><a href="/">Home</a></li>
           <li>

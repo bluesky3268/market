@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div id="menu" th:fragment="navbar">
+    <ul class="navbar">
+        <li class="current_page_item"><a href="/">Home</a></li>
+        <li>
+            <a href="/item/list">텐트/타프</a>
+            <ul>
+                <li><a href="/item/listdetail">리빙쉘 텐트</a></li>
+                <li><a href="#">돔형 텐트</a></li>
+                <li><a href="#">원터치 텐트</a></li>
+                <li><a href="#">렉사 타프</a></li>
+                <li><a href="#">헥사 텐트</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">테이블/체어</a>
+            <ul>
+                <li><a href="#">접이식 테이블</a></li>
+                <li><a href="#">조립식 테이블</a></li>
+                <li><a href="#">접이식 체어</a></li>
+                <li><a href="#">조립식 테이블</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">침낭/매트</a>
+            <ul>
+                <li><a href="#">4계절 침낭</a></li>
+                <li><a href="#">하계용 침낭</a></li>
+                <li><a href="#">에어매트</a></li>
+                <li><a href="#">베개/쿠션</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">밀키트</a>
+            <ul>
+                <li><a href="#">밀키트</a></li>
+                <li><a href="#">소시지/육포</a></li>
+                <li><a href="#">캔/통조림</a></li>
+            </ul>
+        </li>
+        <li><a href="/login">로그인</a></li>
+        <li>
+            <a href="/join">회원가입</a>
+        </li>
+    </ul>
+</div>
+</html>

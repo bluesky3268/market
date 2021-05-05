@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -36,58 +36,9 @@
 
 <body>
 <div id="wrapper">
-    <div id="header">
-        <div id="logo">
-            <a href="index.html"><img alt="logo" src="../static/img/logo.jpg"/></a>
-            <h1><a href="index.html">캠핑가지</a></h1>
-        </div>
-        <div class="search">
-            <form action="#" method="post">
-                <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
-                <input class="searchsubmit" type="submit" value="검색">
-            </form>
-        </div>
-    </div>
+    <div th:replace="/fragments/header.html :: header" />
     <!-- end #header -->
-    <div id="menu">
-        <ul class="navbar">
-            <li class="current_page_item"><a href="index.html">Home</a></li>
-            <li><a href="#">텐트/타프</a>
-                <ul>
-                    <li><a href="#">리빙쉘 텐트</a></li>
-                    <li><a href="#">돔형 텐트</a></li>
-                    <li><a href="#">원터치 텐트</a></li>
-                    <li><a href="#">렉사 타프</a></li>
-                    <li><a href="#">헥사 텐트</a></li>
-                </ul>
-            </li>
-            <li><a href="#">테이블/체어</a>
-                <ul>
-                    <li><a href="#">접이식 테이블</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                    <li><a href="#">접이식 체어</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                </ul>
-            </li>
-            <li><a href="#">침낭/매트</a>
-                <ul>
-                    <li><a href="#">4계절 침낭</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                    <li><a href="#">에어매트</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                </ul>
-            </li>
-            <li><a href="#">밀키트</a>
-                <ul>
-                    <li><a href="#">밀키트</a></li>
-                    <li><a href="#">소시지/육포</a></li>
-                    <li><a href="#">캔/통조림</a></li>
-                </ul>
-            </li>
-            <li><a href="#">로그인</a></li>
-            <li><a href="#">회원가입</a></li>
-        </ul>
-    </div>
+    <div th:replace="/fragments/navbar.html :: navbar"/>
 
     <h2>장바구니</h2>
     <div>
