@@ -10,46 +10,16 @@
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
+<<<<<<< HEAD
 <div id="wrapper">
     <div id="header">
         <div id="logo">
             <a href="/"><img alt="logo" src="/img/logo.jpg"></a>
             <h1><a href="/">캠핑가지</a></h1>
         </div>
-<<<<<<< HEAD
         <!-- end #header -->
         <div th:replace="/fragments/navbar.html :: navbar"></div>
-    <h3 class=" ">기본정보</h3>
-    <p class="required "><img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수"></p>
-    <div class="ec-base-table typeWrite">
-        <table border="1" summary="">
-             <caption>회원 기본정보</caption>
-             <colgroup>
-                <col style="width:150px;">
-                <col style="width:auto;">
-             </colgroup>
-             <tbody>
-                <tr>
-                    <th scope="row" valign="middle">아이디 <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수"></th>
-                    <td>
-                        <input id="member_id" name="member_id" fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity" fw-label="아이디" fw-msg="" class="inputTypeText" placeholder="" value="" type="text">
-                        <span id="idMsg"></span> (영문소문자/숫자, 4~16자)
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">비밀번호 <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수"></th>
-                    <td>
-                        <div class="eTooltip">
-                            <input id="passwd" name="passwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="비밀번호" fw-msg="" autocomplete="off" maxlength="16" 0="disabled" value="" type="password">
-                            <div class="ec-base-tooltip typeUpper">
-                                <div class="content">
-                                    <strong class="txtWarn">※ 비밀번호 입력 조건</strong>
-                                    <ul class="ec-base-help typeDash gBlank10 txtWarn">
-                                    - 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자<br>
-                                    - 입력 가능 특수문자 <br>
-                                    &nbsp;&nbsp;&nbsp; ~ ` ! @ # $ % ^ ( ) _ - = { } [ ] | ; : &lt; &gt; , . ? /<br>
-                                    - 공백 입력 불가능 </ul>
-=======
+        =======
         <div class="search">
             <form action="#" method="post">
                 <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
@@ -97,6 +67,11 @@
             <li><a href="/join">회원가입</a></li>
         </ul>
     </div>
+    >>>>>>> abf2bb17bc58fc76564c65d1179e972aad43838a
+
+// 헤더고쳐주셈!!
+
+
     <div id="contents_sub">
         <form id="joinForm" name="joinForm" action="#" method="POST">
             <h3 class=" ">기본정보</h3>
@@ -150,7 +125,6 @@
                                             src="//img.echosting.cafe24.com/skin/base/common/btn_close_tip.gif"
                                             alt="닫기"></a>
                                     <span class="edge"></span>
->>>>>>> abf2bb17bc58fc76564c65d1179e972aad43838a
                                 </div>
                             </div>
                             (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
@@ -196,30 +170,90 @@
                                                 class=""
                                                 alt="필수"></th>
                         <td>
-                            <!-- 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 class를 부여한다 -->
-                            <input type="text" name="postcode1" class="postcodify_postcode5" value="검색버튼 클릭"/>
-                            <button id="postcodify_search_button">검색</button>
-                            <br/>
-                            <input type="text" name="addr1" class="postcodify_address" value="주소1"/><br/>
-                            <input type="text" name="addr2" class="postcodify_details" value="주소2"/><br/>
-                            <input type="text" name="addrEx" class="postcodify_extra_info" value="기타"/><br/>
+                            <input type="text" id="sample6_postcode" placeholder="우편번호">
+                            <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                            <input type="text" id="sample6_address" placeholder="주소"><br>
+                            <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                            <input type="text" id="sample6_extraAddress" placeholder="참고항목">
 
-                            <!-- jQuery와 Postcodify를 로딩한다 -->
-                            <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-                            <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-
-                            <!-- "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 -->
+                            <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
                             <script>
-                                $(function () {
-                                    $("#postcodify_search_button").postcodifyPopUp();
-                                });
+                                function sample6_execDaumPostcode() {
+                                    new daum.Postcode({
+                                        oncomplete: function (data) {
+                                            // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                                            // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                                            // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                                            var addr = ''; // 주소 변수
+                                            var extraAddr = ''; // 참고항목 변수
+
+                                            //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                                            if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                                                addr = data.roadAddress;
+                                            } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                                                addr = data.jibunAddress;
+                                            }
+
+                                            // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                                            if (data.userSelectedType === 'R') {
+                                                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                                                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                                                if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+                                                    extraAddr += data.bname;
+                                                }
+                                                // 건물명이 있고, 공동주택일 경우 추가한다.
+                                                if (data.buildingName !== '' && data.apartment === 'Y') {
+                                                    extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                                                }
+                                                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                                                if (extraAddr !== '') {
+                                                    extraAddr = ' (' + extraAddr + ')';
+                                                }
+                                                // 조합된 참고항목을 해당 필드에 넣는다.
+                                                document.getElementById("sample6_extraAddress").value = extraAddr;
+
+                                            } else {
+                                                document.getElementById("sample6_extraAddress").value = '';
+                                            }
+
+                                            // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                                            document.getElementById('sample6_postcode').value = data.zonecode;
+                                            document.getElementById("sample6_address").value = addr;
+                                            // 커서를 상세주소 필드로 이동한다.
+                                            document.getElementById("sample6_detailAddress").focus();
+                                        }
+                                    }).open();
+                                }
                             </script>
-                            <!--      <input id="postcode1" name="postcode1" fw-filter="isLengthRange[1][14]" fw-label="우편번호1" fw-msg=""
-                        class="inputTypeText" placeholder="" readonly="readonly" maxlength="14" value="" type="text">
-                        <a href="#none" class="btnNormal" onclick="" id="postBtn">우편번호</a><br>
-                      <input id="addr1" name="addr1" fw-filter="isFill" fw-label="주소" fw-msg="" class="inputTypeText"
-                        placeholder="기본주소" readonly="readonly" value="" type="text"> <input id="addr2" name="addr2" fw-filter=""
-                        fw-label="주소" fw-msg="" class="inputTypeText" placeholder="나머지주소" value="" type="text">  -->
+
+                            <!--                            &lt;!&ndash; 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 class를 부여한다 &ndash;&gt;-->
+                            <!--                            <input type="text" name="postcode1" class="postcodify_postcode5" value="검색버튼 클릭"/>-->
+                            <!--                            <button id="postcodify_search_button">검색</button>-->
+                            <!--                            <br/>-->
+                            <!--                            <input type="text" name="addr1" class="postcodify_address" value="주소1"/><br/>-->
+                            <!--                            <input type="text" name="addr2" class="postcodify_details" value="주소2"/><br/>-->
+                            <!--                            <input type="text" name="addrEx" class="postcodify_extra_info" value="기타"/><br/>-->
+
+                            <!--                            &lt;!&ndash; jQuery와 Postcodify를 로딩한다 &ndash;&gt;-->
+                            <!--                            <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
+                            <!--                            <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>-->
+
+                            <!--                            &lt;!&ndash; "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 &ndash;&gt;-->
+                            <!--                            <script>-->
+                            <!--                                $(function () {-->
+                            <!--                                    $("#postcodify_search_button").postcodifyPopUp();-->
+                            <!--                                });-->
+                            <!--                            </script>-->
+
+
+                            <!--      <input id="postcode1" name="postcode1" fw-filter="isLengthRange[1][14]"
+                                      fw-label="우편번호1" fw-msg=""
+                                      class="inputTypeText" placeholder="" readonly="readonly" maxlength="14" value="" type="text">
+                                  <a href="#none" class="btnNormal" onclick="" id="postBtn">우편번호</a><br>
+                                  <input id="addr1" name="addr1" fw-filter="isFill" fw-label="주소" fw-msg="" class="inputTypeText"
+                                  placeholder="기본주소" readonly="readonly" value="" type="text"> <input id="addr2" name="addr2" fw-filter=""
+                                  fw-label="주소" fw-msg="" class="inputTypeText" placeholder="나머지주소" value="" type="text">  -->
                         </td>
                     </tr>
 
