@@ -1,7 +1,6 @@
 package korit.market.Repository;
 
 import korit.market.entity.Admin;
-import korit.market.entity.QAdmin;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
