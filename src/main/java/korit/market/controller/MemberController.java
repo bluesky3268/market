@@ -1,6 +1,5 @@
 package korit.market.controller;
 
-import korit.market.Service.MemberService;
 import korit.market.entity.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +10,6 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/")
 public class MemberController {
 
-
-//    public MemberController(MemberService memberService) {
-//        this.memberService = memberService;
-//    }
 
     public String basic() {
         return "index";
