@@ -10,74 +10,12 @@
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-<<<<<<< HEAD
 <div id="wrapper">
     <div id="header">
-<<<<<<< HEAD
         <div th:replace="/fragments/header.html :: header"></div>
         <!-- end #header -->
         <div th:replace="/fragments/navbar.html :: navbar"></div>
-=======
-        <div id="logo">
-            <a href="/"><img alt="logo" src="/img/logo.jpg"></a>
-            <h1><a href="/">캠핑가지</a></h1>
-        </div>
-        <!-- end #header -->
-        <div th:replace="/fragments/navbar.html :: navbar"></div>
-        =======
-        <div class="search">
-            <form action="#" method="post">
-                <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
-                <input class="searchsubmit" type="submit" value="검색">
-            </form>
-        </div>
-    </div>
-    <!-- end #header -->
-    <div id="menu">
-        <ul class="navbar">
-            <li class="current_page_item"><a href="/">Home</a></li>
-            <li><a href="#">텐트/타프</a>
-                <ul>
-                    <li><a href="#">리빙쉘 텐트</a></li>
-                    <li><a href="#">돔형 텐트</a></li>
-                    <li><a href="#">원터치 텐트</a></li>
-                    <li><a href="#">렉사 타프</a></li>
-                    <li><a href="#">헥사 텐트</a></li>
-                </ul>
-            </li>
-            <li><a href="#">테이블/체어</a>
-                <ul>
-                    <li><a href="#">접이식 테이블</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                    <li><a href="#">접이식 체어</a></li>
-                    <li><a href="#">조립식 테이블</a></li>
-                </ul>
-            </li>
-            <li><a href="#">침낭/매트</a>
-                <ul>
-                    <li><a href="#">4계절 침낭</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                    <li><a href="#">에어매트</a></li>
-                    <li><a href="#">하계용 침낭</a></li>
-                </ul>
-            </li>
-            <li><a href="#">밀키트</a>
-                <ul>
-                    <li><a href="#">밀키트</a></li>
-                    <li><a href="#">소시지/육포</a></li>
-                    <li><a href="#">캔/통조림</a></li>
-                </ul>
-            </li>
-            <li><a href="/login">로그인</a></li>
-            <li><a href="/join">회원가입</a></li>
-        </ul>
-    </div>
-    >>>>>>> abf2bb17bc58fc76564c65d1179e972aad43838a
-
-// 헤더고쳐주셈!!
-
-
->>>>>>> c8a649848e5a52e449bfd86bf068257fd51ec03d
+// 헤더고쳐주셈!! ->> 수정함.
     <div id="contents_sub">
         <form id="joinForm" name="joinForm" action="#" method="POST">
             <h3 class=" ">기본정보</h3>
@@ -231,44 +169,42 @@
                                     }).open();
                                 }
                             </script>
-<<<<<<< HEAD
                            <input id="postcode1" name="postcode1" fw-filter="isLengthRange[1][14]" fw-label="우편번호1" fw-msg=""
                         class="inputTypeText" placeholder="" readonly="readonly" maxlength="14" value="" type="text">
                         <a href="#none" class="btnNormal" onclick="" id="postBtn">우편번호</a><br>
                       <input id="addr1" name="addr1" fw-filter="isFill" fw-label="주소" fw-msg="" class="inputTypeText"
                         placeholder="기본주소" readonly="readonly" value="" type="text"> <input id="addr2" name="addr2" fw-filter=""
                         fw-label="주소" fw-msg="" class="inputTypeText" placeholder="나머지주소" value="" type="text">
-=======
-
-                            <!--                            &lt;!&ndash; 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 class를 부여한다 &ndash;&gt;-->
-                            <!--                            <input type="text" name="postcode1" class="postcodify_postcode5" value="검색버튼 클릭"/>-->
-                            <!--                            <button id="postcodify_search_button">검색</button>-->
-                            <!--                            <br/>-->
-                            <!--                            <input type="text" name="addr1" class="postcodify_address" value="주소1"/><br/>-->
-                            <!--                            <input type="text" name="addr2" class="postcodify_details" value="주소2"/><br/>-->
-                            <!--                            <input type="text" name="addrEx" class="postcodify_extra_info" value="기타"/><br/>-->
-
-                            <!--                            &lt;!&ndash; jQuery와 Postcodify를 로딩한다 &ndash;&gt;-->
-                            <!--                            <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>-->
-                            <!--                            <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>-->
-
-                            <!--                            &lt;!&ndash; "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 &ndash;&gt;-->
-                            <!--                            <script>-->
-                            <!--                                $(function () {-->
-                            <!--                                    $("#postcodify_search_button").postcodifyPopUp();-->
-                            <!--                                });-->
-                            <!--                            </script>-->
 
 
-                            <!--      <input id="postcode1" name="postcode1" fw-filter="isLengthRange[1][14]"
+            <!--                                         &lt;!&ndash; 주소와 우편번호를 입력할 <input>들을 생성하고 적당한 name과 class를 부여한다 &ndash;&gt;
+                                                    <input type="text" name="postcode1" class="postcodify_postcode5" value="검색버튼 클릭"/>
+                                                   <button id="postcodify_search_button">검색</button>
+                                             <br/>
+                                                     <input type="text" name="addr1" class="postcodify_address" value="주소1"/><br/>
+                                                      <input type="text" name="addr2" class="postcodify_details" value="주소2"/><br/>
+                                                   <input type="text" name="addrEx" class="postcodify_extra_info" value="기타"/><br/>
+
+                                                   &lt;!&ndash; jQuery와 Postcodify를 로딩한다 &ndash;&gt;
+                                                        <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+                                                   <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+
+                                                   &lt;!&ndash; "검색" 단추를 누르면 팝업 레이어가 열리도록 설정한다 &ndash;&gt;
+                                                 <script>
+                                                           $(function () {
+                                                               $("#postcodify_search_button").postcodifyPopUp();
+                                                          });
+                                                      </script>
+
+
+                                   <input id="postcode1" name="postcode1" fw-filter="isLengthRange[1][14]"
                                       fw-label="우편번호1" fw-msg=""
                                       class="inputTypeText" placeholder="" readonly="readonly" maxlength="14" value="" type="text">
                                   <a href="#none" class="btnNormal" onclick="" id="postBtn">우편번호</a><br>
                                   <input id="addr1" name="addr1" fw-filter="isFill" fw-label="주소" fw-msg="" class="inputTypeText"
                                   placeholder="기본주소" readonly="readonly" value="" type="text"> <input id="addr2" name="addr2" fw-filter=""
-                                  fw-label="주소" fw-msg="" class="inputTypeText" placeholder="나머지주소" value="" type="text">  -->
->>>>>>> c8a649848e5a52e449bfd86bf068257fd51ec03d
-                        </td>
+                                  fw-label="주소" fw-msg="" class="inputTypeText" placeholder="나머지주소" value="" type="text">
+                        </td> -->
                     </tr>
 
                     <tr class>
