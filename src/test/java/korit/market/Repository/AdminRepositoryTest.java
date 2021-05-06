@@ -1,9 +1,18 @@
 package korit.market.Repository;
 
 import korit.market.entity.Admin;
+import korit.market.entity.Item;
+import korit.market.entity.Member;
+import korit.market.entity.QAdmin;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import javax.persistence.EntityManager;
+import javax.persistence.NamedQuery;
+import java.util.Optional;
+import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,6 +31,22 @@ class AdminRepositoryTest {
                 .build();
         adminRepository.save(admin);
     }
+
+    @Test
+    public void findById() {
+        Optional<Admin> result = adminRepository.findById(1L);
+        if (result.isPresent()) {
+            Admin admin = result.get();
+            System.out.println(admin);
+        }
+    }
+
+    @Test
+    public void loginCheck() {
+
+
+    }
+
 
 
 }
