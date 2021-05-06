@@ -1,8 +1,8 @@
 package korit.market.Repository;
 
-import org.springframework.stereotype.Repository;
+import korit.market.entity.Item;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public class ItemRepository {
+public interface ItemRepository extends JpaRepository<Item, Long> {
 
 }

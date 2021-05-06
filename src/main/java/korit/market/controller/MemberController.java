@@ -1,11 +1,9 @@
 package korit.market.controller;
 
-import korit.market.Repository.MemberRepository;
 import korit.market.Service.MemberService;
-import korit.market.domain.Member;
+import korit.market.entity.Member;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
@@ -13,11 +11,10 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/")
 public class MemberController {
 
-    private final MemberService memberService;
 
-    public MemberController(MemberService memberService) {
-        this.memberService = memberService;
-    }
+//    public MemberController(MemberService memberService) {
+//        this.memberService = memberService;
+//    }
 
     public String basic() {
         return "index";
@@ -42,7 +39,6 @@ public class MemberController {
 
     @PostMapping("/join")
     public String join(@ModelAttribute Member member) {
-        memberService.join(member);
         return "redirect:/";
     }
 

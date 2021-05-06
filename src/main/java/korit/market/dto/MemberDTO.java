@@ -1,6 +1,5 @@
 package korit.market.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,13 +9,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class AdminDTO {
+public class MemberDTO {
 
-    private Long adminNo;
+    private String id;
+    private String pwd;
 
-    private String adminId;
+    private String userName;
 
-    private String adminPwd;
+    private String phoneNumber;
 
+    private String email;
+
+    private String address;
 
 }

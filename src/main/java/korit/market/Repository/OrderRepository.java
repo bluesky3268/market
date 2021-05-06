@@ -1,8 +1,9 @@
 package korit.market.Repository;
 
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class OrderRepository {
+import korit.market.entity.Orders;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderRepository extends JpaRepository<Orders, Long> {
 
 }
