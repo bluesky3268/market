@@ -1,15 +1,21 @@
 package korit.market.controller;
 
+import korit.market.Service.MemberService;
 import korit.market.entity.Member;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 
 @Controller
+@RequiredArgsConstructor
 @RequestMapping("/")
 public class MemberController {
 
+    private final MemberService memberService;
 
     public String basic() {
         return "index";
@@ -23,18 +29,37 @@ public class MemberController {
     @PostMapping("/login")
     public String login(@ModelAttribute Member member, HttpSession session) {
 
+
         return "redirect:/";
     }
 
+
+    /**
+     * 회원가입 폼
+     */
     @GetMapping("/join")
     public String join() {
 
         return "join";
     }
 
+    /**
+     * 회원가입
+     */
     @PostMapping("/join")
-    public String join(@ModelAttribute Member member) {
+    public String join(Member member) {
+
+        memberService.joinMember(member);
+
         return "redirect:/";
+    }
+
+    /**
+     * 아이디 중복 확인
+     */
+    @GetMapping("/join/{id}/exist")
+    public ResponseEntity<Boolean> duplicateCheckId(@PathVariable String id) {
+        return ResponseEntity.ok(memberService.duplicateCheckMemberId(id));
     }
 
 }

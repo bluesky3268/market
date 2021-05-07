@@ -15,9 +15,9 @@
         <div th:replace="/fragments/header.html :: header"></div>
         <!-- end #header -->
         <div th:replace="/fragments/navbar.html :: navbar"></div>
-// 헤더고쳐주셈!! ->> 수정함.
     <div id="contents_sub">
-        <form id="joinForm" name="joinForm" action="#" method="POST">
+        <form id="joinForm" name="joinForm"
+              th:action="@{/join}" action="/join" method="POST">
             <h3 class=" ">기본정보</h3>
             <p class="required">
                 <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
@@ -38,8 +38,10 @@
                                    fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity"
                                    fw-label="아이디" fw-msg=""
                                    class="inputTypeText" placeholder="" value="" type="text"> <span id="idMsg"></span>
-                            (영문소문자/숫자,
-                            4~16자)
+                            (영문소문자/숫자, 4~16자)
+                        </td>
+                        <td>
+                            <button th:onclick="|location.href='@{/join/{id}/exist}'|" >중복확인</button>
                         </td>
                     </tr>
                     <tr>
@@ -245,8 +247,7 @@
                 </table>
             </div>
             <div class="ec-base-button">
-                <a href="#none" class="btnSubmitFix sizeM" onclick="memberJoinAction()">회원가입</a>
-                ::after
+                <a  class="btnSubmitFix sizeM" onclick="memberJoinAction()">회원가입</a>
             </div>
         </form>
 

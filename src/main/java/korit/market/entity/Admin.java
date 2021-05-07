@@ -22,4 +22,8 @@ public class Admin {
     @Column(length = 25, nullable = false)
     private String adminPwd;
 
+    public Admin(String adminId, String adminPwd) {
+        this.adminId = adminId;
+        this.adminPwd = adminPwd;
+    }
 }

@@ -34,7 +34,7 @@ public class AdminController {
         String paramId = params.get("adminId");
         String paramPwd = params.get("adminPwd");
 
-        Admin paramAdmin = new Admin(1L, paramId, paramPwd);
+        Admin paramAdmin = new Admin(paramId, paramPwd);
 
         if(adminService.loginCheck(paramId, paramPwd) == true) {
             session.setAttribute("admin", paramAdmin);

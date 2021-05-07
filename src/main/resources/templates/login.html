@@ -9,87 +9,41 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css" />
     <link rel="stylesheet" href="/css/style.css"/>
   </head>
-  <body>
-    <div id="wrapper">
-        <div id="header">
-            <div id="logo">
-                <a href="/"><img alt="logo" src="/img/logo.jpg"></a>
-                <h1><a href="/">캠핑가지</a></h1>
-            </div>
-            <div class="search">
-                <form action="#" method="post">
-                    <input class="searchtext" type="text" name=search placeholder="검색어를 입력해주세요." size="50">
-                    <input class="searchsubmit" type="submit" value="검색">
-                </form>
-            </div>
-
 <body>
-   <div th:replace="/fragments/navbar.html :: navbar"></div>
-    
-    <div
-      class="xans-elemet- xans-member xans-member-login ec-base-box typeThin"
-    >
-      <div class="login">
-        <h3 class="Title">
-          LOGIN
-          <br />
-          <span>회원로그인</span>
-        </h3>
-        <fieldset>
+<div id="wrapper">
+  <div th:replace="/fragments/header.html :: header"></div>
+  <div th:replace="/fragments/navbar.html :: navbar"></div>
+
+  <div class="xans-elemet- xans-member xans-member-login ec-base-box typeThin">
+    <div class="login">
+      <h3 class="Title">
+      LOGIN
+      <br/>
+      <span>회원로그인</span>
+      </h3>
+      <fieldset>
           <legend>회원로그인</legend>
+          <form action="/login" method="post">
           <label class="id ePlaceholder" title="아이디">
             <div class="pre">아이디</div>
-            <input
-              id="member_id"
-              name="member_id"
-              fw-filter="isFill"
-              fw-label="아이디"
-              fw-msg=""
-              class="inputTypeText"
-              placeholder=""
-              value=""
-              type="text"
-            />
+            <input id="member_id" name="member_id" fw-filter="isFill" fw-label="아이디" fw-msg="" class="inputTypeText" placeholder="" value="" type="text"/>
           </label>
           <label class="password ePlaceholder" title="비밀번호">
             <div class="pre">비밀번호</div>
-            <input
-              id="member_passwd"
-              name="member_passwd"
-              fw-filter="isFill&amp;isMin[4]&amp;isMax[16]"
-              fw-label="패스워드"
-              fw-msg=""
-              autocomplete="off"
-              value=""
-              type="password"
-            />
+            <input id="member_passwd" name="member_passwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="패스워드" fw-msg="" autocomplete="off" value="" type="password"/>
           </label>
-
           <div>
-            <a
-              href="/login"
-              class="Loginbtn"
-              onclick="MemberAction.login('member_form_4818398116'); return false;"
-            >
-              <span class="hangrd_1 pogrd_hov2">
-                로그인
-                <span></span>
-              </span>
-            </a>
+          <button type="submit" class="Loginbtn">로그인</button>
+          <!-- <a href="/login"
+          class="Loginbtn"
+          onclick="MemberAction.login('member_form_4818398116'); return false;">
+          <span class="hangrd_1 pogrd_hov2">로그인<span></span></span>
+          </a> -->
           </div>
-
           <ul class="snsArea">
             <li class="kakaoLogin">
-              <a
-                href="#none"
-                onclick="MemberAction.snsLogin('kakao', '%2Findex.html')"
-              >
-                <img
-                  src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_kakao_login.gif"
-                  alt=""
-                  title=""
-                />
-              </a>
+              <a href="#none" onclick="MemberAction.snsLogin('kakao', '%2Findex.html')">
+              <img src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_kakao_login.gif" alt="" title=""/></a>
               <script src="https://developers.kakao.com/"></script>
             </li>
           </ul>
@@ -100,5 +54,6 @@
         </fieldset>
       </div>
     </div>
-  </body>
+  </div>
+</body>
 </html>
