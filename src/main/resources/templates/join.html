@@ -15,54 +15,6 @@
         <div th:replace="/fragments/header.html :: header"></div>
         <!-- end #header -->
         <div th:replace="/fragments/navbar.html :: navbar"></div>
-<<<<<<< HEAD
-    <div id="contents_sub">
-        <form id="joinForm" name="joinForm"
-              th:action="@{/join}" action="/join" method="POST">
-            <h3 class=" ">기본정보</h3>
-            <p class="required">
-                <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
-                필수입력사항
-            </p>
-            <div class="ec-base-table typeWrite">
-                <table border="1" summary>
-                    <caption>회원 기본정보</caption>
-                    <colgroup>
-                        <col style="width:150px;">
-                        <col style="width:auto;">
-                    </colgroup>
-                    <tbody>
-                    <tr>
-                        <th scope="row" valign="middle">아이디 <img
-                                src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수"></th>
-                        <td><input id="member_id" name="member_id"
-                                   fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity"
-                                   fw-label="아이디" fw-msg=""
-                                   class="inputTypeText" placeholder="" value="" type="text"> <span id="idMsg"></span>
-                            (영문소문자/숫자, 4~16자)
-                        </td>
-                        <td>
-                            <button th:onclick="|location.href='@{/join/{id}/exist}'|" >중복확인</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">비밀번호 <img
-                                src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
-                                alt="필수">
-                        </th>
-                        <td>
-                            <div class="eTooltip">
-                                <input id="passwd" name="passwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]"
-                                       fw-label="비밀번호"
-                                       fw-msg="" autocomplete="off" maxlength="16" 0="disabled" value=""
-                                       type="password">
-                                <div class="ec-base-tooltip typeUpper">
-                                    <div class="content">
-                                        <strong class="txtWarn">※ 비밀번호 입력 조건</strong>
-                                        <ul class="ec-base-help typeDash gBlank10 txtWarn">
-=======
->>>>>>> 625bb03d9f4a0b76174d7d123f073c514983a0a5
-
         <div id="contents_sub">
             <div class="hanblank_60"></div>
             <form id="joinForm" name="joinForm" action="#" method="POST">
@@ -80,7 +32,7 @@
                         </colgroup>
                         <tbody>
                         <tr>
-                            <th scope="row" valign="middle">아이디 <img
+                            <th scope="row" valign="middle">아이디<img
                                     src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
                             </th>
                             <td><input id="member_id" name="member_id"
@@ -90,6 +42,9 @@
                                     id="idMsg"></span>
                                 (영문소문자/숫자,
                                 4~16자)
+                            </td>
+                            <td>
+                                <button th:onclick="|location.href='@{/join/{id}/exist}'|">중복확인</button>
                             </td>
                         </tr>
                         <tr>
@@ -267,54 +222,12 @@
                     </table>
                 </div>
                 <div class="ec-base-button" ::after>
-                    <a href="#none" class="btnSubmitFix sizeM" onclick="memberJoinAction()">회원가입</a>
-
-<<<<<<< HEAD
-                    <tr class>
-                        <th scope="row">휴대전화 <img
-                                src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
-                                class="" alt="필수">
-                        </th>
-                        <td>
-                            <select id="mobile1" name="mobile[]" fw-filter="isNumber&amp;isFill" fw-label="휴대전화"
-                                    fw-alone="N"
-                                    fw-msg="" class="select">
-                                <option value="010">010</option>
-                                <option value="011">011</option>
-                                <option value="016">016</option>
-                                <option value="017">017</option>
-                                <option value="018">018</option>
-                                <option value="019">019</option>
-                            </select>
-                            -
-                            <input id="mobile2" name="mobile[]" maxlength="4" fw-filter="isNumber&amp;isFill"
-                                   fw-label="휴대전화"
-                                   fw-alone="N" fw-msg="" value="" type="text">-<input id="mobile3" name="mobile[]"
-                                                                                       maxlength="4"
-                                                                                       fw-filter="isNumber&amp;isFill"
-                                                                                       fw-label="휴대전화" fw-alone="N"
-                                                                                       fw-msg="" value="" type="text">
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">이메일 <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif"
-                                                 alt="필수">
-                        </th>
-                        <td><input id="email1" name="email1" fw-filter="isFill&amp;isEmail" fw-label="이메일" fw-alone="N"
-                                   fw-msg="" value="" type="text"> <span id="emailMsg"></span>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="ec-base-button">
-                <a  class="btnSubmitFix sizeM" onclick="memberJoinAction()">회원가입</a>
-            </div>
+                    <button type="submit" href="#none" class="btnSubmitFix sizeM"
+                       onclick="memberJoinAction()">회원가입</button>
+                </div>
         </form>
-=======
                 </div>
             </form>
->>>>>>> 625bb03d9f4a0b76174d7d123f073c514983a0a5
 
         </div>
     </div>

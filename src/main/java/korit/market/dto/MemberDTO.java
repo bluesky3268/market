@@ -18,12 +18,12 @@ public class MemberDTO {
 
     private String pwd;
 
+    private String checkedPwd;
+
     private String userName;
 
     private String phoneNumber;
 
-    @NotBlank(message = "이메일 주소를 입력해 주세요")
-    @Email(message="올바른 이메일 주소를 입력해 주세요.")
     private String email;
 
     private String address;
