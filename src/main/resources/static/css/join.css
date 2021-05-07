@@ -10,6 +10,14 @@ body, code {
   letter-spacing: -.1px;
 }
 
+.hanblank_60 {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  display: block;
+  clear: both;
+}
+
 form {
   display: block;
   margin-top: 0em;
