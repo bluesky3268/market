@@ -1,6 +1,7 @@
 package korit.market.Service;
 
 import korit.market.Repository.MemberRepository;
+import korit.market.dto.MemberDTO;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -34,13 +35,23 @@ public class MemberService {
      * 회원가입
      */
 
-    public String joinMember(Member member) {
-        log.info(member.getMemberId(), member.getMemberName(), member.getMemberPwd());
-        Member joinId = memberRepository.findByMemberId(member.getMemberId());
+    public Member saveMember(MemberDTO memberDTO) {
 
-        Member joinMember = new Member();
+        Member member = Member.builder()
+                .memberId(memberDTO.getMember_id())
+                .memberPwd(memberDTO.getPwd())
+                .memberName(memberDTO.getName())
+                .phoneNumber(memberDTO.getMobile())
+                .email(memberDTO.getEmail())
+                .address1(memberDTO.getAddress())
+                .address2(memberDTO.getDetailAddress())
+                .address3(memberDTO.getExtraAddress())
+                .build();
+
         memberRepository.save(member);
-        return member.getMemberId();
+
+        return member;
+
     }
 
     /**

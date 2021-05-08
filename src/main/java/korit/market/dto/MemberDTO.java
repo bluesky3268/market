@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Builder
 @AllArgsConstructor
@@ -14,18 +15,23 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class MemberDTO {
 
-    private String id;
+
+    private String member_id;
 
     private String pwd;
 
-    private String checkedPwd;
+    private String pwd_confirm;
 
-    private String userName;
+    private String name;
 
-    private String phoneNumber;
+    private String mobile;
 
     private String email;
 
     private String address;
+
+    private String detailAddress;
+
+    private String extraAddress;
 
 }

@@ -1,11 +1,11 @@
 package korit.market.controller;
 
 import korit.market.Service.MemberService;
+import korit.market.dto.MemberDTO;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -46,12 +46,16 @@ public class MemberController {
     /**
      * 회원가입
      */
+
     @PostMapping("/join")
-    public String join(Member member) {
+    @ResponseBody
+    public String join(@RequestBody MemberDTO member) {
 
-        memberService.joinMember(member);
+        duplicateCheckId(member.getMember_id());
+        memberService.saveMember(member);
 
-        return "redirect:/";
+
+        return "성공";
     }
 
     /**
