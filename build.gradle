@@ -34,8 +34,13 @@ dependencies {
 	// 추가항목(Querydsl)
 	implementation 'com.querydsl:querydsl-jpa'
 
+	// 소셜로그인적용(OAuth) 추가 2021-05-08- 22:12
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
 	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+	// Security 추가 2021-05-08 22:38
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5'
 
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'

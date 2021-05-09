@@ -139,24 +139,38 @@ legend {
 }
 
 .Loginbtn {
-  text-align:center;
+  text-align: center;
   text-decoration: none;
-  color: #000;
-}
-
-.Loginbtn span {
   width: 370px;
   height: 36px;
-  line-height: 36px;
+  line-height: 3px;
   display: block;
   margin-top: 10px;
   color: #fff;
   font-size: 15px;
   font-weight: 600;
-}
-.hangrd_1 {
   background: #8b30e0;
 }
+
+/*.Loginbtn {*/
+/*  text-align:center;*/
+/*  text-decoration: none;*/
+/*  color: #000;*/
+/*}*/
+
+/*.Loginbtn span {*/
+/*  width: 370px;*/
+/*  height: 36px;*/
+/*  line-height: 36px;*/
+/*  display: block;*/
+/*  margin-top: 10px;*/
+/*  color: #fff;*/
+/*  font-size: 15px;*/
+/*  font-weight: 600;*/
+/*}*/
+/*.hangrd_1 {*/
+/*  background: #8b30e0;*/
+/*}*/
 
 .fieldset .snsArea {
   padding: 0 0 30px;
