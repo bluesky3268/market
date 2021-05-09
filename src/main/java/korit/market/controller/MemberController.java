@@ -4,6 +4,7 @@ import korit.market.Service.MemberService;
 import korit.market.dto.MemberDTO;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
+@Log4j2
 @RequestMapping("/")
 public class MemberController {
 
@@ -39,31 +41,29 @@ public class MemberController {
      */
     @GetMapping("/join")
     public String join() {
-
-        return "join";
-    }
+        return "join"; }
 
     /**
      * 회원가입
      */
 
     @PostMapping("/join")
-    @ResponseBody
-    public String join(@RequestBody MemberDTO member) {
+    public String join(MemberDTO member) {
 
-        duplicateCheckId(member.getMember_id());
+//        duplicateCheckId(member.getMember_id());
         memberService.saveMember(member);
 
+        log.info(member);
 
-        return "성공";
+        return "redirect:/";
     }
 
     /**
      * 아이디 중복 확인
      */
-    @GetMapping("/join/{id}/exist")
-    public ResponseEntity<Boolean> duplicateCheckId(@PathVariable String id) {
-        return ResponseEntity.ok(memberService.duplicateCheckMemberId(id));
-    }
+//    @GetMapping("/join/{id}/exist")
+//    public ResponseEntity<Boolean> duplicateCheckId(@PathVariable String id) {
+//        return ResponseEntity.ok(memberService.duplicateCheckMemberId(id));
+//    }
 
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
+
 <div id="wrapper">
     <div id="header">
         <div th:replace="/fragments/header.html :: header"></div>
@@ -39,7 +40,7 @@
                                 (영문소문자/숫자, 4~16자)
                             </td>
                             <td>
-                                <button th:onclick="|location.href='@{/join/{id}/exist}'|">중복확인</button>
+                               <!-- <button th:onclick="|location.href='@{/join/{id}/exist}'|">중복확인</button> -->
                             </td>
                         </tr>
                         <tr>
