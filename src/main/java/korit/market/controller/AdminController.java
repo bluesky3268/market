@@ -23,23 +23,23 @@ public class AdminController {
     private final AdminService adminService;
 
 
-    @GetMapping( "/Login")
+    @GetMapping("/Login")
     public String admin_LoginForm() {
 
         return "/admin/adminLogin";
     }
 
     @PostMapping("/Login")
-    public String admin_Login(@RequestParam Map<String, String> params, HttpSession session)  {
+    public String admin_Login(@RequestParam Map<String, String> params, HttpSession session) {
         String paramId = params.get("adminId");
         String paramPwd = params.get("adminPwd");
 
         Admin paramAdmin = new Admin(paramId, paramPwd);
 
-        if(adminService.loginCheck(paramId, paramPwd) == true) {
+        if (adminService.loginCheck(paramId, paramPwd) == true) {
             session.setAttribute("admin", paramAdmin);
-            return "/admin/itemAdd";
-        }else {
+            return "/admin/adminForm";
+        } else {
             return "/admin/loginFail";
         }
     }
@@ -50,4 +50,18 @@ public class AdminController {
         return "/admin/adminLogin";
     }
 
+    @GetMapping("/item")
+    public String adminItem() {
+        return "/admin/item";
+    }
+
+    @GetMapping("/itemList")
+    public String adminItemList() {
+        return "/admin/itemList";
+    }
+
+    @GetMapping("/memberList")
+    public String adminMemberList() {
+        return "/admin/adminMemberList";
+    }
 }
