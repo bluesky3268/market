@@ -346,7 +346,7 @@ input {
   word-wrap: break-word;
   width: 120px;
   background-color: #8b30e0;
-  color: #fff;
+  /*color: #fff;*/
 }
 
 [class^='btn']
@@ -364,7 +364,7 @@ input {
 }
 
 [class^='btn'].sizeM {
-  color: #fff;
+  /*color: #fff;*/
   width: 96px;
   padding: 10px 16px;
 }
@@ -381,7 +381,7 @@ input {
 [class^='btnSubmit']:hover,
 a[class^='btnSubmit']:hover {
   color: #fff;
-  background-color:#34016e;
+  background-color:#8b30e0;
   display: inline-block;
   box-sizing: border-box;
   padding: 2px 8px;
@@ -396,10 +396,15 @@ a[class^='btnSubmit']:hover {
   letter-spacing: 0;
   text-align: center;
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .ec-base-button::after {
   display: block;
   content: "";
   clear: both;
+}
+
+[type="button"]:hover{
+  cursor: pointer;
 }
