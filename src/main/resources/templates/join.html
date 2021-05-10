@@ -18,7 +18,7 @@
         <div th:replace="/fragments/navbar.html :: navbar"></div>
         <div id="contents_sub">
             <div class="hanblank_60"></div>
-            <form id="joinForm" name="joinForm" action="/join" method="POST">
+            <form id="joinForm" name="joinForm" action="/join" th:action="@{/join}" method="POST">
                 <h3 class=" ">기본정보</h3>
                 <p class="required">
                     <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
@@ -36,7 +36,7 @@
                             <th scope="row" valign="middle">아이디<img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
                             </th>
                             <td>
-                                <input id="member_id" name="member_id" fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity" fw-label="아이디" fw-msg="" class="inputTypeText" placeholder="" value="" th:value="" type="text"> <span id="idMsg"></span>
+                                <input id="member_id" name="member_id" fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity" fw-label="아이디" fw-msg="" class="inputTypeText" placeholder="" value="" type="text"> <span id="idMsg"></span>
                                 (영문소문자/숫자, 4~16자)
                             </td>
                             <td>
@@ -48,7 +48,7 @@
                             </th>
                             <td>
                                 <div class="eTooltip">
-                                    <input id="passwd" name="passwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="비밀번호" fw-msg="" autocomplete="off" maxlength="16" 0="disabled" value="" type="password">
+                                    <input id="passwd" name="pwd" fw-filter="isFill&amp;isMin[4]&amp;isMax[16]" fw-label="비밀번호" fw-msg="" autocomplete="off" maxlength="16" 0="disabled" value="" type="password">
                                     <div class="ec-base-tooltip typeUpper">
                                         <div class="content">
                                             <strong class="txtWarn">※ 비밀번호 입력 조건</strong>
@@ -70,7 +70,7 @@
                             <th scope="row">비밀번호 확인 <img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="" title="">
                             </th>
                             <td>
-                                <input id="user_passwd_confirm" name="user_passwd_confirm" fw-filter="isFill&amp;isMatch[passwd]" fw-label="비밀번호 확인" fw-msg="비밀번호가 일치하지 않습니다." autocomplete="off" maxlength="16" 0="disabled" value="" type="password">
+                                <input id="user_passwd_confirm" name="pwd_confirm" fw-filter="isFill&amp;isMatch[passwd]" fw-label="비밀번호 확인" fw-msg="비밀번호가 일치하지 않습니다." autocomplete="off" maxlength="16" 0="disabled" value="" type="password">
                                 <span id="pwConfirmMsg"></span>
                             </td>
                         </tr>

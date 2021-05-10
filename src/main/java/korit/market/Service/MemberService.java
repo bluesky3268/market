@@ -35,22 +35,10 @@ public class MemberService {
      * 회원가입
      */
 
-    public Member saveMember(MemberDTO memberDTO) {
+    public void saveMember(MemberDTO memberDTO) {
 
-        Member member = Member.builder()
-                .memberId(memberDTO.getMember_id())
-                .memberPwd(memberDTO.getPwd())
-                .memberName(memberDTO.getName())
-                .phoneNumber(memberDTO.getMobile())
-                .email(memberDTO.getEmail())
-                .address1(memberDTO.getAddress())
-                .address2(memberDTO.getDetailAddress())
-                .address3(memberDTO.getExtraAddress())
-                .build();
+        memberRepository.save(memberDTO.toEntity());
 
-        memberRepository.save(member);
-
-        return member;
 
     }
 

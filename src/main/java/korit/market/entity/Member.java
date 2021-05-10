@@ -2,9 +2,7 @@ package korit.market.entity;
 
 import lombok.*;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * userId      varchar(16)    not null primary key,
@@ -27,6 +25,7 @@ import javax.persistence.Id;
 public class Member {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long memberNo;
 
     private String memberId;

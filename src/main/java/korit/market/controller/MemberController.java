@@ -39,9 +39,11 @@ public class MemberController {
     /**
      * 회원가입 폼
      */
+
     @GetMapping("/join")
     public String join() {
-        return "join"; }
+        return "join";
+    }
 
     /**
      * 회원가입
@@ -50,12 +52,19 @@ public class MemberController {
     @PostMapping("/join")
     public String join(MemberDTO member) {
 
-//        duplicateCheckId(member.getMember_id());
-        memberService.saveMember(member);
-
         log.info(member);
 
-        return "redirect:/";
+        // 아이디 중복확인
+//        duplicateCheckId(member.getMember_id());
+
+        // 비밀번호 항목 2개 같은지 확인
+
+        //
+
+        // 데이터 베이스에 저장
+         memberService.saveMember(member);
+
+        return "redirect:/login";
     }
 
     /**
