@@ -2,6 +2,7 @@ package korit.market.controller;
 
 import korit.market.Service.MemberService;
 import korit.market.dto.MemberDTO;
+import korit.market.dto.MemberLoginDTO;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -29,10 +30,11 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String login(@ModelAttribute Member member, HttpSession session) {
-
-
-        return "redirect:/";
+    public String login(MemberLoginDTO member) {
+        if (memberService.login(member) == true) {
+            return "redirect:/";
+        }
+        return "redirect:/login";
     }
 
 

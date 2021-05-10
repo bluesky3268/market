@@ -11,13 +11,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class MemberLoginDTO {
-   
+
     private String member_id;
 
     private String pwd;
 
     public Member toEntity() {
-        return Member.builder().memberId(member_id).memberPwd(pwd).build();
+        return Member.builder()
+                .memberId(member_id)
+                .memberPwd(pwd)
+                .build();
 
     }
 
