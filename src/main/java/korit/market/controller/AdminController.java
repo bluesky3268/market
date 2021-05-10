@@ -2,15 +2,18 @@ package korit.market.controller;
 
 import korit.market.Service.AdminService;
 import korit.market.entity.Admin;
+import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 
@@ -61,7 +64,10 @@ public class AdminController {
     }
 
     @GetMapping("/memberList")
-    public String adminMemberList() {
+    public String adminMemberList(Model model) {
+        List<Member> members = adminService.findMembers();
+        log.info(members);
+        model.addAttribute("member", members);
         return "/admin/adminMemberList";
     }
 }

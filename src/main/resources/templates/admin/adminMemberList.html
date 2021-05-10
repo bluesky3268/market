@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>회원목록 페이지</title>
 </head>
 <body>
-회원 목록 페이지
+<h3>회원 목록 페이지</h3>
+<table>
+<thead>
+    <tr>
+        <th>회원번호</th>
+        <th>아이디</th>
+        <th>비밀번호</th>
+        <th>이름</th>
+        <th>전화번호</th>
+        <th>Email</th>
+        <th>주소</th>
+        <th>세부주소</th>
+    </tr>
+</thead>
+<tbody>
+    <tr th:each="member : ${member}">
+        <td th:text="${member.memberNo}"></td>
+        <td th:text="${member.memberId}"></td>
+        <td th:text="${member.memberPwd}"></td>
+        <td th:text="${member.memberName}"></td>
+        <td th:text="${member.phoneNumber}"></td>
+        <td th:text="${member.email}"></td>
+        <td th:text="${member.address1}"></td>
+        <td th:text="${member.address2}"></td>
+        <td th:text="${member.address3}"></td>
+    </tr>
+</tbody>
+</table>
+
 </body>
 </html>
