@@ -6,81 +6,22 @@
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
   </head>
   <body>
     <div id="wrapper">
-      <div id="header" th:replace="/fragments/header.html :: header">
-        <div id="logo">
-          <a href="/"><img alt="logo" src="img/logo.jpg" /></a>
-          <h1><a href="/">캠핑가지</a></h1>
-        </div>
-        <div class="search">
-          <form action="#" method="post">
-            <input
-              class="searchtext"
-              type="text"
-              name="search"
-              placeholder="검색어를 입력해주세요."
-              size="50"/>
-            <input class="searchsubmit" type="submit" value="검색" />
-          </form>
-        </div>
-      </div>
+      <div id="header" th:replace="/fragments/header.html :: header" />
       <!-- end #header -->
-      <div id="menu" th:replace="/fragments/navbar.html :: navbar">
-        <ul class="navbar">
-          <li class="current_page_item"><a href="/">Home</a></li>
-          <li>
-            <a href="/item/list">텐트/타프</a>
-            <ul>
-              <li><a href="/item/listdetail">리빙쉘 텐트</a></li>
-              <li><a href="#">돔형 텐트</a></li>
-              <li><a href="#">원터치 텐트</a></li>
-              <li><a href="#">렉사 타프</a></li>
-              <li><a href="#">헥사 텐트</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">테이블/체어</a>
-            <ul>
-              <li><a href="#">접이식 테이블</a></li>
-              <li><a href="#">조립식 테이블</a></li>
-              <li><a href="#">접이식 체어</a></li>
-              <li><a href="#">조립식 테이블</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">침낭/매트</a>
-            <ul>
-              <li><a href="#">4계절 침낭</a></li>
-              <li><a href="#">하계용 침낭</a></li>
-              <li><a href="#">에어매트</a></li>
-              <li><a href="#">베개/쿠션</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">밀키트</a>
-            <ul>
-              <li><a href="#">밀키트</a></li>
-              <li><a href="#">소시지/육포</a></li>
-              <li><a href="#">캔/통조림</a></li>
-            </ul>
-          </li>
-          <li><a href="/login" th:text="로그아웃">로그인</a></li>
-          <li>
-            <a href="/join">회원가입</a>
-          </li>
-        </ul>
-      </div>
+      <div id="menu" th:replace="/fragments/navbar.html :: navbar" />
+
       <div id="banner">
-        <img src="img/tent1.jpg" width="1100" height="450" alt="" />
+        <img src="/img/tent1.jpg" width="1100" height="450" alt="" />
       </div>
       <div class="productcontainer">
         <h2>이 달의 신상품</h2>
         <div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/chair2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/chair2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -88,7 +29,7 @@
             <p>가격 : <a href="#">50,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tent3.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tent3.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -96,7 +37,7 @@
             <p>가격 : <a href="#">550,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tent2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -104,7 +45,7 @@
             <p>가격 : <a href="#">100,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/chair1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/chair1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -114,11 +55,11 @@
         </div>
       </div>
       <div class="productcontainer">
-        <h2><a href="../templates/productlist.html">텐트/타프</a></h2>
-        <h4><a href="../templates/productlist.html">더보기</a></h4>
+        <h2><a href="productlist.html">텐트/타프</a></h2>
+        <h4><a href="productlist.html">더보기</a></h4>
         <div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tarp1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tarp1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -126,7 +67,7 @@
             <p>가격 : <a href="#">70,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tent1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tent1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -134,7 +75,7 @@
             <p>가격 : <a href="#">150,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tent2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -142,7 +83,7 @@
             <p>가격 : <a href="#">100,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tarp2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tarp2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -150,11 +91,11 @@
             <p>가격 : <a href="#">550,000원</a></p>
           </div>
         </div>
-        <h2><a href="../templates/productlist.html">테이블/체어</a></h2>
-        <h4><a href="../templates/productlist.html">더보기</a></h4>
+        <h2><a href="productlist.html">테이블/체어</a></h2>
+        <h4><a href="productlist.html">더보기</a></h4>
         <div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/chair1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/chair1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -162,7 +103,7 @@
             <p>가격 : <a href="#">70,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/hammock.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/hammock.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -170,7 +111,7 @@
             <p>가격 : <a href="#">50,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/chair2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/chair2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -178,7 +119,7 @@
             <p>가격 : <a href="#">100,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/table2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/table2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -186,12 +127,12 @@
             <p>가격 : <a href="#">50,000원</a></p>
           </div>
         </div>
-        <h2><a href="../templates/productlist.html">침낭/매트</a></h2>
-        <h4><a href="../templates/productlist.html">더보기</a></h4>
+        <h2><a href="productlist.html">침낭/매트</a></h2>
+        <h4><a href="productlist.html">더보기</a></h4>
         <div>
           <div class="newthumb">
             <a href="#"
-              ><img alt="new1" src="img/sleepingbag.jpg"
+              ><img alt="new1" src="/img/sleepingbag.jpg"
             /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
@@ -201,7 +142,7 @@
           </div>
           <div class="newthumb">
             <a href="#"
-              ><img alt="new1" src="img/sleepigbag2.jpg"
+              ><img alt="new1" src="/img/sleepigbag2.jpg"
             /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
@@ -210,7 +151,7 @@
             <p>가격 : <a href="#">150,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/pillow1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/pillow1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -218,7 +159,7 @@
             <p>가격 : <a href="#">40,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tarp2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tarp2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -226,11 +167,11 @@
             <p>가격 : <a href="#">550,000원</a></p>
           </div>
         </div>
-        <h2><a href="../templates/productlist.html">밀키트</a></h2>
-        <h4><a href="../templates/productlist.html">더보기</a></h4>
+        <h2><a href="productlist.html">밀키트</a></h2>
+        <h4><a href="productlist.html">더보기</a></h4>
         <div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tarp1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tarp1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -238,7 +179,7 @@
             <p>가격 : <a href="#">70,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tent1.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tent1.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -246,7 +187,7 @@
             <p>가격 : <a href="#">150,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tent2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>
@@ -254,7 +195,7 @@
             <p>가격 : <a href="#">100,000원</a></p>
           </div>
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="img/tarp2.jpg" /></a>
+            <a href="#"><img alt="new1" src="/img/tarp2.jpg" /></a>
             <p>
               <a href="#"><b>브랜드</b></a>
             </p>

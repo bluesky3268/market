@@ -39,7 +39,19 @@
                 <li><a href="#">캔/통조림</a></li>
             </ul>
         </li>
-        <li><a href="/login">로그인</a></li>
+
+        <th:block th:unless="${#strings.isEmpty(session.id)}">
+            <li><a th:href="@{/logout}">
+                <th:block th:text="${session.id}"/>
+            </a></li>
+        </th:block>
+        <th:block th:if="${#strings.isEmpty(session.id)}">
+            <li><a th:href="@{/login}">
+                로그인
+            </a></li>
+        </th:block>
+
+<!--        <li><a href="/login">로그인</a></li>-->
         <li>
             <a href="/join">회원가입</a>
         </li>

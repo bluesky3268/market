@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
@@ -15,27 +16,45 @@ import javax.servlet.http.HttpSession;
 @Controller
 @RequiredArgsConstructor
 @Log4j2
-@RequestMapping("/")
 public class MemberController {
 
     private final MemberService memberService;
 
+    @RequestMapping("/")
     public String basic() {
         return "index";
     }
+
+    /**
+     * 로그인 폼
+     */
 
     @GetMapping("/login")
     public String login() {
         return "login";
     }
 
+    /**
+     * 로그인 처리
+     */
     @PostMapping("/login")
-    public String login(MemberLoginDTO member) {
+    public String login(MemberLoginDTO member, HttpSession session) {
         if (memberService.login(member) == true) {
+            String login_id = member.getMember_id();
+
+            session.setAttribute("id", login_id);
+
             return "redirect:/";
         }
         return "redirect:/login";
     }
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
+    }
+
 
 
     /**
