@@ -8,6 +8,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@Setter
 @ToString
 @Builder
 public class Orders {
@@ -46,20 +47,26 @@ foreign key(cartStock) references cart(cartStock)
 
     private Integer itemPrice;
 
-    private Integer cartStock;  // 주문 수량
+    @Column
+    private String addr1;     // 주소(우편번호_zipcode)
 
     @Column
-    private String address;     // 주소
+    private String addr2;     // 주소(기본주소)
+
+    @Column
+    private String addr3;     // 주소(상세주소_주문자가 작성)
+
+    // buyDate (생성예정)
 
     // 참조값
 
-    @ManyToOne
-    private Member member;
+    @OneToOne
+    private Member memberId;
 
     @ManyToOne
     private Item item;
 
-    @ManyToOne
-    private Cart cart;
+    @OneToOne
+    private Cart cartStock;     // 주문 수량
 
     }
