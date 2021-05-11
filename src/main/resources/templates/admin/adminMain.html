@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/adminMain.css"/>
 </head>
 <body>
-  <a href="/admin/logout">로그아웃</a>
-<ul>
-  <li><a href="/admin/itemList">상품목록</a></li>
-</ul>
-<ul>
-  <li><a href="/admin/memberList">회원목록</a></li>
-</ul>
+<div class="container">
+    <ul class="logout">
+        <a href="/admin/logout"><span>로그아웃</span></a>
+    </ul>
+    <ul>
+        <li><a href="/admin/itemList"><span>상품목록</span></a></li>
+    </ul>
+    <ul>
+        <li><a href="/admin/memberList"><span>회원목록</span></a></li>
+    </ul>
+</div>
 </body>
 </html>
