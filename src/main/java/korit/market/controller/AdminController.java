@@ -27,21 +27,20 @@ public class AdminController {
 
 
     @GetMapping("/Login")
-    public String admin_LoginForm() {
-
+    public String admin_LoginForm(HttpSession session) {
         return "/admin/adminLogin";
     }
 
     @PostMapping("/Login")
     public String admin_Login(@RequestParam Map<String, String> params, HttpSession session) {
+
         String paramId = params.get("adminId");
         String paramPwd = params.get("adminPwd");
-
         Admin paramAdmin = new Admin(paramId, paramPwd);
 
         if (adminService.loginCheck(paramId, paramPwd) == true) {
             session.setAttribute("admin", paramAdmin);
-            return "/admin/adminForm";
+            return "redirect:/admin/adminMain";
         } else {
             return "/admin/loginFail";
         }
@@ -52,6 +51,12 @@ public class AdminController {
         session.invalidate();
         return "/admin/adminLogin";
     }
+
+    @GetMapping("/adminMain")
+    public String main() {
+        return "/admin/adminMain";
+    }
+
 
     @GetMapping("/item")
     public String adminItem() {
