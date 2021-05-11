@@ -62,6 +62,8 @@ public class AdminService {
      * 상품 등록
      */
     public void addItem(ItemAddDTO item) {
+        log.info("adminService_itemDTO : " + item);
+
         itemRepository.save(item.toEntity());
     }
 

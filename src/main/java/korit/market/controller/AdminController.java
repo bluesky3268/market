@@ -80,6 +80,7 @@ public class AdminController {
 
     @PostMapping("/itemAdd")
     public String itemAdd(ItemAddDTO itemDTO){
+        log.info("itemAdd_PostMapping) : " + itemDTO);
         adminService.addItem(itemDTO);
         return "redirect:/admin/itemList";
     }

@@ -16,9 +16,9 @@ public class ItemAddDTO {
 
     private String itemName;
 
-    private Integer itemPrice;
+    private int itemPrice;
 
-    private Integer itemQuantity;
+    private int itemQuantity;
 
     private String itemInfo;
 
