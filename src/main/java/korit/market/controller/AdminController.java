@@ -5,6 +5,7 @@ import korit.market.dto.ItemAddDTO;
 import korit.market.entity.Admin;
 import korit.market.entity.Item;
 import korit.market.entity.Member;
+import korit.market.entity.Orders;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
@@ -73,6 +74,13 @@ public class AdminController {
 //        log.info(members);
         model.addAttribute("member", members);
         return "/admin/adminMemberList";
+    }
+
+    @GetMapping("/orderList")
+    public String adminOrderList(Model model) {
+        List<Orders> orders = adminService.findOrders();
+        model.addAttribute("orders", orders);
+        return "/admin/orderList";
     }
 
 
