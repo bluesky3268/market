@@ -79,20 +79,39 @@ public class AdminController {
     }
 
     @PostMapping("/itemAdd")
-    public String itemAdd(ItemAddDTO itemDTO){
-        log.info("itemAdd_PostMapping) : " + itemDTO);
-        adminService.addItem(itemDTO);
+    public String itemAdd(Item item){
+        log.info("itemAdd_PostMapping : " + item);
+        adminService.addItem(item);
         return "redirect:/admin/itemList";
     }
 
     @GetMapping("/item/{id}/edit")
-    public String itemEdit(@PathVariable("id") String id, Model model) {
+    public String itemEdit(@PathVariable("id") Long id, Model model) {
 
-        Long itemId = Long.parseLong(id);
-        Item findItem = adminService.findItem(itemId);
-        log.info("itemEdit_findItem : " + findItem);
+        Item findItem = adminService.findItem(id);
+
+//        ItemAddDTO form = new ItemAddDTO();
+//        form.setItemNo(findItem.getItemNo());
+//        form.setItemName(findItem.getItemName());
+//        form.setItemPrice(findItem.getItemPrice());
+//        form.setItemQuantity(findItem.getItemQuantity());
+//        form.setItemInfo(findItem.getItemInfo());
+//        form.setItemImg(findItem.getItemImg());
 
         model.addAttribute("item", findItem);
         return "admin/itemEdit";
+    }
+
+    @PostMapping("/item/{id}/edit")
+    public String updateItem(@PathVariable("id") String id, @ModelAttribute Item item) {
+        Long itemId = Long.parseLong(id);
+        log.info("update item id = " + itemId);
+
+        item.setItemNo(itemId);
+        log.info("before update : " + item);
+
+        adminService.addItem(item);
+
+        return "redirect:/admin/itemList";
     }
 }

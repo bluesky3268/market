@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Data
@@ -14,6 +15,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemAddDTO {
+
+    private Long itemNo;
 
     private String itemName;
 
@@ -25,15 +28,8 @@ public class ItemAddDTO {
 
     private String itemImg;
 
-    public Item toEntity() {
-        return Item.builder()
-                .itemName(itemName)
-                .itemPrice(itemPrice)
-                .itemQuantity(itemQuantity)
-                .itemInfo(itemInfo)
-                .itemImg(itemImg)
-                .itemRegDate(new Timestamp(System.currentTimeMillis()))
-                .build();
-    }
+    private String itemRegDate =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis());
+
+
 
 }

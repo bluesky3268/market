@@ -8,14 +8,14 @@
 <h3>상품 수정</h3>
 <a th:href="@{/admin/itemList}">뒤로</a>
 <h3>상품 등록하기</h3>
-<form th:action="@{/admin/itemAdd}" th:object="${item}"  method="post">
+<form th:action="@{/admin/item/{id}/edit(id=${item.itemNo})}" th:object="${item}"  method="post">
     <div>
         <label>상품번호</label>
-        <input type="text" th:value="${item.itemNo}">
+        <input type="text" th:value="${item.itemNo}" readonly="readonly">
     </div>
     <div>
         <label th:for="itemName" >상품명</label>
-        <input type="text" th:value="${item.itemName}" name="itemName" placeholder="상품명을 입력하세요">
+        <input type="text" th:value="${item.itemName}" name="itemName" readonly="readonly">
     </div>
 
     <div>

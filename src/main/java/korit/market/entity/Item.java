@@ -3,7 +3,7 @@ package korit.market.entity;
 import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * itemsNo bigint not null auto_increment primary key,
@@ -17,14 +17,13 @@ import java.util.Date;
  */
 
 @Entity
-@Getter
-@ToString
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class Item {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long itemNo;
 
     @Column(length = 50, nullable = false)
@@ -40,7 +39,7 @@ public class Item {
     @Column(length = 500, nullable = false)
     private String itemImg;
 
-    private Date itemRegDate;
+    private String itemRegDate =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis());
 
     @ManyToOne
     private Category category;
