@@ -91,6 +91,13 @@ table {
 label {
   cursor: default;
 }
+
+#wrapper2{
+  width: 1200px;
+  margin: 0px auto;
+  padding: 0px 0px 0px 0px;
+  background: #FFFFFF;
+}
 .calculation1 {
   clear: both;
   border: solid 1px #e0e0eb;
