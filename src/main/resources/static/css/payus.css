@@ -94,8 +94,8 @@ label {
 
 #wrapper2{
   width: 1100px;
-  margin: 0px auto;
-  padding: 0px 50px 0px 50px;
+  margin: 0px 50px;
+  padding: 0px 0px 0px 0px;
   background: #FFFFFF;
 }
 .calculation1 {
@@ -208,6 +208,7 @@ table.type10 th {
   float: right;
 }
 
+/*
 .navbar ol {
   background-color: purple;
   padding: 6px;
@@ -217,6 +218,7 @@ table.type10 th {
   display: inline;
   margin: 0 10px;
 }
+*/
 
 .title2 {
   font-size: larger;
@@ -226,9 +228,12 @@ table.type10 th {
   display: inline;
 }
 
+/*
 .navbar li a {
   color: white;
 }
+*/
+
 .top-menu li {
   justify-content: space-between;
 }
