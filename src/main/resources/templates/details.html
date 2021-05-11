@@ -7,7 +7,7 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"/>
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
     <link rel="stylesheet" href="/css/itemsViewDefault.css" />
     <link rel="stylesheet" href="/css/itemsViewStyle.css"/>
 </head>
@@ -15,20 +15,19 @@
 <script>
     $(".btns1 #btnCart").click(function() {
         // 장바구니 페이지로 이동
-        location.href="cart.html"
+        location.href="cart"
     });
+
     $(".btns2 #btnBuy").click(function() {
         // 장바구니 페이지로 이동
-        location.href="payus.html"
+        location.href="payment"
     });
 </script>
 
 <body>
 <div id="wrapper">
     <div th:replace="/fragments/header.html :: header" />
-
     <div th:replace="/fragments/navbar.html :: navbar"/>
-
 
     <div class="items_view" div-align="center">
         <br>
@@ -100,11 +99,10 @@
         <br>
 
         <div class="btns">
-            <a href="cart.html" class="btn1" id="btnCart">장바구니</a>
-            <a href="payus.html" class="btn2" id="btnBuy">구매하기</a>
+            <a class="btn1" id="btnCart" th:href="@{/item/cart}">장바구니</a>
+            <a class="btn2" id="btnBuy" th:href="@{/item/payment}">구매하기</a>
         </div>
     </div>
-</div>
 
 <br>
 
@@ -114,6 +112,7 @@
             <a href="https://unsplash.com/">Fotogrph</a>
         </p>
     </div>
+</div>
 </body>
 
 </html>

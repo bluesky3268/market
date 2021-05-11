@@ -24,4 +24,10 @@ public class ItemController {
         return "details";
     }
 
+    @GetMapping("/cart")
+    public String cart() { return "cart"; }
+
+    @GetMapping("/payment")
+    public String payment() { return "payus"; }
+
 }

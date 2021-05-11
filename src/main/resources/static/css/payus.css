@@ -91,6 +91,13 @@ table {
 label {
   cursor: default;
 }
+
+#wrapper2{
+  width: 1100px;
+  margin: 0px auto;
+  padding: 0px 50px 0px 50px;
+  background: #FFFFFF;
+}
 .calculation1 {
   clear: both;
   border: solid 1px #e0e0eb;
@@ -165,6 +172,7 @@ label {
 .btnfloat2 {
   float: right;
 }
+
 table.type10 td {
   width: 350px;
   padding: 10px;
@@ -176,6 +184,13 @@ table.type10 td {
 table.type10 th {
   background-color: rgba(53, 50, 54, 0.075);
   font-size: larger;
+}
+
+.orderArea {
+  width: 1100px;
+  margin: 0px auto;
+  padding: 0px 50px 0px 50px;
+  align-content: center;
 }
 
 .top-menu {
@@ -549,6 +564,11 @@ a.btnAgree {
 
 #titleArea1 {
   font-size: 20px;
+  width: 850px;
+  height: 100px;
+  margin: 0px auto 0px auto;
+  color: rebeccapurple;
+  text-align: center;
 }
 
 #msg {
@@ -567,6 +587,7 @@ a.btnAgree {
 
 #content1 {
   font-size: 1.5em;
+  margin-left: 50px;
   margin-bottom: 10px;
 }
 
@@ -574,5 +595,3 @@ a.btnAgree {
   font-size: 1.5em;
   margin-top: 60px;
 }
-
-
