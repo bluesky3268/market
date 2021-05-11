@@ -19,7 +19,7 @@
 <body>
 <div id="wrapper">
 
-    <div th:replace="/fragments/header,html :: header"></div>
+    <div th:replace="/fragments/header.html :: header"></div>
    <div th:replace="/fragments/navbar.html :: navbar"></div>
 
     <div id="header">
@@ -93,7 +93,12 @@
             </div>
 
             <!--상품정보 테이블-->
-
+            <div align="center">
+                <div id="titleArea1">
+                    <h2>주문서 작성</h2>
+                </div>
+            </div>
+            <p></p>
             <div>
                 <table class="calculation1">
                     <thead>
@@ -107,7 +112,6 @@
                         <th style="width: 500px;"><span>상품정보</span></th>
                         <th style= "width: 100px;">판매가</th>
                         <th>수량</th>
-                        <th style= "width: 100px;">배송비</th>
                         <th style= "width: 100px;">합계</th>
                     </tr>
                     </thead>
@@ -124,7 +128,6 @@
                         <td style="width: 80px;">
                             <span>1</span>
                         </td>
-                        <td>무료배송</td>
                         <td><span>34,000</span>원</td>
                     </tr>
 
@@ -138,7 +141,6 @@
                         <td style="width: 80px;">
                             <span>1</span>
                         </td>
-                        <td>무료배송</td>
                         <td><span>34,000</span>원</td>
                     </tr>
                     </tbody>
@@ -148,8 +150,7 @@
                             <span>[기본배송]</span>
                         </td>
                         <td colspan="5" style="border-left: none; text-align: right; padding-right: 10px;">
-                            상품금액 <span> 34,000 </span>+<span>배송비 0 = 합계 </span>&nbsp; <span style="font-weight: bold; font-size: 10pt;">
-                    </span>
+                            <span>   총 금액 68,000원     </span>&nbsp; <span style="font-weight: bold; font-size: 10pt;"/>
                         </td>
                     </tr>
                     </tfoot>
@@ -162,8 +163,6 @@
         </div>
 
         <div style="margin: 10px 0; padding-bottom: 50px; border-bottom: solid 1px gray;">
-            <span style="margin: 0 10px;" class="btnfloat">선택상품을</span>
-            <button type="button" class="btn default btnfloat" id="choiceProductDelete" style="background-color: gray;; color: #fff;"> x 삭제하기</button>
             <button type="button" class="btn default btnfloat2" onclick="javascript: history.back()">이전페이지></button>
         </div>
         <br/>
@@ -172,11 +171,6 @@
 
     </div>
     <!--배송정보 적는 테이블-->
-    <div align="center">
-        <div id="titleArea1">
-            <h2>주문서 작성</h2>
-        </div>
-    </div>
 
     <div id="content1">
         <h3>배송상품 주문내역</h3>

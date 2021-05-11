@@ -8,6 +8,7 @@ a:hover {
   text-decoration: none;
 }
 
+
 a {
   text-decoration: none;
   color: #000;
@@ -556,6 +557,11 @@ a.btnAgree {
 
 #titleArea1 {
   font-size: 20px;
+  width: 850px;
+  height: 100px;
+  margin: 0px auto 0px auto;
+  color: rebeccapurple;
+  text-align: center;
 }
 
 #msg {
