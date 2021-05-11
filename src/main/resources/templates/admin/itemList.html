@@ -7,6 +7,7 @@
 <body>
 <a th:href="@{/admin/adminMain}">뒤로</a>
 <h3>상품목록 페이지</h3>
+<a th:href="@{/admin/itemAdd}">상품등록</a>
 <table>
     <thead>
     <tr>
@@ -15,6 +16,7 @@
         <th>상품가격</th>
         <th>재고수량</th>
         <th>상품등록일자</th>
+        <th>기타</th>
 
     </tr>
     </thead>
@@ -25,6 +27,7 @@
         <td th:text="${item.itemPrice}"></td>
         <td th:text="${item.itemQuantity}"></td>
         <td th:text="${item.itemRegDate}"></td>
+        <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>
     </tr>
     </tbody>
 </table>

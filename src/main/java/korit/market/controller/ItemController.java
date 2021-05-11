@@ -24,13 +24,4 @@ public class ItemController {
         return "details";
     }
 
-    @GetMapping("/add")
-    public String item_addForm(){
-        return "itemAdd";
-    }
-
-    @PostMapping("/add")
-    public String item_add(){
-        return "/index";
-    }
 }

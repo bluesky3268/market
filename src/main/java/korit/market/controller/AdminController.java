@@ -1,6 +1,7 @@
 package korit.market.controller;
 
 import korit.market.Service.AdminService;
+import korit.market.dto.ItemAddDTO;
 import korit.market.entity.Admin;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
@@ -53,15 +54,10 @@ public class AdminController {
     }
 
     @GetMapping("/adminMain")
-    public String main() {
+    public String adminMainPage() {
         return "/admin/adminMain";
     }
 
-
-    @GetMapping("/item")
-    public String adminItem() {
-        return "/admin/item";
-    }
 
     @GetMapping("/itemList")
     public String adminItemList() {
@@ -74,5 +70,17 @@ public class AdminController {
         log.info(members);
         model.addAttribute("member", members);
         return "/admin/adminMemberList";
+    }
+
+
+    @GetMapping("/itemAdd")
+    public String itemAdd() {
+        return "/admin/itemAdd";
+    }
+
+    @PostMapping("/itemAdd")
+    public String itemAdd(ItemAddDTO itemDTO){
+        adminService.addItem(itemDTO);
+        return "redirect:/admin/itemList";
     }
 }

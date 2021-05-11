@@ -1,18 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>상품 등록</title>
 </head>
 <body>
-<a href="/admin/logout">로그아웃</a>
-<form action="/item/add" method="post">
-    상품명 : <input type="text" name="itemName"/><br/>
-    가격 : <input type="text" name="price"/><br/>
-    수량 : <input type="text" name="quantity"/><br/>
-    상세보기 :
-    <button type="submit">저장</button>
-    <button type="reset">취소</button>
-</form>
+<a th:href="@{/admin/itemList}">뒤로</a>
+<h3>상품 등록하기</h3>
+    <form th:action="@{admin/itemAdd}"  method="post">
+        <div>
+            <label th:for="itemName">상품명</label>
+            <input type="text"  placeholder="상품명을 입력하세요">
+        </div>
+
+        <div>
+            <label th:for="itemPrice">가격</label>
+            <input type="text"  placeholder="상품 가격을 입력하세요">
+        </div>
+
+        <div>
+            <label th:for="itemQuantity">상품명</label>
+            <input type="text"  placeholder="수량을 입력하세요">
+        </div>
+
+        <div>
+        <label th:for="itemInfo">상품설명</label>
+            <textarea  cols="50" rows="10" placeholder="상품 상세설명을 입력하세요"></textarea>
+        </div>
+
+        <button type="submit">등록</button>
+        <button type="reset">취소</button>
+    </form>
 </body>
 </html>
