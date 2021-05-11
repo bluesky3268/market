@@ -42,8 +42,10 @@
         <div clss="logout">
             <th:block th:unless="${#strings.isEmpty(session.id)}">
                 <li>
-                    <a><th:block th:text="${session.id}"/></a>
-<!--                    <ul><a href="#">마이페이지</a></ul>-->
+                    <a>
+                        <th:block th:text="${session.id}"/>
+                    </a>
+                    <!--                    <ul><a href="#">마이페이지</a></ul>-->
                     <ul><a th:href="@{/logout}">로그아웃</a></ul>
                 </li>
             </th:block>
@@ -54,8 +56,7 @@
             </a></li>
         </th:block>
 
-
-<!--        <li><a href="/login">로그인</a></li>-->
+        <!--        <li><a href="/login">로그인</a></li>-->
         <li>
             <a href="/join">회원가입</a>
         </li>

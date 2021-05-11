@@ -5,8 +5,8 @@ import lombok.*;
 import javax.persistence.*;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
+@NoArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -18,7 +18,6 @@ public class PayForm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="payForm_Id")
     private Long Id;
-
 
     @Column
     private String receiver;
@@ -43,5 +42,6 @@ public class PayForm {
 
     @OneToOne
     private Member member;
+
 
 }

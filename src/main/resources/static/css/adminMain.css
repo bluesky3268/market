@@ -1,0 +1,41 @@
+.container {
+    font-size: 18px;
+}
+
+.logout {
+    width: 100px;
+    height: 15px;
+    background-color: #a76ddb;
+    margin: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #75328a;
+    border-radius: 10px;
+    padding: 40px;
+    opacity: 70%;
+
+}
+
+span {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.container ul {
+    width: 100px;
+    height: 30px;
+    background-color: #a76ddb;
+    margin: 40px;
+    margin-bottom: 20px;
+    border: 2px solid #75328a;
+    border-radius: 10px;
+    padding: 10px;
+    text-algin: center;
+    color: #fff;
+}
+
+li {
+    text-align: center;
+
+}
