@@ -27,14 +27,17 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemNo;
 
+    @Column(length = 50, nullable = false)
     private String itemName;
 
     private Integer itemPrice;
 
-    private Integer itemQuantity;
+    private Integer itemQuantity;   // 재고 수량
 
+    @Column(length = 500, nullable = false)
     private String itemInfo;
 
+    @Column(length = 500, nullable = false)
     private String itemImg;
 
     private Date itemRegDate;
