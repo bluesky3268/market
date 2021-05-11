@@ -3,6 +3,7 @@ package korit.market.controller;
 import korit.market.Service.AdminService;
 import korit.market.dto.ItemAddDTO;
 import korit.market.entity.Admin;
+import korit.market.entity.Item;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -60,14 +61,16 @@ public class AdminController {
 
 
     @GetMapping("/itemList")
-    public String adminItemList() {
+    public String adminItemList(Model model) {
+        List<Item> items = adminService.findItems();
+        model.addAttribute("items", items);
         return "/admin/itemList";
     }
 
     @GetMapping("/memberList")
     public String adminMemberList(Model model) {
         List<Member> members = adminService.findMembers();
-        log.info(members);
+//        log.info(members);
         model.addAttribute("member", members);
         return "/admin/adminMemberList";
     }

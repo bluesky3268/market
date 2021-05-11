@@ -43,9 +43,6 @@ public class Item {
     private Date itemRegDate;
 
     @ManyToOne
-    private Orders order;
-
-    @ManyToOne
     private Category category;
 
 

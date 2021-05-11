@@ -21,13 +21,13 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="item : ${item}">
-        <td th:text="${item.itemNo}"></td>
-        <td th:text="${item.itemName}"></td>
-        <td th:text="${item.itemPrice}"></td>
-        <td th:text="${item.itemQuantity}"></td>
-        <td th:text="${item.itemRegDate}"></td>
-        <a href="#" th:href="@{/items/{id}/edit (id=${item.id})}" class="btn btn-primary" role="button">수정</a>
+    <tr th:each="items : ${items}">
+        <td th:text="${items.itemNo}"></td>
+        <td th:text="${items.itemName}"></td>
+        <td th:text="${items.itemPrice}"></td>
+        <td th:text="${items.itemQuantity}"></td>
+        <td th:text="${items.itemRegDate}"></td>
+<!--        <a href="#" th:href="@{/items/{id}/edit (id=${items.id})}" class="btn btn-primary" role="button">수정</a>-->
     </tr>
     </tbody>
 </table>

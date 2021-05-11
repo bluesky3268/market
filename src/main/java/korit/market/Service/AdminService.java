@@ -63,7 +63,6 @@ public class AdminService {
      */
     public void addItem(ItemAddDTO item) {
         log.info("adminService_itemDTO : " + item);
-
         itemRepository.save(item.toEntity());
     }
 
