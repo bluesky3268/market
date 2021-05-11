@@ -16,7 +16,6 @@ import javax.persistence.*;
  foreign key(itemsNo) references items(itemsNo),
  foreign key(itemsName) references items(itemsName),
  foreign key(itemsPrice) references items(itemsPrice)
- ) ENGINE = innoDB default charset=utf8;
  */
 
 @Entity
@@ -31,8 +30,21 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cartNo;
 
-//    // 참조값
-//    @ManyToOne
-//    private Member memberId;
+    private Long itemNo;
+
+    @Column(length = 50, nullable = false)
+    private String itemName;
+
+    private Integer itemPrice;
+
+    private Integer cartStock;  // 주문 수량
+
+    // 참조값
+
+    @ManyToOne
+    private Orders order;
+
+    @ManyToOne
+    private Item item;
 
 }
