@@ -15,6 +15,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -61,6 +62,15 @@ public class AdminService {
         return items;
     }
 
+
+    /**
+     * 전체 주문 조회
+     */
+    public List<Orders> findOrders() {
+        List<Orders> orders = orderRepository.findAll();
+        return orders;
+    }
+
     /**
      * 상품 등록
      */
@@ -70,11 +80,12 @@ public class AdminService {
     }
 
     /**
-     * 전체 주문 조회
+     * 단일 상품 조회
      */
-    public List<Orders> findOrders() {
-        List<Orders> orders = orderRepository.findAll();
-        return orders;
+    public Item findItem(Long itemNo) {
+        Item findItem = itemRepository.findByItemNo(itemNo);
+        log.info("adminService_findItem : " + findItem);
+        return findItem;
     }
 
 }

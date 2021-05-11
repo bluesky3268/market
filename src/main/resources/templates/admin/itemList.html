@@ -26,7 +26,9 @@
         <td th:text="${items.itemPrice}"></td>
         <td th:text="${items.itemQuantity}"></td>
         <td th:text="${items.itemRegDate}"></td>
-<!--        <a href="#" th:href="@{/items/{id}/edit (id=${items.id})}" class="btn btn-primary" role="button">수정</a>-->
+        <td>
+        <a href="#" th:href="@{/admin/item/{id}/edit (id=${items.itemNo})}" class="btn btn-primary" role="button">수정</a>
+        </td>
     </tr>
     </tbody>
 </table>
