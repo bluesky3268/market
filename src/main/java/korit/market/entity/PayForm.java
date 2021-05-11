@@ -4,6 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@Builder
 @NoArgsConstructor
 @Getter
 @Setter
@@ -16,10 +18,6 @@ public class PayForm {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="payForm_Id")
     private Long Id;
-
-    //member를 참조하는 외래키
-    private Long memberId;
-
 
     @Column
     private String receiver;
@@ -41,6 +39,9 @@ public class PayForm {
 
     @Column
     private String memo;
+
+    @OneToOne
+    private Member member;
 
 
 }
