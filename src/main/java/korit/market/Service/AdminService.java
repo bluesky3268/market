@@ -3,11 +3,13 @@ package korit.market.Service;
 import korit.market.Repository.AdminRepository;
 import korit.market.Repository.ItemRepository;
 import korit.market.Repository.MemberRepository;
+import korit.market.Repository.OrderRepository;
 import korit.market.dto.ItemAddDTO;
 import korit.market.dto.MemberDTO;
 import korit.market.entity.Admin;
 import korit.market.entity.Item;
 import korit.market.entity.Member;
+import korit.market.entity.Orders;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -24,6 +26,7 @@ public class AdminService {
     private final AdminRepository adminRepository;
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
+    private final OrderRepository orderRepository;
 
     /**
      * 관리자 추가
@@ -76,7 +79,6 @@ public class AdminService {
         itemRepository.save(item.toEntity());
     }
 
-<<<<<<< HEAD
     /**
      * 단일 상품 조회
      */
@@ -85,7 +87,6 @@ public class AdminService {
         log.info("adminService_findItem : " + findItem);
         return findItem;
     }
-=======
->>>>>>> 1525ea36b7eac4ecc8ada1943ffd69d565efcee9
+
 
 }
