@@ -37,7 +37,7 @@
 
     <div>
         <label th:for="itemInfo">상품설명</label>
-        <textarea  cols="50" rows="10" th:value="${item.itemInfo}"  name="itemInfo" placeholder="상품 상세설명을 입력하세요"></textarea>
+        <textarea  cols="50" rows="10" th:value="${item.itemInfo}" th:text="${item.itemInfo}" name="itemInfo" placeholder="상품 상세설명을 입력하세요"></textarea>
     </div>
 
     <div>
