@@ -1,16 +1,12 @@
 package korit.market.Service;
 
 import korit.market.Repository.*;
-import korit.market.dto.ItemAddDTO;
-import korit.market.dto.MemberDTO;
 import korit.market.entity.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.Optional;
 
 
 @Service
@@ -21,7 +17,7 @@ public class AdminService {
     private final AdminRepository adminRepository;
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
-    private final OrderRepository orderRepository;
+    private final CartRepository orderRepository;
     private final CategoryRepository categoryRepository;
 
     /**
