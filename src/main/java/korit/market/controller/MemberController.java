@@ -50,6 +50,10 @@ public class MemberController {
         return "redirect:/login";
     }
 
+
+    /**
+     * 로그아웃
+     */
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
@@ -72,15 +76,23 @@ public class MemberController {
      */
 
     @PostMapping("/join")
-    public String join(MemberDTO member, RedirectAttributes redirectAttributes) {
+    public String join(MemberDTO member, RedirectAttributes redirectAttributes, Model model) {
 
         log.info(member);
+        model.addAttribute("member", member);
 
         // 아이디 중복확인(true == 중복되는 아이디 존재함)
         if (memberService.duplicateCheckMemberId(member.getMember_id())) {
             log.info("아이디 중복");
             redirectAttributes.addAttribute("status", true);
             return "redirect:/join";
+        }else{
+            if(!member.getPwd().equals(member.getPwd_confirm())){
+                log.info("입력한 비밀번호가 같지 않음");
+                redirectAttributes.addAttribute("pwdStatus", true);
+                return "redirect:/join";
+            }
+
         }
         // false일 경우 데이터 베이스에 저장
         memberService.saveMember(member);
@@ -88,12 +100,7 @@ public class MemberController {
         return "redirect:/login";
     }
 
-    /**
-     * 아이디 중복 확인
-     */
-//    @GetMapping("/join/{id}/exist")
-//    public ResponseEntity<Boolean> duplicateCheckId(@PathVariable String id) {
-//        return ResponseEntity.ok(memberService.duplicateCheckMemberId(id));
-//    }
+
+
 
 }

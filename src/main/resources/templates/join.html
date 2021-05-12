@@ -36,7 +36,8 @@
                             <th scope="row" valign="middle">아이디<img src="//img.echosting.cafe24.com/skin/base/common/ico_required_blue.gif" alt="필수">
                             </th>
                             <td>
-                                <input id="member_id" name="member_id" fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity" fw-label="아이디" fw-msg=""
+                                <input id="member_id" name="member_id"
+                                       fw-filter="isFill&amp;isFill&amp;isMin[4]&amp;isMax[16]&amp;isIdentity" fw-label="아이디" fw-msg=""
                                        class="inputTypeText" placeholder="" value="" type="text"> <span id="idMsg"></span>
                                 (영문소문자/숫자, 4~16자) <div th:if="${param.status}" th:text="'중복된 아이디입니다.'" style="color: red"></div>
                             </td>
@@ -61,6 +62,7 @@
                                         <span class="edge"></span>
                                     </div>
                                 </div>
+                                <div th:if="${param.pwdStatus}" th:text="'입력하신 비밀번호가 같지 않습니다..'" style="color: red"></div>
                                 (영문 대소문자/숫자/특수문자 중 2가지 이상 조합, 10자~16자)
                             </td>
                         </tr>
