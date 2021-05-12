@@ -7,13 +7,14 @@ import javax.persistence.Id;
 
 @Entity
 @Builder
-@Getter
-@ToString
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Category {
 
     @Id
-    private Long category_id;
+    private Long categoryId;
+
+    private String categoryName;
 
 }

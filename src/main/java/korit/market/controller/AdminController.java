@@ -4,6 +4,7 @@ import korit.market.Service.AdminService;
 import korit.market.Service.ItemService;
 import korit.market.dto.ItemAddDTO;
 import korit.market.entity.Admin;
+import korit.market.entity.Category;
 import korit.market.entity.Item;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,20 @@ public class AdminController {
 
     private final AdminService adminService;
 
+    /**
+     * 관리자 메인페이지
+     */
+
+    @GetMapping("/adminMain")
+    public String adminMainPage() {
+        return "/admin/adminMain";
+    }
+
+
+    /**
+     * 로그인
+     */
+
     @GetMapping("/Login")
     public String admin_LoginForm(HttpSession session) {
         return "/admin/adminLogin";
@@ -45,25 +60,20 @@ public class AdminController {
         }
     }
 
+    /**
+     * 로그아웃
+     */
+
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
         return "/admin/adminLogin";
     }
 
-    @GetMapping("/adminMain")
-    public String adminMainPage() {
-        return "/admin/adminMain";
-    }
 
-
-    @GetMapping("/itemList")
-    public String adminItemList(Model model) {
-        List<Item> items = adminService.findItems();
-        model.addAttribute("items", items);
-        return "/admin/itemList";
-    }
-
+    /**
+     * 회원 목록
+     */
     @GetMapping("/memberList")
     public String adminMemberList(Model model) {
         List<Member> members = adminService.findMembers();
@@ -71,47 +81,91 @@ public class AdminController {
         model.addAttribute("member", members);
         return "/admin/adminMemberList";
     }
+    /**
+     * 주문 목록
+     */
 
 
+    /**
+     * 상품 목록
+     */
+    @GetMapping("/itemList")
+    public String adminItemList(Model model) {
+        List<Item> items = adminService.findItems();
+        log.info("itemList : " + items);
+        model.addAttribute("items", items);
+        return "/admin/itemList";
+    }
+
+    /**
+     * 상품 등록
+     */
     @GetMapping("/itemAdd")
-    public String itemAdd() {
+    public String itemAdd(Model model) {
+        List<Category> categories = adminService.findCategories();
+        log.info("categories : " + categories);
+        model.addAttribute("categories", categories);
         return "/admin/itemAdd";
     }
 
     @PostMapping("/itemAdd")
-    public String itemAdd(Item item){
-        log.info("itemAdd_PostMapping : " + item);
+    public String itemAdd(@RequestParam("categoryName") String categoryName, Item item) {
+
+        item.setCategory(adminService.findCategoryByName(categoryName));
         adminService.addItem(item);
+
         return "redirect:/admin/itemList";
     }
 
+    /**
+     * 상품 수정
+     */
     @GetMapping("/item/{id}/edit")
     public String itemEdit(@PathVariable("id") Long id, Model model) {
 
         Item findItem = adminService.findItem(id);
 
-//        ItemAddDTO form = new ItemAddDTO();
-//        form.setItemNo(findItem.getItemNo());
-//        form.setItemName(findItem.getItemName());
-//        form.setItemPrice(findItem.getItemPrice());
-//        form.setItemQuantity(findItem.getItemQuantity());
-//        form.setItemInfo(findItem.getItemInfo());
-//        form.setItemImg(findItem.getItemImg());
+        List<Category> categories = adminService.findCategories();
 
         model.addAttribute("item", findItem);
+        model.addAttribute("categories", categories);
         return "admin/itemEdit";
     }
 
     @PostMapping("/item/{id}/edit")
-    public String updateItem(@PathVariable("id") String id, @ModelAttribute Item item) {
+    public String updateItem(@PathVariable("id") String id, @RequestParam("categoryName") String categoryName, @ModelAttribute Item item) {
         Long itemId = Long.parseLong(id);
-        log.info("update item id = " + itemId);
 
         item.setItemNo(itemId);
-        log.info("before update : " + item);
+        item.setCategory(adminService.findCategoryByName(categoryName));
 
         adminService.addItem(item);
 
         return "redirect:/admin/itemList";
+    }
+
+    /**
+     * 카테고리 등록
+     */
+    @GetMapping("/categoryAdd")
+    public String addCategory(Model model) {
+
+        List<Category> categories = adminService.findCategories();
+        model.addAttribute("categories", categories);
+
+        return "/admin/categoryAdd";
+    }
+
+    @PostMapping("/categoryAdd")
+    public String addCategory(Category cat) {
+        Long catId = cat.getCategoryId();
+
+        boolean checkCatId = adminService.checkDuplicateCatId(catId);
+        log.info("check duplicate catId : " + checkCatId);
+        if(checkCatId) {
+            adminService.addCategory(cat);
+            return "redirect:/admin/itemList";
+        }
+        return "redirect:/admin/categoryAdd";
     }
 }

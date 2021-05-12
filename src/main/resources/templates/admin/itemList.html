@@ -7,15 +7,19 @@
 <body>
 <a th:href="@{/admin/adminMain}">뒤로</a>
 <h3>상품목록 페이지</h3>
+<a th:href="@{/admin/categoryAdd}">카테고리등록</a>
 <a th:href="@{/admin/itemAdd}">상품등록</a>
+
 <table>
     <thead>
     <tr>
         <th>상품번호</th>
-        <th>상품이름</th>
-        <th>상품가격</th>
-        <th>재고수량</th>
-        <th>상품등록일자</th>
+        <th>카테고리 번호</th>
+        <th>카테고리 이름</th>
+        <th>상품 이름</th>
+        <th>상품 가격</th>
+        <th>재고 수량</th>
+        <th>상품 등록일자</th>
         <th>기타</th>
 
     </tr>
@@ -23,6 +27,8 @@
     <tbody>
     <tr th:each="items : ${items}">
         <td th:text="${items.itemNo}"></td>
+        <td th:text="${items.category.categoryId}"></td>
+        <td th:text="${items.category.categoryName}"></td>
         <td th:text="${items.itemName}"></td>
         <td th:text="${items.itemPrice}"></td>
         <td th:text="${items.itemQuantity}"></td>

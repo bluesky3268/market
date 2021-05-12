@@ -15,7 +15,14 @@
     </div>
     <div>
         <label th:for="itemName" >상품명</label>
-        <input type="text" th:value="${item.itemName}" name="itemName" readonly="readonly">
+        <input type="text" th:value="${item.itemName}" name="itemName">
+    </div>
+    <div>
+        <label>카테고리</label>
+        <select name="categoryName">
+            <option value="">카테고리 선택</option>
+            <option th:each="cat : ${categories}" th:value="${cat.categoryName}" th:text="${cat.categoryName}"></option>
+        </select>
     </div>
 
     <div>

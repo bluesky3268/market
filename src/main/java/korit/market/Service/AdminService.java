@@ -3,10 +3,7 @@ package korit.market.Service;
 import korit.market.Repository.*;
 import korit.market.dto.ItemAddDTO;
 import korit.market.dto.MemberDTO;
-import korit.market.entity.Admin;
-import korit.market.entity.Item;
-import korit.market.entity.Member;
-import korit.market.entity.Orders;
+import korit.market.entity.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
@@ -25,6 +22,7 @@ public class AdminService {
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
     private final OrderRepository orderRepository;
+    private final CategoryRepository categoryRepository;
 
     /**
      * 관리자 추가
@@ -56,7 +54,7 @@ public class AdminService {
      */
     public List<Item> findItems() {
         List<Item> items = itemRepository.findAll();
-        log.info(items);
+        log.info("item list : " + items);
         return items;
     }
 
@@ -88,6 +86,31 @@ public class AdminService {
 
         log.info("afterSave : " + item);
     }
+
+    /**
+     * 카테고리 추가
+     */
+    public void addCategory(Category category) {
+        Category savedCat = categoryRepository.save(category);
+        log.info("save category success : " + savedCat);
+    }
+
+    public boolean checkDuplicateCatId(Long catId) {
+        if(categoryRepository.findByCategoryId(catId) == null)
+            return true;
+        return false;
+    }
+
+    public Category findCategoryByName(String categoryName) {
+        return categoryRepository.findByCategoryName(categoryName);
+    }
+
+    public List<Category> findCategories() {
+        List<Category> categories = categoryRepository.findAll();
+        log.info("finded categories : " + categories);
+        return categories;
+    }
+
 
 
 }

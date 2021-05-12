@@ -42,6 +42,7 @@ public class Item {
     private String itemRegDate =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis());
 
     @ManyToOne
+    @JoinColumn(name="category_id")
     private Category category;
 
 

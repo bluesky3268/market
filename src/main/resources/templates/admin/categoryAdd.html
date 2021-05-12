@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>카테고리 등록</title>
+</head>
+<body>
+<h3>카테고리 등록</h3>
+<a th:href="@{/admin/itemList}">뒤로</a>
+
+<form th:action="@{/admin/categoryAdd}" method="post">
+    <label>카테고리 번호</label>
+    <input type="text" name="categoryId">
+    <label>카테고리 이름</label>
+    <input type="text" name="categoryName">
+    <button type="submit">저장</button>
+</form>
+<h3>카테고리 목록</h3>
+<table>
+    <thead>
+        <tr>
+            <th>카테고리 번호</th>
+            <th>카테고리 이름</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="cat : ${categories}">
+            <td th:text="${cat.categoryId}"></td>
+            <td th:text="${cat.categoryName}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

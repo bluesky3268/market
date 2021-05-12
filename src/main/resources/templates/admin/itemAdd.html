@@ -14,6 +14,20 @@
         </div>
 
         <div>
+            <label th:for="categoryName">카테고리</label>
+            <select name="categoryName">
+                <option value="">카테고리 선택</option>
+                <option th:each="cat : ${categories}" th:value="${cat.categoryName}" th:text="${cat.categoryName}"></option>
+<!--                <option value="tarp">타프</option>-->
+<!--                <option value="table">테이블</option>-->
+<!--                <option value="chair">체어</option>-->
+<!--                <option value="sleepingbag">침낭</option>-->
+<!--                <option value="mattress">매트</option>-->
+<!--                <option value="mealkit">밀키트</option>-->
+            </select>
+        </div>
+
+        <div>
             <label th:for="itemPrice">가격</label>
             <input type="text" name="itemPrice"  placeholder="상품 가격을 입력하세요">
         </div>

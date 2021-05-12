@@ -30,6 +30,19 @@ public class ItemAddDTO {
 
     private String itemRegDate =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis());
 
+    private String categoryName;
 
+//    public Item toEntity() {
+//        return Item.builder()
+//                .itemNo(itemNo)
+//                .itemName(itemName)
+//                .itemPrice(itemPrice)
+//                .itemQuantity(itemQuantity)
+//                .itemInfo(itemInfo)
+//                .itemImg(itemImg)
+//                .category(categoryName)
+//                .itemRegDate(itemRegDate)
+//                .build();
+//    }
 
 }
