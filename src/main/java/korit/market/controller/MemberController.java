@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
 
@@ -71,20 +72,19 @@ public class MemberController {
      */
 
     @PostMapping("/join")
-    public String join(MemberDTO member) {
+    public String join(MemberDTO member, RedirectAttributes redirectAttributes) {
 
         log.info(member);
 
-        // 아이디 중복확인
-//        duplicateCheckId(member.getMember_id());
-
-        // 비밀번호 항목 2개 같은지 확인
-
-        //
-
-        // 데이터 베이스에 저장
-         memberService.saveMember(member);
-
+        // 아이디 중복확인(true == 중복되는 아이디 존재함)
+        if (memberService.duplicateCheckMemberId(member.getMember_id())) {
+            log.info("아이디 중복");
+            redirectAttributes.addAttribute("status", true);
+            return "redirect:/join";
+        }
+        // false일 경우 데이터 베이스에 저장
+        memberService.saveMember(member);
+        log.info("회원가입 성공!");
         return "redirect:/login";
     }
 

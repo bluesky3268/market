@@ -57,6 +57,7 @@ public class MemberService {
      * 회원 아이디 중복확인
      */
     public boolean duplicateCheckMemberId(String memberId) {
+
         return memberRepository.existsByMemberId(memberId);
     }
 
