@@ -42,9 +42,30 @@
           </div>
           <ul class="snsArea">
             <li class="kakaoLogin">
-              <a href="#none" onclick="MemberAction.snsLogin('kakao', '%2Findex.html')">
+              <a href="javascript:kakaoLogin();">
+<!--                  <onclick="MemberAction.snsLogin('kakao', '%2Findex.html')">-->
               <img src="//img.echosting.cafe24.com/skin/base_ko_KR/member/btn_kakao_login.gif" alt="" title=""/></a>
-              <script src="https://developers.kakao.com/"></script>
+                <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+                <script>
+                    // 1211437d131d62efe08d984d583c5068  > 캠핑가지 JavaScript 앱키
+                    window.Kakao.init("1211437d131d62efe08d984d583c5068");
+
+                    function kakaoLogin() {
+                        window.Kakao.Auth.login({
+                            scope: 'profile, account_email, gender',
+                            success: function (auth) {
+                                console.log(authObj);
+                                window.Kakao.API.request({
+                                    url: '/v2/user/me',
+                                    success: res => {
+                                        const kakao_account = res.kakao_account;
+                                        console.log(kakao_account);
+                                    }
+                                });
+                            }
+                        });
+                    }
+                </script>
             </li>
           </ul>
           <ul class="ec-base-button gColumn">
