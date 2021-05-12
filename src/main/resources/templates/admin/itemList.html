@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>상품목록 페이지</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/adminMain.css"/>
 </head>
 <body>
-<a th:href="@{/admin/adminMain}">뒤로</a>
-<h3>상품목록 페이지</h3>
+<a th:href="@{/admin/adminMain}" class="gohome">뒤로</a>
+<h3>< 상품목록 페이지 ></h3>
 <a th:href="@{/admin/categoryAdd}">카테고리등록</a>
 <a th:href="@{/admin/itemAdd}">상품등록</a>
-
-<table>
+<br/>
+<table clas="table">
     <thead>
     <tr>
         <th>상품번호</th>
@@ -21,7 +23,6 @@
         <th>재고 수량</th>
         <th>상품 등록일자</th>
         <th>기타</th>
-
     </tr>
     </thead>
     <tbody>

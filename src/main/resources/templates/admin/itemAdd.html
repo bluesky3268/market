@@ -3,50 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>상품 등록</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/adminMain.css"/>
 </head>
 <body>
-<a th:href="@{/admin/itemList}">뒤로</a>
-<h3>상품 등록하기</h3>
+<a th:href="@{/admin/itemList}" class="gohome">뒤로</a>
+<h3> < 상품 등록하기 ></h3>
     <form th:action="@{/admin/itemAdd}"  method="post">
-        <div>
-            <label th:for="itemName" >상품명</label>
-            <input type="text"  name="itemName" placeholder="상품명을 입력하세요">
-        </div>
-
-        <div>
-            <label th:for="categoryName">카테고리</label>
-            <select name="categoryName">
-                <option value="">카테고리 선택</option>
-                <option th:each="cat : ${categories}" th:value="${cat.categoryName}" th:text="${cat.categoryName}"></option>
-<!--                <option value="tarp">타프</option>-->
-<!--                <option value="table">테이블</option>-->
-<!--                <option value="chair">체어</option>-->
-<!--                <option value="sleepingbag">침낭</option>-->
-<!--                <option value="mattress">매트</option>-->
-<!--                <option value="mealkit">밀키트</option>-->
-            </select>
-        </div>
-
-        <div>
-            <label th:for="itemPrice">가격</label>
-            <input type="text" name="itemPrice"  placeholder="상품 가격을 입력하세요">
-        </div>
-
-        <div>
-            <label th:for="itemQuantity">수량</label>
-            <input type="text" name="itemQuantity"  placeholder="수량을 입력하세요">
-        </div>
-
-        <div>
-        <label th:for="itemInfo">상품설명</label>
-            <textarea  cols="50" rows="10" name="itemInfo" placeholder="상품 상세설명을 입력하세요"></textarea>
-        </div>
-
-        <div>
-        <label th:for="itemImg">이미지 첨부</label>
-        <input type="file" name="itemImg" multiple="multiple">
-        </div>
-
+        <table>
+            <tr>
+                <th><label th:for="itemName" >상품명</label></th>
+                <td><input type="text"  name="itemName" placeholder="상품명을 입력하세요"></td>
+            </tr>
+            <tr>
+                <th> <label th:for="categoryName">카테고리</label></th>
+                <td>
+                    <select name="categoryName">
+                    <option value="">카테고리 선택</option>
+                    <option th:each="cat : ${categories}" th:value="${cat.categoryName}" th:text="${cat.categoryName}"></option>
+                        <!--                <option value="tarp">타프</option>-->
+                        <!--                <option value="table">테이블</option>-->
+                        <!--                <option value="chair">체어</option>-->
+                        <!--                <option value="sleepingbag">침낭</option>-->
+                        <!--                <option value="mattress">매트</option>-->
+                        <!--                <option value="mealkit">밀키트</option>-->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th> <label th:for="itemPrice">가격</label></th>
+                <td> <input type="text" name="itemPrice"  placeholder="상품 가격을 입력하세요"></td>
+            </tr>
+            <tr>
+                <th>  <label th:for="itemQuantity">수량</label></th>
+                <td> <input type="text" name="itemQuantity"  placeholder="수량을 입력하세요"></td>
+            </tr>
+            <tr>
+                <th> <label th:for="itemInfo">상품설명</label></th>
+                <td> <textarea  cols="50" rows="10" name="itemInfo" placeholder="상품 상세설명을 입력하세요"></textarea></td>
+            </tr>
+            <tr>
+                <th><label th:for="itemImg">이미지 첨부</label></th>
+                <td><input type="file" name="itemImg" multiple="multiple"></td>
+            </tr>
+        </table>
         <button type="submit">등록</button>
         <button type="reset">취소</button>
     </form>

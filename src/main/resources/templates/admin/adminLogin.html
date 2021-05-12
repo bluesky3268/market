@@ -3,13 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>관리자 페이지 </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/adminMain.css"/>
 </head>
 <body>
-<a href="/">홈</a>
-<form action="/admin/Login" method="post">
-    아이디 : <input type="text" name="adminId">
-    비밀번호 : <input type="password" name="adminPwd">
-    <button type="submit">로그인</button>
+<a href="/" class="gohome">홈</a>
+<form action="/admin/Login" method="post" id="login">
+    <div class="login_input">
+        <label>아이디</label>
+        <input type="text" name="adminId">
+    </div>
+    <div class="login_input">
+        <label>비밀번호</label>
+        <input type="password" name="adminPwd">
+    </div>
+    <button type="submit" class="button">로그인</button>
 </form>
 </body>
 </html>

@@ -14,14 +14,18 @@
     opacity: 70%;
 
 }
-
+body{
+    padding:20px;
+}
 span {
     display: block;
     color: white;
     text-align: center;
     padding: 5px;
 }
-
+h3{
+    padding:10px;
+}
 .container ul {
     width: 100px;
     height: 30px;
@@ -38,4 +42,41 @@ span {
 li {
     text-align: center;
 
+}
+a{
+    padding:10px;
+}
+.table {
+    border: 1px solid #454545;
+    border-collapse:collapse;
+    width: 80%;
+
+}
+.table tr, th, td{
+    border: 1px solid #454545;
+    padding: 10px;
+    text-align:center;
+}
+
+#login {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+}
+#login .login_input{
+    padding:15px;
+}
+
+.gohome{
+    display: inline-block;
+    border: 1px solid #D5C2EE;
+    padding:10px;
+}
+
+.button{
+    padding:5px;
+    margin:10px;
+}
+form{
+    padding:15px;
 }

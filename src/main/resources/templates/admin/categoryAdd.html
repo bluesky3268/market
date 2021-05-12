@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>카테고리 등록</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/adminMain.css"/>
 </head>
 <body>
-<h3>카테고리 등록</h3>
+<h3> < 카테고리 등록 > </h3>
 <a th:href="@{/admin/itemList}">뒤로</a>
 
 <form th:action="@{/admin/categoryAdd}" method="post">
@@ -16,7 +18,7 @@
     <button type="submit">저장</button>
 </form>
 <h3>카테고리 목록</h3>
-<table>
+<table class="table">
     <thead>
         <tr>
             <th>카테고리 번호</th>

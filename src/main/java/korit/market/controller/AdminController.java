@@ -162,10 +162,15 @@ public class AdminController {
 
         boolean checkCatId = adminService.checkDuplicateCatId(catId);
         log.info("check duplicate catId : " + checkCatId);
-        if(checkCatId) {
+        if (checkCatId) {
             adminService.addCategory(cat);
             return "redirect:/admin/itemList";
         }
         return "redirect:/admin/categoryAdd";
+    }
+
+    @GetMapping("/orderList")
+    public String orderList() {
+        return "/admin/orderList";
     }
 }
