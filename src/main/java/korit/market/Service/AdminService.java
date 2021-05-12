@@ -17,7 +17,7 @@ public class AdminService {
     private final AdminRepository adminRepository;
     private final MemberRepository memberRepository;
     private final ItemRepository itemRepository;
-    private final CartRepository orderRepository;
+    private final OrderRepository orderRepository;
     private final CategoryRepository categoryRepository;
 
     /**
