@@ -53,7 +53,7 @@
                     function kakaoLogin() {
                         window.Kakao.Auth.login({
                             scope: 'profile, account_email, gender',
-                            success: function (auth) {
+                            success: function (authObj) {
                                 console.log(authObj);
                                 window.Kakao.API.request({
                                     url: '/v2/user/me',
