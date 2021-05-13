@@ -12,7 +12,7 @@
 <a th:href="@{/admin/categoryAdd}">카테고리등록</a>
 <a th:href="@{/admin/itemAdd}">상품등록</a>
 <br/>
-<table clas="table">
+<table class="table">
     <thead>
     <tr>
         <th>상품번호</th>
@@ -38,6 +38,7 @@
         <td th:text="${items.itemRegDate}"></td>
         <td>
         <a href="#" th:href="@{/admin/item/{id}/edit (id=${items.itemNo})}" class="btn btn-primary" role="button">수정</a>
+        <a href="#" th:href="@{/admin/item/{id}/delete (id=${items.itemNo})}" class="btn btn-primary" role="button">삭제</a>
         </td>
     </tr>
     </tbody>

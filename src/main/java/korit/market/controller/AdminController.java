@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
@@ -110,7 +111,8 @@ public class AdminController {
     }
 
     @PostMapping("/itemAdd")
-    public String itemAdd(@RequestParam("categoryName") String categoryName, @RequestParam("file") MultipartFile file, Item item) {
+    public String itemAdd(@RequestParam("categoryName") String categoryName,
+                          @RequestParam("file") MultipartFile file, Item item) {
 
         log.info("file : " + file.getOriginalFilename());
 
@@ -149,6 +151,20 @@ public class AdminController {
     }
 
     /**
+     * 상품 삭제
+     */
+
+    @GetMapping("/admin/item/{id}/delete")
+    public String delete(@PathVariable("id") String id, Item item) {
+
+        log.info("delete_item : " + item);
+        adminService.deleteItem(item);
+
+        return "redirect:/admin/itemList";
+    }
+
+
+    /**
      * 카테고리 등록
      */
     @GetMapping("/categoryAdd")
@@ -177,4 +193,7 @@ public class AdminController {
     public String orderList() {
         return "/admin/orderList";
     }
+
+
+
 }

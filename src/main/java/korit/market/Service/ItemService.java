@@ -22,17 +22,20 @@ public class ItemService {
      * 메인페이지 - 신상품 가져오기
      */
     public List<Item> brandNew() {
+
 //         가장 최근 추가된 상품의 번호 찾기
         Item item = itemRepository.findTopByOrderByItemNoDesc();
-        Long itemId = item.getItemNo();
-        Long needItemId = itemId-4;
-        List<Item> brandNewList = itemRepository.findAllByItemNoGreaterThan(needItemId);
-        return brandNewList;
-    }
+        Long itemNo = item.getItemNo();
+        if(itemNo > 4) {
+            Long i = itemNo - 4;
+            List<Item> brandNewList = itemRepository.findAllByItemNoGreaterThan(i);
+            return brandNewList;
+        }else{
+            List<Item> brandNewList = itemRepository.findAll();
+            return brandNewList;
+        }
 
-    /**
-     * 상품 사진 저장
-     */
+    }
 
 
     /**

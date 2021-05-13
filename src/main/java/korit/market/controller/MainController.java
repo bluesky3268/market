@@ -5,7 +5,6 @@ import korit.market.Service.MemberService;
 import korit.market.dto.MemberDTO;
 import korit.market.dto.MemberLoginDTO;
 import korit.market.entity.Item;
-import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -27,7 +27,6 @@ public class MainController {
 
     @RequestMapping("/")
     public String mainPage(Model model) {
-
         List<Item> brandNews = itemService.brandNew();
         model.addAttribute("brandNew", brandNews);
         return "index";
@@ -106,7 +105,6 @@ public class MainController {
         log.info("회원가입 성공!");
         return "redirect:/login";
     }
-
 
 
 

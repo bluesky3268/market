@@ -109,6 +109,14 @@ public class AdminService {
     }
 
     /**
+     * 상품 삭제
+     */
+    public void deleteItem(Item item) {
+        itemRepository.delete(item);
+        log.info("delete_success : " + item);
+    }
+
+    /**
      * 카테고리 추가
      */
     public void addCategory(Category category) {

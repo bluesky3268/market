@@ -13,5 +13,5 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
     Item findByItemNo(Long itemNo);
 
     Item findTopByOrderByItemNoDesc();
-    List<Item> findAllByItemNoGreaterThan(Long itemNo);
+    List<Item> findAllByItemNoGreaterThan(Long number);
 }
