@@ -19,40 +19,37 @@
       </div>
       <div class="productcontainer">
         <h2>이 달의 신상품</h2>
-        <div>
+        <div th:each="brandNew : ${brandNew}">
           <div class="newthumb">
             <a href="#"><img alt="new1" src="/img/chair2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">의자2</a></p>
-            <p>가격 : <a href="#">50,000원</a></p>
+            <p>상품명 : <a href="#" th:text="${brandNew.itemName}"></a></p>
+            <p>가격 : <a href="#" th:text="${brandNew.itemPrice}"></a></p>
           </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tent3.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">텐트3</a></p>
-            <p>가격 : <a href="#">550,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">텐트2</a></p>
-            <p>가격 : <a href="#">100,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/chair1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">의자1</a></p>
-            <p>가격 : <a href="#">30,000원</a></p>
-          </div>
-        </div>
+<!--          <div class="newthumb">-->
+<!--            <a href="#"><img alt="new1" src="/img/tent3.jpg" /></a>-->
+<!--            <p>-->
+<!--              <a href="#"><b>브랜드</b></a>-->
+<!--            </p>-->
+<!--            <p>상품명 : <a href="#">텐트3</a></p>-->
+<!--            <p>가격 : <a href="#">550,000원</a></p>-->
+<!--          </div>-->
+<!--          <div class="newthumb">-->
+<!--            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>-->
+<!--            <p>-->
+<!--              <a href="#"><b>브랜드</b></a>-->
+<!--            </p>-->
+<!--            <p>상품명 : <a href="#">텐트2</a></p>-->
+<!--            <p>가격 : <a href="#">100,000원</a></p>-->
+<!--          </div>-->
+<!--          <div class="newthumb">-->
+<!--            <a href="#"><img alt="new1" src="/img/chair1.jpg" /></a>-->
+<!--            <p>-->
+<!--              <a href="#"><b>브랜드</b></a>-->
+<!--            </p>-->
+<!--            <p>상품명 : <a href="#">의자1</a></p>-->
+<!--            <p>가격 : <a href="#">30,000원</a></p>-->
+<!--          </div>-->
+<!--        </div>-->
       </div>
       <div class="productcontainer">
         <h2><a href="productlist.html">텐트/타프</a></h2>

@@ -1,8 +1,10 @@
 package korit.market.controller;
 
+import korit.market.Service.ItemService;
 import korit.market.Service.MemberService;
 import korit.market.dto.MemberDTO;
 import korit.market.dto.MemberLoginDTO;
+import korit.market.entity.Item;
 import korit.market.entity.Member;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -13,16 +15,21 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 @Log4j2
-public class MemberController {
+public class MainController {
 
     private final MemberService memberService;
+    private final ItemService itemService;
 
     @RequestMapping("/")
-    public String basic() {
+    public String mainPage(Model model) {
+
+        List<Item> brandNews = itemService.brandNew();
+        model.addAttribute("brandNew", brandNews);
         return "index";
     }
 
