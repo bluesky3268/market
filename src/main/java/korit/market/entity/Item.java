@@ -39,6 +39,9 @@ public class Item {
     @Column(length = 500, nullable = false)
     private String itemImg;
 
+    @Column(length = 500, nullable = false)
+    private String itemImgThumb;
+
     private String itemRegDate =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(System.currentTimeMillis());
 
     @ManyToOne

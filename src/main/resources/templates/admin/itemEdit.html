@@ -37,11 +37,15 @@
         </tr>
         <tr>
             <th><label th:for="itemImage">이미지</label></th>
-            <td><img th:src="@{/img/}+${item.itemImg}" /></td>
+            <td><img th:src="@{/img/}+${item.itemImgThumb}" /></td>
         </tr>
         <tr>
             <th><label th:for="itemInfo">상품설명</label></th>
             <td> <textarea  cols="50" rows="10" th:value="${item.itemInfo}" th:text="${item.itemInfo}" name="itemInfo" placeholder="상품 상세설명을 입력하세요"></textarea></td>
+        </tr>
+        <tr>
+            <th><label th:for="thumbImg">썸네일 이미지 첨부</label></th>
+            <td><input type="file" th:src="${item.itemImg}" name="fileThumb" multiple="multiple"></td>
         </tr>
         <tr>
             <th>  <label th:for="itemImg">이미지 첨부</label></th>

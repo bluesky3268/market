@@ -14,6 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Base64;
+import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,13 +33,9 @@ public class AdminService {
     // 이미지 파일 업로드 디렉토리 지정
     public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/img";
 
-    /**
-     * 관리자 추가
-     */
+    /** 관리자 추가 */
 
-    /**
-     * 관리자 로그인
-     */
+    /** 관리자 로그인 */
     public boolean loginCheck(String paramId, String paramPwd) {
 
         Admin admin = adminRepository.findByAdminId(paramId);
@@ -48,84 +45,83 @@ public class AdminService {
         return false;
     }
 
-    /**
-     * 전체 회원 조회
-     */
+
+    /** 조회 */
+
+    //전체 회원 조회
     public List<Member> findMembers() {
         List<Member> members = memberRepository.findAll();
         log.info(members);
         return members;
     }
 
-    /**
-     * 전체 상품 조회
-     */
+    //전체 상품 조회
     public List<Item> findItems() {
         List<Item> items = itemRepository.findAll();
         log.info("item list : " + items);
         return items;
     }
 
-
-    /**
-     * 전체 주문 조회
-     */
+    // 전체 주문 조회
     public List<Orders> findOrders() {
         List<Orders> orders = orderRepository.findAll();
         return orders;
     }
 
-    /**
-     * 단일 상품 조회
-     */
+    //단일 상품 조회
     public Item findItem(Long itemNo) {
         Item findItem = itemRepository.findByItemNo(itemNo);
         log.info("adminService_findItem : " + findItem);
         return findItem;
     }
 
+    // 카테고리 조회
     public Category findCategory(Long categoryNo) {
         Category category = categoryRepository.findByCategoryId(categoryNo);
         log.info("adminService_findCategory : " + category);
         return category;
     }
 
-    /**
-     * 상품 등록
-     */
+    /** 등록 및 삭제 **/
 
-    public void addItem(MultipartFile file, Item item) {
+    /** 상품 **/
+
+    // 상품 등록
+    public void addItem(MultipartFile file, MultipartFile fileThumb, Item item) {
         log.info("beforeSave : " + item);
 
-
-        StringBuilder fileNames = new StringBuilder();
-        String fileName = UUID.randomUUID().toString() + "." + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf(".")+1);
-        Path path = Paths.get(uploadDir, fileName);
-
-
-//        try {
-//            Files.write(path, file.getBytes());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        // imgInfo
+        String fileName = UUID.randomUUID().toString() + "."
+                + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf(".")+1);
+        Path filepath = Paths.get(uploadDir, fileName);
+        // thumbImg
+        String thumbFileName = UUID.randomUUID().toString() + "."
+                + fileThumb.getOriginalFilename().substring(file.getOriginalFilename().indexOf(".")+1);
+        Path thumbFilePath = Paths.get(uploadDir, thumbFileName);
+//
+        try {
+            Files.write(filepath, file.getBytes());
+            Files.write(thumbFilePath, fileThumb.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         item.setItemImg(fileName);
+        item.setItemImgThumb(thumbFileName);
         itemRepository.save(item);
 
         log.info("afterSave : " + item);
     }
 
-    /**
-     * 상품 삭제
-     */
+    //상품 삭제
     public void deleteItem(Item item) {
         itemRepository.delete(item);
         log.info("delete_success : " + item);
     }
 
-    /**
-     * 카테고리 추가
-     */
+    /** 카테고리 **/
+
+    //카테고리 추가
     public void addCategory(Category category) {
         Category savedCat = categoryRepository.save(category);
         log.info("save category success : " + savedCat);
@@ -147,9 +143,7 @@ public class AdminService {
         return categories;
     }
 
-    /**
-     * 카테고리 삭제
-     */
+    //카테고리 삭제
     public void deleteCategory(Category category) {
         categoryRepository.delete(category);
         log.info("delete_category_success : " + category);

@@ -106,19 +106,21 @@ public class AdminController {
     @GetMapping("/itemAdd")
     public String itemAdd(Model model) {
         List<Category> categories = adminService.findCategories();
-        log.info("categories : " + categories);
+        log.info("item_add - categories : " + categories);
         model.addAttribute("categories", categories);
         return "/admin/itemAdd";
     }
 
     @PostMapping("/itemAdd")
     public String itemAdd(@RequestParam("categoryName") String categoryName,
-                          @RequestParam("file") MultipartFile file, Item item) {
+                          @RequestParam("file") MultipartFile file,
+                          @RequestParam("fileThumb") MultipartFile file_thumb, Item item) {
 
-        log.info("file : " + file.getOriginalFilename());
+//        log.info("file : " + file.getOriginalFilename());
 
+        log.info("add_item : " + item + ", file : " + file + ", file_thumb : " + file_thumb);
         item.setCategory(adminService.findCategoryByName(categoryName));
-        adminService.addItem(file, item);
+        adminService.addItem(file, file_thumb, item);
 
         return "redirect:/admin/itemList";
     }
@@ -140,13 +142,17 @@ public class AdminController {
 
     @PostMapping("/item/{id}/edit")
     public String updateItem(@PathVariable("id") String id, @RequestParam("categoryName") String categoryName,
-                             @RequestParam("file") MultipartFile file, @ModelAttribute Item item) {
+                             @RequestParam("file") MultipartFile file,
+                             @RequestParam("fileThumb") MultipartFile fileThumb,
+                             @ModelAttribute Item item) {
         Long itemNo = Long.parseLong(id);
 
         item.setItemNo(itemNo);
         item.setCategory(adminService.findCategoryByName(categoryName));
 
-        adminService.addItem(file, item);
+        log.info("edit_item : " + item);
+
+        adminService.addItem(file, fileThumb, item);
 
         return "redirect:/admin/itemList";
     }

@@ -29,7 +29,7 @@
     <tbody>
     <tr th:each="items : ${items}">
         <td th:text="${items.itemNo}"></td>
-        <td><img th:src="@{/img/}+${items.itemImg}" /></td>
+        <td><img th:src="@{/img/}+${items.itemImgThumb}" /></td>
         <td th:text="${items.category.categoryId}"></td>
         <td th:text="${items.category.categoryName}"></td>
         <td th:text="${items.itemName}"></td>
