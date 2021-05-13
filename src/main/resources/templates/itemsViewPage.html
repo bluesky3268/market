@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
 	<title>캠핑가지_패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</title>
@@ -7,8 +7,12 @@
 	<link rel="stylesheet" href="/css/itemsViewStyle.css">
 </head>
 <body>
-		<div class="items_view">
-			<h2>패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</h2>
+<div id="wrapper"
+<div th:replace="/fragments/header.html :: header"></div>
+<!-- end #header -->
+<div th:replace="/fragments/navbar.html :: navbar"></div>
+		<div class="items_view" th:object="${item}">
+			<h2 th:text="${item.itemName}">패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</h2>
 			<table>
 				<caption>
 					<details class="hide">
@@ -23,11 +27,11 @@
 				<tbody>
 					<tr>
 						<th>판매가</th>
-						<td class="price">299,000</td>
+						<td class="price" th:text="${item.itemPrice}">299,000</td>
 					</tr>
 					<tr>
 						<th>상품코드</th>
-						<td>FCMP10325</td>
+						<td th:text="${item.itemNo}">FCMP10325</td>
 					</tr>
 					<tr>
 						<th>국내·해외배송</th>
@@ -59,16 +63,16 @@
 					</tr>
 					<tr>
 						<th>결제금액</th>
-						<td class="total"><b>299,000</b>원</td>
+						<td class="total" th:text="${item.itemPrice}"><b>299,000</b>원</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="img">
-				<img src="/images/Fastcamp_onetouch_tent1.JPG" alt="">
+				<img th:src="@{/img/}+${item.itemImgThumb}" th:alt="${item.itemName}">
 				<ul>
-					<li class="on"><a href="#a"><img src="/images/Fastcamp_onetouch_tent1.JPG" alt=""></a></li>
-					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-1.JPG" alt=""></a></li>
-					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-2.JPG" alt=""></a></li>
+					<li class="on"><a href="#"><img th:src="@{/img/}+${item.itemImg}"  alt=""></a></li>
+<!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-1.JPG" alt=""></a></li>-->
+<!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-2.JPG" alt=""></a></li>-->
 				</ul>
 			</div>
 			<div class="btns">
@@ -76,5 +80,11 @@
 				<a href="#a" class="btn2">구매하기</a>
 			</div>
 		</div>
+		<div>상세설명</div>
+		<div>
+			<img th:src="@{/img/}+${item.itemImg}">
+		</div>
+
+</div>
 </body>
 </html>

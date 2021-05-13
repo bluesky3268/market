@@ -21,185 +21,55 @@
         <h2>이 달의 신상품</h2>
         <div th:each="brandNew : ${brandNew}">
           <div class="newthumb">
-            <a href="#"><img th:alt="${brandNew.itemName}" th:src="@{/img/}+${brandNew.itemImgThumb}" /></a>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${brandNew.itemNo})}"><img th:alt="${brandNew.itemName}" th:src="@{/img/}+${brandNew.itemImgThumb}" /></a>
             <p>상품명 : <a href="#" th:text="${brandNew.itemName}"></a></p>
             <p>가격 : <a href="#" th:text="${brandNew.itemPrice}"></a></p>
           </div>
-<!--          <div class="newthumb">-->
-<!--            <a href="#"><img alt="new1" src="/img/tent3.jpg" /></a>-->
-<!--            <p>-->
-<!--              <a href="#"><b>브랜드</b></a>-->
-<!--            </p>-->
-<!--            <p>상품명 : <a href="#">텐트3</a></p>-->
-<!--            <p>가격 : <a href="#">550,000원</a></p>-->
-<!--          </div>-->
-<!--          <div class="newthumb">-->
-<!--            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>-->
-<!--            <p>-->
-<!--              <a href="#"><b>브랜드</b></a>-->
-<!--            </p>-->
-<!--            <p>상품명 : <a href="#">텐트2</a></p>-->
-<!--            <p>가격 : <a href="#">100,000원</a></p>-->
-<!--          </div>-->
-<!--          <div class="newthumb">-->
-<!--            <a href="#"><img alt="new1" src="/img/chair1.jpg" /></a>-->
-<!--            <p>-->
-<!--              <a href="#"><b>브랜드</b></a>-->
-<!--            </p>-->
-<!--            <p>상품명 : <a href="#">의자1</a></p>-->
-<!--            <p>가격 : <a href="#">30,000원</a></p>-->
-<!--          </div>-->
-<!--        </div>-->
       </div>
       <div class="productcontainer">
-        <h2><a href="productlist.html">텐트/타프</a></h2>
-        <h4><a href="productlist.html">더보기</a></h4>
-        <div>
+        <!-- 텐트 -->
+        <h2><a href="/item/list/100">텐트</a></h2>
+        <h4><a href="/item/list/100">더보기</a></h4>r
+        <div th:each="tents : ${tents}">
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tarp1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">타프1</a></p>
-            <p>가격 : <a href="#">70,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tent1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">텐트1</a></p>
-            <p>가격 : <a href="#">150,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">텐트2</a></p>
-            <p>가격 : <a href="#">100,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tarp2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">타프2</a></p>
-            <p>가격 : <a href="#">550,000원</a></p>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tents.itemNo})}"><img th:alt="${tents.itemName}" th:src="@{/img/}+${tents.itemImgThumb}" /></a>
+            <p>상품명 : <a href="#" th:text="${tents.itemName}"></a></p>
+            <p>가격 : <a href="#" th:text="${tents.itemPrice}"></a></p>
           </div>
         </div>
-        <h2><a href="productlist.html">테이블/체어</a></h2>
-        <h4><a href="productlist.html">더보기</a></h4>
-        <div>
+        <!-- 타프 -->
+        <h2><a href="/item/list/200">타프</a></h2>
+        <h4><a href="/item/list/200">더보기</a></h4>
+        <div th:each="tarps : ${tarps}">
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/chair1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">의자1</a></p>
-            <p>가격 : <a href="#">70,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/hammock.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">해먹</a></p>
-            <p>가격 : <a href="#">50,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/chair2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">의자2</a></p>
-            <p>가격 : <a href="#">100,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/table2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">테이블2</a></p>
-            <p>가격 : <a href="#">50,000원</a></p>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tarps.itemNo})}"><img th:alt="${tarps.itemName}" th:src="@{/img/}+${tarps.itemImgThumb}" /></a>
+            <p>상품명 : <a href="#" th:text="${tarps.itemName}"></a></p>
+            <p>가격 : <a href="#" th:text="${tarps.itemPrice}"></a></p>
           </div>
         </div>
-        <h2><a href="productlist.html">침낭/매트</a></h2>
-        <h4><a href="productlist.html">더보기</a></h4>
-        <div>
+        <!-- 테이블 -->
+        <h2><a href="/item/list/300">테이블</a></h2>
+        <h4><a href="/item/list/300">더보기</a></h4>
+        <div th:each="tables : ${tables}">
           <div class="newthumb">
-            <a href="#"
-              ><img alt="new1" src="/img/sleepingbag.jpg"
-            /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">침낭1</a></p>
-            <p>가격 : <a href="#">70,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"
-              ><img alt="new1" src="/img/sleepigbag2.jpg"
-            /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">침낭2</a></p>
-            <p>가격 : <a href="#">150,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/pillow1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">베개</a></p>
-            <p>가격 : <a href="#">40,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tarp2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">타프2</a></p>
-            <p>가격 : <a href="#">550,000원</a></p>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tables.itemNo})}"><img th:alt="${tables.itemName}" th:src="@{/img/}+${tables.itemImgThumb}" /></a>
+            <p>상품명 : <a href="#" th:text="${tables.itemName}"></a></p>
+            <p>가격 : <a href="#" th:text="${tables.itemPrice}"></a></p>
           </div>
         </div>
-        <h2><a href="productlist.html">밀키트</a></h2>
-        <h4><a href="productlist.html">더보기</a></h4>
-        <div>
+        <!-- 의자 -->
+        <h2><a href="/item/list/400">의자</a></h2>
+        <h4><a href="/item/list/400">더보기</a></h4>
+        <div th:each="chairs : ${chairs}">
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tarp1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">타프1</a></p>
-            <p>가격 : <a href="#">70,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tent1.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">텐트1</a></p>
-            <p>가격 : <a href="#">150,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tent2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">텐트2</a></p>
-            <p>가격 : <a href="#">100,000원</a></p>
-          </div>
-          <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/tarp2.jpg" /></a>
-            <p>
-              <a href="#"><b>브랜드</b></a>
-            </p>
-            <p>상품명 : <a href="#">타프2</a></p>
-            <p>가격 : <a href="#">550,000원</a></p>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${chairs.itemNo})}"><img th:alt="${chairs.itemName}" th:src="@{/img/}+${chairs.itemImgThumb}" /></a>
+            <p>상품명 : <a href="#" th:text="${chairs.itemName}"></a></p>
+            <p>가격 : <a href="#" th:text="${chairs.itemPrice}"></a></p>
           </div>
         </div>
+
+      </div>
+
       </div>
       <div id="three-columns">
         <div class="content">

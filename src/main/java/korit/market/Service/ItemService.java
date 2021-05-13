@@ -1,8 +1,11 @@
 package korit.market.Service;
 
+import korit.market.Repository.CategoryRepository;
 import korit.market.Repository.ItemRepository;
+import korit.market.entity.Category;
 import korit.market.entity.Item;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.data.domain.Sort;
@@ -13,10 +16,12 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @Service
+@Log4j2
 @RequiredArgsConstructor
 public class ItemService {
 
     private final ItemRepository itemRepository;
+    private final CategoryRepository categoryRepository;
 
     /**
      * 메인페이지 - 신상품 가져오기
@@ -35,6 +40,23 @@ public class ItemService {
             return brandNewList;
         }
 
+    }
+
+    /** 상품 리스트(카테고리별로) 찾기 */
+    public List<Item> findItemsByCatNo(Long categoryId) {
+
+        Category categoryId_result = categoryRepository.findByCategoryId(categoryId);
+
+        List<Item> items = itemRepository.findAllByCategoryEquals(categoryId_result);
+        log.info("item list : " + items);
+        return items;
+    }
+
+    /** 단일 상품 찾기 */
+    public Item findItem(Long itemNo) {
+        Item findItem = itemRepository.findByItemNo(itemNo);
+        log.info("adminService_findItem : " + findItem);
+        return findItem;
     }
 
 

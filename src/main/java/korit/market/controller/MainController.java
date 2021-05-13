@@ -29,6 +29,22 @@ public class MainController {
     public String mainPage(Model model) {
         List<Item> brandNews = itemService.brandNew();
         model.addAttribute("brandNew", brandNews);
+
+        List<Item> tents = itemService.findItemsByCatNo(100L);
+        model.addAttribute("tents", tents);
+
+        List<Item> tarps = itemService.findItemsByCatNo(200L);
+        model.addAttribute("tarps", tarps);
+
+        List<Item> tables = itemService.findItemsByCatNo(300L);
+        model.addAttribute("tables", tables);
+
+        List<Item> chairs = itemService.findItemsByCatNo(400L);
+        model.addAttribute("chairs", chairs);
+
+
+
+
         return "index";
     }
 
