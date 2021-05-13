@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpSession;
@@ -172,7 +173,7 @@ public class AdminController {
     /**
      * 카테고리 등록
      */
-    @GetMapping("/categoryAdd")
+    @GetMapping("/category/add")
     public String addCategory(Model model) {
 
         List<Category> categories = adminService.findCategories();
@@ -181,17 +182,33 @@ public class AdminController {
         return "/admin/categoryAdd";
     }
 
-    @PostMapping("/categoryAdd")
-    public String addCategory(Category cat) {
+    @PostMapping("/category/add")
+    public String addCategory(Category cat, RedirectAttributes redirectAttributes) {
         Long catId = cat.getCategoryId();
 
-        boolean checkCatId = adminService.checkDuplicateCatId(catId);
+        boolean checkCatId = adminService.checkDuplicateCatId(catId); // true면 저장 가능
         log.info("check duplicate catId : " + checkCatId);
         if (checkCatId) {
             adminService.addCategory(cat);
-            return "redirect:/admin/itemList";
+            redirectAttributes.addAttribute("success", true);
+            return "redirect:/admin/category/add";
+        }else{
+            redirectAttributes.addAttribute("fail", true);
+            return "redirect:/admin/category/add";
         }
-        return "redirect:/admin/categoryAdd";
+    }
+
+    /**
+     * 카테고리 삭제
+     */
+    @GetMapping("/{catId}/delete")
+    public String deleteCategory(@PathVariable("catId") Long categoryId) {
+
+        Category category = adminService.findCategory(categoryId);
+
+        adminService.deleteCategory(category);
+
+        return "redirect:/admin/category/add";
     }
 
     @GetMapping("/orderList")

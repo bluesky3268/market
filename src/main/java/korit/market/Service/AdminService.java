@@ -84,6 +84,12 @@ public class AdminService {
         return findItem;
     }
 
+    public Category findCategory(Long categoryNo) {
+        Category category = categoryRepository.findByCategoryId(categoryNo);
+        log.info("adminService_findCategory : " + category);
+        return category;
+    }
+
     /**
      * 상품 등록
      */
@@ -91,16 +97,17 @@ public class AdminService {
     public void addItem(MultipartFile file, Item item) {
         log.info("beforeSave : " + item);
 
+
         StringBuilder fileNames = new StringBuilder();
         String fileName = UUID.randomUUID().toString() + "." + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf(".")+1);
         Path path = Paths.get(uploadDir, fileName);
 
 
-        try {
-            Files.write(path, file.getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Files.write(path, file.getBytes());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
         item.setItemImg(fileName);
         itemRepository.save(item);
@@ -126,7 +133,7 @@ public class AdminService {
 
     public boolean checkDuplicateCatId(Long catId) {
         if(categoryRepository.findByCategoryId(catId) == null)
-            return true;
+            return true; // 중복 아이디 없음 -> 저장가능
         return false;
     }
 
@@ -140,6 +147,13 @@ public class AdminService {
         return categories;
     }
 
+    /**
+     * 카테고리 삭제
+     */
+    public void deleteCategory(Category category) {
+        categoryRepository.delete(category);
+        log.info("delete_category_success : " + category);
+    }
 
 
 }
