@@ -6,11 +6,10 @@
     width: 100px;
     height: 15px;
     background-color: #a76ddb;
-    margin: 40px;
+    margin: 20px;
     margin-bottom: 20px;
     border: 2px solid #75328a;
     border-radius: 10px;
-    padding: 40px;
     opacity: 70%;
 
 }
@@ -21,7 +20,6 @@ span {
     display: block;
     color: white;
     text-align: center;
-    padding: 5px;
 }
 h3{
     padding:10px;
@@ -43,9 +41,7 @@ li {
     text-align: center;
 
 }
-a{
-    padding:10px;
-}
+
 .table {
     border: 1px solid #454545;
     border-collapse:collapse;
