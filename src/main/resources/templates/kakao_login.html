@@ -7,29 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-<a href="javascript:kakaoLogin()";
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script>
-    // 1211437d131d62efe08d984d583c5068
-    window.Kakao.init("1211437d131d62efe08d984d583c5068");
+<a href ="https://kauth.kakao.com/oauth/authorize?client_id=8beb4f0f849a8beed0ca295821292842&redirect_uri=http://localhost:8084/login&response_typecode">로그인</a>
+<!--<a href="javascript:kakaoLogin()";-->
+<!--<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>-->
+<!--<script>-->
+<!--    // 1211437d131d62efe08d984d583c5068-->
+<!--    window.Kakao.init("1211437d131d62efe08d984d583c5068");-->
 
-    function kakaoLogin() {
-        window.Kakao.Auth.login({
-            scope: 'profile, account_email, gender',
-            success: function (auth) {
-                console.log(authObj);
-                window.Kakao.API.request({
-                    url: '/v2/user/me',
-                    success: res => {
-                        const kakao_account = res.kakao_account;
-                        console.log(kakao_account);
-                    }
-                });
-            }
-        });
-    }
+<!--    function kakaoLogin() {-->
+<!--        window.Kakao.Auth.login({-->
+<!--            scope: 'profile, account_email, gender',-->
+<!--            success: function (authObj) {-->
+<!--                console.log(authObj);-->
+<!--                window.Kakao.API.request({-->
+<!--                    url: '/v2/user/me',-->
+<!--                    success: res => {-->
+<!--                        const kakao_account = res.kakao_account;-->
+<!--                        console.log(kakao_account);-->
+<!--                    }-->
+<!--                });-->
+<!--            }-->
+<!--        });-->
+<!--    }-->
 
 
-</script>
+<!--</script>-->
 </body>
 </html>

@@ -30,15 +30,21 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
+	// 카카오로그인관련 Gson 추가 2021-05-14 02:22
+	implementation 'com.google.code.gson:gson:2.8.6'
+	implementation 'org.json:json:20190722'
 
 	// 추가항목(Querydsl)
 	implementation 'com.querydsl:querydsl-jpa'
+    implementation 'org.projectlombok:lombok:1.18.18'
+    implementation 'org.projectlombok:lombok:1.18.18'
 
-	// 소셜로그인적용(OAuth) 추가 2021-05-08- 22:12
+    // 소셜로그인적용(OAuth) 추가 2021-05-08- 22:12
 //	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
 
 	compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.19'
 	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-java8time'
+
 	// Security 추가 2021-05-08 22:38
 //	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity5'
 

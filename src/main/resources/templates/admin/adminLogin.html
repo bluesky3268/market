@@ -7,17 +7,29 @@
     <link rel="stylesheet" type="text/css" href="/css/adminMain.css"/>
 </head>
 <body>
-<a href="/" class="gohome">홈</a>
-<form action="/admin/Login" method="post" id="login">
-    <div class="login_input">
-        <label>아이디</label>
-        <input type="text" name="adminId">
+<div class="container">
+    <div class="adminLogin">
+        <h3 class="adminTitle">
+            ADMIN LOGIN <br/>
+            <span class ="small-adminLogin">관리자 로그인</span>
+        </h3>
+        <fieldset>
+
+            <form action="/admin/Login" method="post" id="login">
+                <label class="login_input">
+                    <div class="pre">아이디</div>
+                    <input type="text" name="adminId">
+                </label>
+                <br/>
+                <label class="login_input">
+                    <div class="pre">비밀번호</div>
+                    <input type="password" name="adminPwd">
+                </label>
+                <button type="submit" class="button">로그인</button>
+                <a href="/" class="gohome">홈</a>
+            </form>
+        </fieldset>
     </div>
-    <div class="login_input">
-        <label>비밀번호</label>
-        <input type="password" name="adminPwd">
-    </div>
-    <button type="submit" class="button">로그인</button>
-</form>
+</div>
 </body>
 </html>
