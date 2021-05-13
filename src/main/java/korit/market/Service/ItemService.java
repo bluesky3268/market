@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Required;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -28,7 +29,11 @@ public class ItemService {
         List<Item> brandNewList = itemRepository.findAllByItemNoGreaterThan(needItemId);
         return brandNewList;
     }
-    
+
+    /**
+     * 상품 사진 저장
+     */
+
 
     /**
      * 장바구니 담기

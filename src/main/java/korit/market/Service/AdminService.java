@@ -5,8 +5,17 @@ import korit.market.entity.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.List;
+import java.util.UUID;
 
 
 @Service
@@ -19,6 +28,9 @@ public class AdminService {
     private final ItemRepository itemRepository;
     private final OrderRepository orderRepository;
     private final CategoryRepository categoryRepository;
+
+    // 이미지 파일 업로드 디렉토리 지정
+    public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/img";
 
     /**
      * 관리자 추가
@@ -75,9 +87,22 @@ public class AdminService {
     /**
      * 상품 등록
      */
-    public void addItem(Item item) {
+
+    public void addItem(MultipartFile file, Item item) {
         log.info("beforeSave : " + item);
 
+        StringBuilder fileNames = new StringBuilder();
+        String fileName = UUID.randomUUID().toString() + "." + file.getOriginalFilename().substring(file.getOriginalFilename().indexOf(".")+1);
+        Path path = Paths.get(uploadDir, fileName);
+
+
+        try {
+            Files.write(path, file.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        item.setItemImg(fileName);
         itemRepository.save(item);
 
         log.info("afterSave : " + item);

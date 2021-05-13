@@ -21,7 +21,7 @@
         <h2>이 달의 신상품</h2>
         <div th:each="brandNew : ${brandNew}">
           <div class="newthumb">
-            <a href="#"><img alt="new1" src="/img/chair2.jpg" /></a>
+            <a href="#"><img th:alt="${brandNew.itemName}" th:src="@{/img/}+${brandNew.itemImg}" /></a>
             <p>상품명 : <a href="#" th:text="${brandNew.itemName}"></a></p>
             <p>가격 : <a href="#" th:text="${brandNew.itemPrice}"></a></p>
           </div>

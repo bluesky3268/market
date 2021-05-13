@@ -9,7 +9,7 @@
 <body>
 <a th:href="@{/admin/itemList}" class="gohome">뒤로</a>
 <h3> < 상품 등록하기 ></h3>
-    <form th:action="@{/admin/itemAdd}"  method="post">
+    <form th:action="@{/admin/itemAdd}" enctype="multipart/form-data"  method="post">
         <table>
             <tr>
                 <th><label th:for="itemName" >상품명</label></th>
@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <th><label th:for="itemImg">이미지 첨부</label></th>
-                <td><input type="file" name="itemImg" multiple="multiple"></td>
+                <td><input type="file" name="file" multiple="multiple"></td>
             </tr>
         </table>
         <button type="submit">등록</button>

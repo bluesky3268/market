@@ -9,7 +9,7 @@
 <body>
 <a th:href="@{/admin/itemList}">뒤로</a>
 <h3> < 상품 수정하기 > </h3>
-<form th:action="@{/admin/item/{id}/edit(id=${item.itemNo})}" th:object="${item}"  method="post">
+<form th:action="@{/admin/item/{id}/edit(id=${item.itemNo})}" th:object="${item}" enctype="multipart/form-data" method="post">
     <table>
         <tr>
             <th> <label>상품번호</label></th>
@@ -41,7 +41,7 @@
         </tr>
         <tr>
             <th>  <label th:for="itemImg">이미지 첨부</label></th>
-            <td> <input type="file" th:value="${item.itemImg}" name="itemImg" multiple="multiple"></td>
+            <td> <input type="file" th:src="${item.itemImg}" name="file" multiple="multiple"></td>
         </tr>
     </table>
 

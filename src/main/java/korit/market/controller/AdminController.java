@@ -12,6 +12,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -77,7 +78,7 @@ public class AdminController {
     @GetMapping("/memberList")
     public String adminMemberList(Model model) {
         List<Member> members = adminService.findMembers();
-//        log.info(members);
+        log.info(members);
         model.addAttribute("member", members);
         return "/admin/adminMemberList";
     }
@@ -109,10 +110,12 @@ public class AdminController {
     }
 
     @PostMapping("/itemAdd")
-    public String itemAdd(@RequestParam("categoryName") String categoryName, Item item) {
+    public String itemAdd(@RequestParam("categoryName") String categoryName, @RequestParam("file") MultipartFile file, Item item) {
+
+        log.info("file : " + file.getOriginalFilename());
 
         item.setCategory(adminService.findCategoryByName(categoryName));
-        adminService.addItem(item);
+        adminService.addItem(file, item);
 
         return "redirect:/admin/itemList";
     }
@@ -133,13 +136,14 @@ public class AdminController {
     }
 
     @PostMapping("/item/{id}/edit")
-    public String updateItem(@PathVariable("id") String id, @RequestParam("categoryName") String categoryName, @ModelAttribute Item item) {
+    public String updateItem(@PathVariable("id") String id, @RequestParam("categoryName") String categoryName,
+                             @RequestParam("file") MultipartFile file, @ModelAttribute Item item) {
         Long itemId = Long.parseLong(id);
 
         item.setItemNo(itemId);
         item.setCategory(adminService.findCategoryByName(categoryName));
 
-        adminService.addItem(item);
+        adminService.addItem(file, item);
 
         return "redirect:/admin/itemList";
     }

@@ -16,6 +16,7 @@
     <thead>
     <tr>
         <th>상품번호</th>
+        <th>상품 </th>
         <th>카테고리 번호</th>
         <th>카테고리 이름</th>
         <th>상품 이름</th>
@@ -28,6 +29,7 @@
     <tbody>
     <tr th:each="items : ${items}">
         <td th:text="${items.itemNo}"></td>
+        <td><img th:src="@{/img/}+${items.itemImg}" /></td>
         <td th:text="${items.category.categoryId}"></td>
         <td th:text="${items.category.categoryName}"></td>
         <td th:text="${items.itemName}"></td>
