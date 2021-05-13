@@ -43,7 +43,7 @@
             <th:block th:unless="${#strings.isEmpty(session.id)}">
                 <li>
                     <a>
-                        <th:block th:text="${session.id}"/>
+                        <th:block th:text="${session.id}+' 님'"/>
                     </a>
                     <!--                    <ul><a href="#">마이페이지</a></ul>-->
                     <ul><a th:href="@{/logout}">로그아웃</a></ul>

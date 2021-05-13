@@ -140,9 +140,9 @@ public class AdminController {
     @PostMapping("/item/{id}/edit")
     public String updateItem(@PathVariable("id") String id, @RequestParam("categoryName") String categoryName,
                              @RequestParam("file") MultipartFile file, @ModelAttribute Item item) {
-        Long itemId = Long.parseLong(id);
+        Long itemNo = Long.parseLong(id);
 
-        item.setItemNo(itemId);
+        item.setItemNo(itemNo);
         item.setCategory(adminService.findCategoryByName(categoryName));
 
         adminService.addItem(file, item);
@@ -154,8 +154,13 @@ public class AdminController {
      * 상품 삭제
      */
 
-    @GetMapping("/admin/item/{id}/delete")
-    public String delete(@PathVariable("id") String id, Item item) {
+    @GetMapping("/item/{id}/delete")
+    public String delete(@PathVariable("id") String id) {
+
+        Long itemNo = Long.parseLong(id);
+        log.info("itemNo : " + itemNo);
+
+        Item item = adminService.findItem(itemNo);
 
         log.info("delete_item : " + item);
         adminService.deleteItem(item);
