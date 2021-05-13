@@ -36,6 +36,10 @@
             <td><input type="text" th:value="${item.itemQuantity}" name="itemQuantity"  placeholder="수량을 입력하세요"></td>
         </tr>
         <tr>
+            <th><label th:for="itemImage">이미지</label></th>
+            <td><img th:src="@{/img/}+${item.itemImg}" /></td>
+        </tr>
+        <tr>
             <th><label th:for="itemInfo">상품설명</label></th>
             <td> <textarea  cols="50" rows="10" th:value="${item.itemInfo}" th:text="${item.itemInfo}" name="itemInfo" placeholder="상품 상세설명을 입력하세요"></textarea></td>
         </tr>
