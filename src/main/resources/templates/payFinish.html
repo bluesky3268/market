@@ -1,19 +1,204 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTMl 4.01 Transitional//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="data:;base64,=" />
-  <title>PayFinish</title>
-</head>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<div th:replace="fragments/configHeader"/>
 <body>
-    <script>
-        alert('결제가 완료되었습니다');
-    </script>
+<div th:replace="fragments/head"/>
 
-    <div class="orderTitle" align=center>
-        <h1>주문 확인서</h1>
+<div class="container">
+    <div class="titleContainer">
+        <h2>주문완료</h2>
     </div>
+
+    <div class="component">
+        <div class="messageContainer">
+            <div class="completeMessageContainer">
+                <span style="color: purple">주문이 완료</span>
+                <span>되었습니다.
+                    <span id="orderer"></span>님 감사합니다.
+            </div>
+            <div class="completeOrderInfoContainer" >
+
+                <table class="calculation1">
+                    <thead>
+                    <tr>
+                        <th colspan="8" style="text-align: left; padding-left: 10px;">일반상품(1)</th>
+                    </tr>
+
+                    <tr>
+                        <th></th>
+                        <th>이미지</th>
+                        <th style="width: 500px;"><span>상품정보</span></th>
+                        <th style="width: 100px;">판매가</th>
+                        <th>수량</th>
+                        <th style="width: 100px;">합계</th>
+                    </tr>
+                    </thead>
+
+                    <tbody id="calculation1tbody">
+                    <tr class="calculation1_tbody_tr1" style="height: 90px; background-color: #fff;">
+                        <td style="text-align: left; text-align: center; border-right:none;">
+                        </td>
+                        <td style="border-left: none; border-right: none;"><img style="width: 45%;"
+                                                                                src="/img/hammock.jpg"></td>
+                        <td style="text-align: center; padding-left: 10px; border-left:none; font-weight: bold;">패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</td>
+
+
+                        <td><span style="padding-left: 10px;">299,000</span>원</td>
+                        <td style="width: 80px;">
+                            <span>1</span>
+                        </td>
+                        <td><span>299,000원</span></td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr style="height: 60px;">
+                        <td colspan="5" style="border-right: none; text-align: left; padding-left: 10px;">
+                            <span>[기본배송]</span>
+                        </td>
+                        <td colspan="5" style="border-left: none; text-align: right; padding-right: 10px;">
+                            <span>총 금액 299,000</span><span style="font-weight: bold; font-size: 10pt;"/>
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            </a>
+        </div>
+    </div>
+</div>
+<p></p>
+<div class="continueShoppingBtnContainer" align="center">
+    <div class="btn btn-primary" id="continueShoppingBtn">계속 쇼핑하기 ></div>
+    </a>
+</div>
+</div>
+</div>
+</div>
 
 </body>
 </html>
+
+<style>
+    .titleContainer {
+        height: 10vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .component {
+        border-top: 2px solid #CECECE;
+        border-bottom: 1px solid #CECECE;
+    }
+
+    .messageContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .messageContainer div {
+        margin-top: 15px;
+    }
+
+    .completeMessageContainer {
+        font-size: 30px;
+    }
+
+    .completeOrderInfoContainer {
+        max-width: 40%;
+        min-width: 40%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .completeOrderInfoContainer div {
+        margin-top: 0px;
+    }
+
+    #continueShoppingBtn {
+        margin-bottom: 15px;
+    }
+    .textarea1 {
+        padding: 5px 6px;
+        border: 1px solid #d5d5d5;
+        line-height: 1.5;
+    }
+
+    .calculation1 {
+        clear: both;
+        border: solid 1px #e0e0eb;
+        border-collapse: collapse;
+        background-color: #f5f5f0;
+        width: 100%;
+        font-size: 10pt;
+    }
+
+    .calculation1 th {
+        border: solid 1px #e0e0eb;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .calculation1 td {
+        border: solid 1px #e0e0eb;
+        text-align: center;
+    }
+
+    .calculation2 {
+        border: solid 1px #e0e0eb;
+        border-collapse: collapse;
+        background-color: #f5f5f0;
+        width: 100%;
+        font-size: 10pt;
+    }
+
+    .calculation2 th {
+        border: solid 1px #e0e0eb;
+        text-align: center;
+    }
+
+    .calculation2 td {
+        border: solid 1px #e0e0eb;
+        text-align: center;
+    }
+
+    .price {
+        font-size: 20pt;
+        font-weight: bold;
+    }
+
+    .default {
+        background-color: gray;
+        border: solid 1px gray;
+        color: #fff;
+    }
+
+    .default:hover {
+        background: #ddd;
+    }
+
+    .backBtn {
+        background: #fff;
+        border: solid 1px gray;
+    }
+
+    .btn {
+        border: none;
+        color: black;
+        padding: 5px 10px;
+        font-size: 13px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #btnfloat {
+        float: left;
+    }
+
+    #btnfloat2 {
+        float: right;
+    }
+</style>
+
