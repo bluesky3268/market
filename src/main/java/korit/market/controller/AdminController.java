@@ -116,6 +116,7 @@ public class AdminController {
                           @RequestParam("file") MultipartFile file,
                           @RequestParam("fileThumb") MultipartFile file_thumb, Item item) {
 
+
 //        log.info("file : " + file.getOriginalFilename());
 
         log.info("add_item : " + item + ", file : " + file + ", file_thumb : " + file_thumb);

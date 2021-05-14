@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -43,5 +45,28 @@ class ItemServiceTest {
 
     }
 
+
+    @Test
+    public void 메인페이지_카테고리출력() {
+        Long categoryId = 100L;
+        Category categoryId_result = categoryRepository.findByCategoryId(categoryId);
+
+        List<Item> items = itemRepository.findAllByCategoryEquals(categoryId_result);
+        System.out.println("itemList : " + items);
+
+        int size = items.size();
+        System.out.println("size = " + size);
+
+        int start = size - 1;
+        int end = start - 3;
+
+
+        for (int i = start; i >= end ; i--) {
+            List<Item> addItem = new ArrayList<>();
+            addItem.add(items.get(i));
+            System.out.println(addItem);
+        }
+
+    }
 
 }

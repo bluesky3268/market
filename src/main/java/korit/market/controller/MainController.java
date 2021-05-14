@@ -30,19 +30,17 @@ public class MainController {
         List<Item> brandNews = itemService.brandNew();
         model.addAttribute("brandNew", brandNews);
 
-        List<Item> tents = itemService.findItemsByCatNo(100L);
+        List<Item> tents = itemService.findItems(100L);
         model.addAttribute("tents", tents);
 
-        List<Item> tarps = itemService.findItemsByCatNo(200L);
+        List<Item> tarps = itemService.findItems(200L);
         model.addAttribute("tarps", tarps);
 
-        List<Item> tables = itemService.findItemsByCatNo(300L);
+        List<Item> tables = itemService.findItems(300L);
         model.addAttribute("tables", tables);
 
-        List<Item> chairs = itemService.findItemsByCatNo(400L);
+        List<Item> chairs = itemService.findItems(400L);
         model.addAttribute("chairs", chairs);
-
-
 
 
         return "index";

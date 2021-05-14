@@ -13,6 +13,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -48,9 +50,36 @@ public class ItemService {
         Category categoryId_result = categoryRepository.findByCategoryId(categoryId);
 
         List<Item> items = itemRepository.findAllByCategoryEquals(categoryId_result);
+
         log.info("item list : " + items);
         return items;
     }
+
+    /** 메인페이지 최근 추가된 상품4개 리스트 가져오기 */
+    public List<Item> findItems(Long categoryId) {
+
+        Category categoryId_result = categoryRepository.findByCategoryId(categoryId);
+
+        List<Item> items = itemRepository.findAllByCategoryEquals(categoryId_result);
+
+        int size = items.size();
+        System.out.println("size = " + size);
+
+        int start = size - 1;
+        int end = start - 3;
+
+        List<Item> addItem = new ArrayList<>();
+
+        if(start >= 4) {
+            for (int i = start; i >= end; i--) {
+                addItem.add(items.get(i));
+                log.info("addItem : " + addItem);
+            }
+            return addItem;
+        }
+        return items;
+    }
+
 
     /** 단일 상품 찾기 */
     public Item findItem(Long itemNo) {
