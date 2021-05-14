@@ -1,134 +1,166 @@
 <!DOCTYPE>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>캠핑가지</title>
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"/>
-    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
-  </head>
-  <body>
-    <div id="wrapper">
-      <div id="header" th:replace="/fragments/header.html :: header" />
-      <!-- end #header -->
-      <div id="menu" th:replace="/fragments/navbar.html :: navbar" />
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>캠핑가지</title>
+  <meta name="keywords" content=""/>
+  <meta name="description" content=""/>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css"/>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+</head>
+<body>
+<div id="wrapper">
+  <div id="header" th:replace="/fragments/header.html :: header"/>
+  <!-- end #header -->
+  <div id="menu" th:replace="/fragments/navbar.html :: navbar"/>
 
-      <div id="banner">
-        <img src="/img/tent1.jpg" width="1100" height="450" alt="" />
+  <div id="banner">
+    <img src="/img/tent1.jpg" width="1100" height="450" alt=""/>
+  </div>
+  <div class="hanblank_60"></div>
+  <div class="productcontainer">
+    <h2>이 달의 신상품</h2>
+    <div th:each="brandNew : ${brandNew}">
+      <div class="newthumb">
+        <a th:href="@{/item/list/detail/{itemNo}(itemNo=${brandNew.itemNo})}"><img th:alt="${brandNew.itemName}"
+                                                                                   th:src="@{/img/}+${brandNew.itemImgThumb}"/></a>
+        <p>상품명 : <a href="#" th:text="${brandNew.itemName}"></a></p>
+        <p>가격 : <a href="#" th:text="${brandNew.itemPrice}"></a></p>
       </div>
-      <div class="productcontainer">
-        <h2>이 달의 신상품</h2>
-        <div th:each="brandNew : ${brandNew}">
-          <div class="newthumb">
-            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${brandNew.itemNo})}"><img th:alt="${brandNew.itemName}" th:src="@{/img/}+${brandNew.itemImgThumb}" /></a>
-            <p>상품명 : <a href="#" th:text="${brandNew.itemName}"></a></p>
-            <p>가격 : <a href="#" th:text="${brandNew.itemPrice}"></a></p>
-          </div>
-      </div>
-      <div class="productcontainer">
-        <!-- 텐트 -->
+    </div>
+    <div class="hanblank_40"></div>
+    <div class="productInnerContainer">
+      <!-- 텐트 -->
+      <div class="tentContainer">
         <h2><a href="/item/list/100">텐트</a></h2>
-        <h4><a href="/item/list/100">더보기</a></h4>r
+        <h4 class="viewMore"><a href="/item/list/100">더보기</a></h4>
+
         <div th:each="tents : ${tents}">
           <div class="newthumb">
-            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tents.itemNo})}"><img th:alt="${tents.itemName}" th:src="@{/img/}+${tents.itemImgThumb}" /></a>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tents.itemNo})}"><img th:alt="${tents.itemName}"
+                                                                                    th:src="@{/img/}+${tents.itemImgThumb}"/></a>
             <p>상품명 : <a href="#" th:text="${tents.itemName}"></a></p>
             <p>가격 : <a href="#" th:text="${tents.itemPrice}"></a></p>
           </div>
         </div>
-        <!-- 타프 -->
+      </div>
+
+      <div class="hanblank_20"></div>
+
+      <!-- 타프 -->
+      <div class="tarfContainer">
         <h2><a href="/item/list/200">타프</a></h2>
-        <h4><a href="/item/list/200">더보기</a></h4>
+        <h4 class="viewMore"><a href="/item/list/200">더보기</a></h4>
         <div th:each="tarps : ${tarps}">
           <div class="newthumb">
-            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tarps.itemNo})}"><img th:alt="${tarps.itemName}" th:src="@{/img/}+${tarps.itemImgThumb}" /></a>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tarps.itemNo})}"><img th:alt="${tarps.itemName}"
+                                                                                    th:src="@{/img/}+${tarps.itemImgThumb}"/></a>
             <p>상품명 : <a href="#" th:text="${tarps.itemName}"></a></p>
             <p>가격 : <a href="#" th:text="${tarps.itemPrice}"></a></p>
           </div>
         </div>
-        <!-- 테이블 -->
+      </div>
+
+      <div class="hanblank_20"></div>
+
+      <!-- 테이블 -->
+      <div class="tableContainer">
         <h2><a href="/item/list/300">테이블</a></h2>
-        <h4><a href="/item/list/300">더보기</a></h4>
+        <h4 class="viewMore"><a href="/item/list/300">더보기</a></h4>
         <div th:each="tables : ${tables}">
           <div class="newthumb">
-            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tables.itemNo})}"><img th:alt="${tables.itemName}" th:src="@{/img/}+${tables.itemImgThumb}" /></a>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${tables.itemNo})}"><img th:alt="${tables.itemName}"
+                                                                                     th:src="@{/img/}+${tables.itemImgThumb}"/></a>
             <p>상품명 : <a href="#" th:text="${tables.itemName}"></a></p>
             <p>가격 : <a href="#" th:text="${tables.itemPrice}"></a></p>
           </div>
         </div>
-        <!-- 의자 -->
+      </div>
+
+      <div class="hanblank_20"></div>
+
+      <!-- 의자 -->
+      <div class="chairContainer">
         <h2><a href="/item/list/400">의자</a></h2>
-        <h4><a href="/item/list/400">더보기</a></h4>
+        <h4 class="viewMore"><a href="/item/list/400">더보기</a></h4>
         <div th:each="chairs : ${chairs}">
           <div class="newthumb">
-            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${chairs.itemNo})}"><img th:alt="${chairs.itemName}" th:src="@{/img/}+${chairs.itemImgThumb}" /></a>
+            <a th:href="@{/item/list/detail/{itemNo}(itemNo=${chairs.itemNo})}"><img th:alt="${chairs.itemName}"
+                                                                                     th:src="@{/img/}+${chairs.itemImgThumb}"/></a>
             <p>상품명 : <a href="#" th:text="${chairs.itemName}"></a></p>
             <p>가격 : <a href="#" th:text="${chairs.itemPrice}"></a></p>
           </div>
         </div>
-
-      </div>
-
-      </div>
-      <div id="three-columns">
-        <div class="content">
-          <div id="column1">
-            <h2>여기에는 뭘 넣을까요??</h2>
-          </div>
-          <div id="column2">
-            <h2>원터치 텐트 사용법</h2>
-            <p>
-              <iframe
-                width="430"
-                height="200"
-                src="https://www.youtube.com/embed/rmnKHAbHVhw"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </p>
-            <p>
-              <iframe
-                width="430"
-                height="200"
-                src="https://www.youtube.com/embed/iqP67GdRvA4"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </p>
-          </div>
-          <div id="column3">
-            <h2>자주 묻는 질문</h2>
-            <ul class="list-style2">
-              <li class="first">
-                <a href="#">Q.배송기간은 얼마나 걸리나요?</a>
-              </li>
-              <li>
-                <a href="#">Q.단순 변심 시 환불 규정은 어떻게 되나요??</a>
-              </li>
-              <li><a href="#">Q.제품 불량 시 교환 절차는 어떻게 되나요?</a></li>
-              <li><a href="#">Q.A/S는 어떻게 받을 수 있나요?</a></li>
-              <li>
-                <a href="#">Q.품절 제품의 경우 재입고까지 얼마나 걸리나요?</a>
-              </li>
-              <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
-              <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
-              <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
-            </ul>
-            <p><a href="#" class="link-style">Read More</a></p>
-          </div>
-        </div>
-      </div>
-      <div id="footer">
-        <p>
-          Copyright&copy; 2021 CampingGaji. All rights reserved. Photos by
-          <a href="https://unsplash.com/">Fotogrph</a>
-        </p>
       </div>
     </div>
-  </body>
+  </div>
+  <div id="three-columns">
+    <div class="content">
+      <div id="column1">
+        <h2>고객센터</h2>
+        <span class="num_big" style="letter-spacing: 0px">
+          "010.1234.5678"
+        </span>
+        <div class="hanblank_40"></div>
+        <h2>운영시간</h2>
+        <span class ="opentime">
+          * 점심시간: 12:30 ~ 13:30
+          <br>(토/ 주일 / 공휴일 휴무)
+        </span>
+      </div>
+      <div id="column2">
+        <h2>원터치 텐트 사용법</h2>
+        <p>
+          <iframe
+              width="430"
+              height="200"
+              src="https://www.youtube.com/embed/rmnKHAbHVhw"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+          ></iframe>
+        </p>
+        <p>
+          <iframe
+              width="430"
+              height="200"
+              src="https://www.youtube.com/embed/iqP67GdRvA4"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+          ></iframe>
+        </p>
+      </div>
+      <div id="column3">
+        <h2>자주 묻는 질문</h2>
+        <ul class="list-style2">
+          <li class="first">
+            <a href="#">Q.배송기간은 얼마나 걸리나요?</a>
+          </li>
+          <li>
+            <a href="#">Q.단순 변심 시 환불 규정은 어떻게 되나요??</a>
+          </li>
+          <li><a href="#">Q.제품 불량 시 교환 절차는 어떻게 되나요?</a></li>
+          <li><a href="#">Q.A/S는 어떻게 받을 수 있나요?</a></li>
+          <li>
+            <a href="#">Q.품절 제품의 경우 재입고까지 얼마나 걸리나요?</a>
+          </li>
+          <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
+          <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
+          <li><a href="#">Q.Aenean elementum facilisis ligula?</a></li>
+        </ul>
+        <p><a href="#" class="link-style">Read More</a></p>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>
+      Copyright&copy; 2021 CampingGaji. All rights reserved. Photos by
+      <a href="https://unsplash.com/">Fotogrph</a>
+    </p>
+  </div>
+</div>
+</body>
 </html>
