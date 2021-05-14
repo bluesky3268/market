@@ -28,8 +28,8 @@
         <div th:each="itemList : ${itemList}">
             <div class="newthumb">
                 <a th:href="@{/item/list/detail/{itemNo}(itemNo=${itemList.itemNo})}"><img th:alt="${itemList.itemName}" th:src="@{/img/}+${itemList.itemImgThumb}" /></a>
-                <p>상품명 : <a href="#" th:text="${itemList.itemName}"></a></p>
-                <p>가격 : <a href="#" th:text="${itemList.itemPrice}"></a></p>
+                <div>상품명 : </div><a th:href="@{/item/list/detail/{itemNo}(itemNo=${itemList.itemNo})}"> <div th:text="${itemList.itemName}" /></a></p>
+                <div>가격 : </div><a th:href="@{/item/list/detail/{itemNo}(itemNo=${itemList.itemNo})}"> <div th:text="${itemList.itemPrice}" /></a></p>
             </div>
         </div>
 <!--        <div>-->

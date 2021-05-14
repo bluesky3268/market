@@ -15,7 +15,7 @@
 <div th:replace="/fragments/navbar.html :: navbar"></div>
 
 		<div class="items_view" th:object="${item}">
-			<h2 th:text="${item.itemName}">패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</h2>
+			<h2 th:text="${item.itemName}" name="itemName">패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</h2>
 			<table>
 				<caption>
 					<details class="hide">
@@ -30,11 +30,11 @@
 				<tbody>
 					<tr>
 						<th>판매가</th>
-						<td class="price" th:text="${item.itemPrice}">299,000</td>
+						<td class="price" th:text="${item.itemPrice}" name="itemPrice">299,000</td>
 					</tr>
 					<tr>
 						<th>상품코드</th>
-						<td th:text="${item.itemNo}">FCMP10325</td>
+						<td th:text="${item.itemNo}" name="itemNo">FCMP10325</td>
 					</tr>
 					<tr>
 						<th>국내·해외배송</th>
@@ -52,7 +52,7 @@
 						<th>구매수량</th>
 						<td>
 							<div class="length">
-								<input type="number" min="1" value="1">
+								<input min="1" value="1" name="itemQuantity">
 								<a href="#a">증가</a>
 								<a href="#a">감소</a>
 							</div>
@@ -71,15 +71,15 @@
 				</tbody>
 			</table>
 			<div class="img">
-				<img th:src="@{/img/}+${item.itemImgThumb}" th:alt="${item.itemName}">
+				<img th:src="@{/img/}+${item.itemImgThumb}" name="itemImgThumb" th:alt="${item.itemName}">
 				<ul>
-					<li class="on"><a href="#"><img th:src="@{/img/}+${item.itemImg}"  alt=""></a></li>
+					<li class="on"><a href="#"><img th:src="@{/img/}+${item.itemImg}" name="itemImg" th:text="${item.itemName}"></a></li>
 <!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-1.JPG" alt=""></a></li>-->
 <!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-2.JPG" alt=""></a></li>-->
 				</ul>
 			</div>
 			<div class="btns">
-				<a href="/item/cart" class="btn1">장바구니</a>
+				<button><a th:href="@{/item/cart/{id}(id=${item.itemNo})}" class="btn2">장바구니</a></button>
 				<a href="/item/payment" class="btn2">구매하기</a>
 			</div>
 		</div>

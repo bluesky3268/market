@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -51,12 +52,24 @@ public class ItemController {
 
     @GetMapping("/itemdetail")
     public String item_detail() {
+
         return "details";
     }
 
-    @GetMapping("/cart")
-    public String cart() {
-        return "cart";
+    @GetMapping("/cart/{id}")
+    public ModelAndView cart(@PathVariable("id") String id, ModelAndView mv) {
+        Long itemNo = Long.parseLong(id);
+//        Integer itemQuantity = Integer.parseInt(iq);
+//        log.info("itemQuantity : " + itemQuantity);
+
+        Item addCart = itemService.findItem(itemNo);
+//        addCart.setItemQuantity(itemQuantity);
+
+        log.info("item : " + addCart);
+        mv.addObject("item", addCart);
+        log.info("cart mv: " + mv.getModel());
+        mv.setViewName("/cart");
+        return mv;
     }
 
     @GetMapping("/payment")
@@ -66,6 +79,7 @@ public class ItemController {
 
     @GetMapping("/payment/finish")
     public String payfinish() {
+
         return "payFinish";
     }
 }

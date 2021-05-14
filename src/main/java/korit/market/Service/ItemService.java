@@ -89,6 +89,13 @@ public class ItemService {
     }
 
 
+    public Item findByItemName(String itemName) {
+        Item result = itemRepository.findByItemName(itemName);
+        return result;
+
+    }
+
+
     /**
      * 장바구니 담기
      */

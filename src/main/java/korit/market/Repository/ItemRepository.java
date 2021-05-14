@@ -19,4 +19,6 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 
     List<Item> findAllByCategoryEquals(Category category);
 
+    Item findByItemName(String itemName);
+
 }
