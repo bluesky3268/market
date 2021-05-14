@@ -55,9 +55,17 @@ public class ItemController {
     }
 
     @GetMapping("/cart")
-    public String cart() { return "cart"; }
+    public String cart() {
+        return "cart";
+    }
 
     @GetMapping("/payment")
-    public String payment() { return "payus"; }
+    public String payment() {
+        return "payus";
+    }
 
+    @GetMapping("/payment/finish")
+    public String payfinish() {
+        return "payFinish";
+    }
 }

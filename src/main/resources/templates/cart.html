@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="./css/itemsViewDefault.css" /> -->
     <link href="/css/itemsViewStyle.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="/css/cartStyle.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
     <script>
         $("#choiceProductDelete").click(function () {
             var bool = $(".calculation1 tbody input:checkbox[name=checkbox]").is(":checked");
@@ -130,6 +131,7 @@
                 style="background-color: gray;; color: #fff;"> x 삭제하기
         </button>
         <button type="button" class="btn default btnfloat2" onclick="javascript: history.back()">계속 쇼핑하기></button>
+        <button type="submit" class="btn default btnfloat2" th:onclick="|location.href='@{/item/payment}'|">결제하기</button>
     </div>
 </div>
 <br/>
