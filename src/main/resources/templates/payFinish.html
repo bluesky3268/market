@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <meta charset="UTF-8">
-<div th:replace="fragments/configHeader"/>
 <body>
-<div th:replace="fragments/head"/>
+
 
 <div class="container">
-    <div class="titleContainer" >
-        <h2>주문완료</h2>
+  <div class="titleContainer">
+    <h2>주문완료</h2>
+  </div>
+
+  <div class="component">
+    <div class="messageContainer">
+      <div class="completeMessageContainer">
+        <span style="color: purple">주문이 완료</span>
+        <span>되었습니다.</span>
+        <span th:text="${session.id}"></span>님 감사합니다.
+
+      </div>
+      <div class="completeOrderInfoContainer">
+
+
+      </div>
     </div>
-
-    <div class="component">
-        <div class="messageContainer">
-            <div class="completeMessageContainer">
-                <span style="color: purple">주문이 완료</span>
-                <span>되었습니다.
-                    <span th:text="${session.id}"></span>님 감사합니다.
-
-            </div>
-            <div class="completeOrderInfoContainer" >
-
-
-        </div>
-    </div>
-</div>
-<p></p>
+  </div>
+  <p></p>
 
 </div>
 </div>
@@ -74,6 +73,7 @@
     #continueShoppingBtn {
         margin-bottom: 15px;
     }
+
     .textarea1 {
         padding: 5px 6px;
         border: 1px solid #d5d5d5;

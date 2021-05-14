@@ -1,80 +1,89 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>캠핑가지_패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</title>
-	<link rel="stylesheet" href="/css/itemsViewDefault.css">
-	<link rel="stylesheet" href="/css/itemsViewStyle.css">
-	<link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <title>캠핑가지_패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</title>
+  <link rel="stylesheet" href="/css/itemsViewDefault.css">
+  <link rel="stylesheet" href="/css/itemsViewStyle.css">
+  <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
 <div id="wrapper">
-<div th:replace="/fragments/header.html :: header"></div>
-<!-- end #header -->
-<div th:replace="/fragments/navbar.html :: navbar"></div>
+  <div th:replace="/fragments/header.html :: header"></div>
+  <!-- end #header -->
+  <div th:replace="/fragments/navbar.html :: navbar"></div>
 
-		<div class="items_view" th:object="${item}">
-			<h2 th:text="${item.itemName}" name="itemName">패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</h2>
-			<table>
-				<caption>
-					<details class="hide">
-						<summary>상품정보</summary>
-						판매가, 상품코드 및 결제금액 안내
-					</details>
-				</caption>
-				<colgroup>
-					<col style="width: 175px;">
-					<col>
-				</colgroup>
-				<tbody>
-					<tr>
-						<th>판매가</th>
-						<td class="price" th:text="${item.itemPrice}" name="itemPrice">299,000</td>
-					</tr>
-					<tr>
-						<th>상품코드</th>
-						<td th:text="${item.itemNo}" name="itemNo">FCMP10325</td>
-					</tr>
-					<tr>
-						<th>구매수량</th>
-						<td>
-							<div class="length">
-								<input min="1" value="1" name="itemQuantity">
-								<a href="#a">증가</a>
-								<a href="#a">감소</a>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<th>옵션선택</th>
-						<td><select>
-								<option>기본</option>
-						</select></td>
-					</tr>
-					<tr>
-						<th>결제금액</th>
-						<td class="total" th:text="${item.itemPrice}"><b>299,000</b>원</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="img">
-				<img th:src="@{/img/}+${item.itemImgThumb}" name="itemImgThumb" th:alt="${item.itemName}">
-				<ul>
-					<li class="on"><a href="#"><img th:src="@{/img/}+${item.itemImg}" name="itemImg" th:text="${item.itemName}"></a></li>
-<!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-1.JPG" alt=""></a></li>-->
-<!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-2.JPG" alt=""></a></li>-->
-				</ul>
-			</div>
-			<div class="btns">
-				<button><a th:href="@{/item/cart/{id}(id=${item.itemNo})}" class="btn2">장바구니</a></button>
-				<a href="/item/payment" class="btn2">구매하기</a>
-			</div>
-		</div>
-		<div>상세설명</div>
-		<div>
-			<img th:src="@{/img/}+${item.itemImg}">
-		</div>
+  <div class="hanblank_60"></div>
+
+  <div class="items_view" th:object="${item}">
+    <h2 th:text="${item.itemName}" name="itemName">패스트캠프 마운트프로 원터치팝업텐트 L 사이즈 [블랙]</h2>
+    <table>
+      <caption>
+        <details class="hide">
+          <summary>상품정보</summary>
+          판매가, 상품코드 및 결제금액 안내
+        </details>
+      </caption>
+      <colgroup>
+        <col style="width: 175px;">
+        <col>
+      </colgroup>
+      <tbody>
+      <tr>
+        <th>판매가</th>
+        <td class="price" th:text="${item.itemPrice}" name="itemPrice">299,000</td>
+      </tr>
+      <tr>
+        <th>상품코드</th>
+        <td th:text="${item.itemNo}" name="itemNo">FCMP10325</td>
+      </tr>
+      <tr>
+        <th>구매수량</th>
+        <td>
+          <div class="length">
+            <input min="1" value="1" name="itemQuantity">
+            <a href="#a">증가</a>
+            <a href="#a">감소</a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>옵션선택</th>
+        <td><select>
+          <option>기본</option>
+        </select></td>
+      </tr>
+      <tr>
+        <th>결제금액</th>
+        <td class="total" th:text="${item.itemPrice}"><b>299,000</b>원</td>
+      </tr>
+      </tbody>
+    </table>
+    <div class="img">
+      <img th:src="@{/img/}+${item.itemImgThumb}" name="itemImgThumb" th:alt="${item.itemName}">
+      <ul>
+        <li class="on"><a href="#"><img th:src="@{/img/}+${item.itemImg}" name="itemImg" th:text="${item.itemName}"></a>
+        </li>
+        <!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-1.JPG" alt=""></a></li>-->
+        <!--					<li><a href="#a"><img src="/images/Fastcamp_onetouch_tent1-2.JPG" alt=""></a></li>-->
+      </ul>
+    </div>
+    <div class="hanblank_60"></div>
+    <div class="hanblank_60"></div>
+    <div class="hanblank_60"></div>
+    <div class="btns">
+      <button><a th:href="@{/item/cart/{id}(id=${item.itemNo})}" class="btn2">장바구니</a></button>
+      <a href="/item/payment" class="btn2">구매하기</a>
+    </div>
+  </div>
+  <div class="detailsContainer">
+    <h3>상세설명</h3>
+    <div class="hanblank_60"></div>
+    <div>
+      <img th:src="@{/img/}+${item.itemImg}">
+    </div>
+  </div>
 
 </div>
 </body>
